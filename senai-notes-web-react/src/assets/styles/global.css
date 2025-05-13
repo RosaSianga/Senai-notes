@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+
+* {
+
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+.inpt {
+
+    border-radius: 16px;
+    padding: 18px;
+    border: none;
+    background-color: #F7F9FB;
+    width: 100%;
+    margin-bottom: 16px;
+}
+
+.btn {
+
+    padding: 10px;
+    border-radius: 10px;
+    background-color: blue;
+    color: #FFFFFF;
+    border: none;
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}

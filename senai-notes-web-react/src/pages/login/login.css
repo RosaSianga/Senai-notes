@@ -1,0 +1,51 @@
+
+
+h1{
+    font-family: inter;
+    font-weight: bolder;
+    margin-bottom: 16px;
+    font-size: 34px;
+
+}
+
+.descricao {
+    font-family: inter;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.login-container {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 40vh;
+    width: 20vw;
+
+}
+
+.page-container img {
+
+    height: 5vh;
+}
+
+input {
+    background-color: white;
+}
+
+.label {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.label p{
+    font-family: inter;
+    font-weight: bold;
+}
+
+.page-container img{
+    margin-bottom: 24px;
+}
