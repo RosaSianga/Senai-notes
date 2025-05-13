@@ -1,0 +1,26 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+
+
+
+.txt1{
+
+    position: relative;
+    top: -310px;
+    font-size: 24px;
+    margin-left: -870px;
+}
+
+.inpt{
+
+    margin-left: 1000px;
+    width: 250px;
+    position: relative;
+    top: -335px;
+    height: 25px;
+    border-radius: 5px;
+}

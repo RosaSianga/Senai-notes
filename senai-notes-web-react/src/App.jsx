@@ -1,4 +1,4 @@
-
+import Anotacoes from "../src/pages/Anotacoes/"
 import './App.css'
 
 function App() {
@@ -7,6 +7,8 @@ function App() {
   return (
     <>
  
+  <Anotacoes></Anotacoes>
+
     </>
   )
 }
