@@ -9,36 +9,41 @@ function Login() {
 
             <header></header>
 
-            <main className="page-container">
+            <div className="borda">
 
-                <img src={logo} alt="Logo Senai Notes" />
+                <main className="page-container">
 
-                <h1>Welcome to Notes</h1>
+                    <img src={logo} alt="Logo Senai Notes" />
 
-                <div className="login-container">
+                    <h1>Welcome to Notes</h1>
+                    <p>Please log in to continue</p>
 
-                    <div className="label">
-                        <p className="descricao">Email Address</p>
-                        <p></p>
+                    <div className="login-container">
+
+                        <div className="label">
+                            <p className="descricao">Email Address</p>
+                            <p></p>
+                        </div>
+
+
+                        <input className="inpt" type="email" placeholder="email@example.com" />
+
+                        <div className="label">
+                            <p className="descricao">Password</p>
+                            <a href='/forgot'> Forgot</a>
+                        </div>
+
+                        <input className="inpt" type="password" placeholder="Insira a senha" />
+
+                        <button className="btn" >Entrar</button>
+
+                        <p> No account yet ? Sign Up </p>
+
                     </div>
 
+                </main>
 
-                    <input className="inpt" type="email" placeholder="Insira o e-mail" />
-
-                    <div className="label">
-                        <p className="descricao">Password</p>
-                        <p>forgot</p>
-                    </div>
-
-                    <input className="inpt" type="password" placeholder="Insira a senha" />
-
-                    <button className="btn" >Entrar</button>
-
-                    <p> No account yet ? Sign Up </p>
-
-                </div>
-
-            </main>
+            </div>
 
             <footer></footer>
 

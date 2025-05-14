@@ -1,0 +1,37 @@
+.page-container-forgot h1 {
+    font-size: 24px;
+    font-family: Inter;
+    font-weight: bolder;
+    margin-bottom: 1px;
+
+}
+
+
+.forgot-container {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 25vh;
+    width: 25vw;
+
+}
+
+.borda-forgot {
+    border: 1px solid gray;
+    border-radius: 10px;
+    padding: 20px;
+    
+}
+
+.page-container-forgot {
+    width: 25vw;
+    height: 40vh;
+}
+
+.page-container-forgot img {
+
+    height: 5vh;
+    margin-bottom: 24px;
+}

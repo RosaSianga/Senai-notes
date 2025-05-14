@@ -1,15 +1,14 @@
-
-
-h1{
-    font-family: inter;
-    font-weight: bolder;
-    margin-bottom: 16px;
+.page-container h1 {
     font-size: 34px;
+    font-family: Inter;
+    font-weight: bolder;
+    margin-bottom: 1px;
+
 
 }
 
 .descricao {
-    font-family: inter;
+    font-family: Inter;
     font-weight: bold;
     font-size: 15px;
 }
@@ -25,13 +24,22 @@ h1{
 
 }
 
+.borda {
+    border: 1px solid gray;
+    border-radius: 10px;
+    padding: 30px;
+    
+}
+
+.page-container {
+    width: 20vw;
+    height: 50vh;
+}
+
 .page-container img {
 
     height: 5vh;
-}
-
-input {
-    background-color: white;
+    margin-bottom: 24px;
 }
 
 .label {
@@ -41,11 +49,14 @@ input {
     width: 100%;
 }
 
-.label p{
-    font-family: inter;
+.label p {
+    font-family: Inter;
     font-weight: bold;
 }
 
-.page-container img{
-    margin-bottom: 24px;
+.label a {
+    color: #525866;
+    font-family: Inter;
+    font-size: 12px;
 }
+
