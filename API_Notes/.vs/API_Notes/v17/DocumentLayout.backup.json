@@ -1,12 +1,37 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\FIC\\Documents\\Workstation\\Senai-notes\\API_Notes\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{1FA8A44D-F397-4648-A363-8871A9D2F462}|API_Notes\\API_Notes.csproj|c:\\users\\fic\\documents\\workstation\\senai-notes\\api_notes\\api_notes\\api_notes.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{1FA8A44D-F397-4648-A363-8871A9D2F462}|API_Notes\\API_Notes.csproj|solutionrelative:api_notes\\api_notes.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "API_Notes",
+              "DocumentMoniker": "C:\\Users\\FIC\\Documents\\Workstation\\Senai-notes\\API_Notes\\API_Notes\\API_Notes.csproj",
+              "RelativeDocumentMoniker": "API_Notes\\API_Notes.csproj",
+              "ToolTip": "C:\\Users\\FIC\\Documents\\Workstation\\Senai-notes\\API_Notes\\API_Notes\\API_Notes.csproj",
+              "RelativeToolTip": "API_Notes\\API_Notes.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-05-13T22:23:53.395Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }
