@@ -10,7 +10,7 @@
 .txt1{
 
     position: relative;
-    top: -310px;
+    top: -300px;
     font-size: 24px;
     margin-left: -870px;
 }
@@ -20,7 +20,17 @@
     margin-left: 1000px;
     width: 250px;
     position: relative;
-    top: -335px;
+    top: -320px;
     height: 25px;
-    border-radius: 5px;
+    border-left: none;
+}
+
+.img-cabecalho{
+
+    position: relative;
+    top: -200px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: left;
+    
 }
