@@ -13,4 +13,7 @@ app.UseSwaggerUI();
 
 app.MapControllers();
 
+app.UseAuthentication();
+app.UseAuthentication();
+
 app.Run();
