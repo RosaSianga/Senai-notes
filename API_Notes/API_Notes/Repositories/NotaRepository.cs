@@ -27,8 +27,16 @@ namespace API_Notes.Repositories
         {
             Nota notaCadastrada = new Nota 
             {
-
+                Titulo = nota.Titulo,
+                Conteudo = nota.Conteudo,
+                DataCriacao = nota.DataCriacao,
+                DataEdicao = nota.DataEdicao,
+                Arquivada = nota.Arquivada,
+                //IdUsuario = nota.IdUsuario
             };
+            
+            _context.Notas.Add(notaCadastrada);
+            _context.SaveChanges();
         }
 
         public List<Nota> ListarTodos()
