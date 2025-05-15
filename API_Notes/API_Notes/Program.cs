@@ -8,7 +8,9 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 builder.Services.AddSwaggerGen();
 
+//Esta linha é necessário para que o Ctor, relacionado a injeção das dependências em outras classes, opere normalmente. O mesmo principio que o @autowired no Java 
 builder.Services.AddDbContext<SenaiNotesContext, SenaiNotesContext>();
+
 builder.Services.AddTransient<INotaRepository, NotaRepository>();
 
 var app = builder.Build();

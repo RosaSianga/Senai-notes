@@ -1,4 +1,5 @@
 ﻿using API_Notes.Context;
+using API_Notes.DTO;
 using API_Notes.Interfaces;
 using API_Notes.Models;
 
@@ -23,15 +24,15 @@ namespace API_Notes.Repositories
             return _context.Notas.FirstOrDefault(n => n.IdNotas == id);
         }
 
-        public void CadastrarNota(Nota nota)
+        public void CadastrarNota(CadastrarNotaDTO nota)
         {
             Nota notaCadastrada = new Nota 
             {
                 Titulo = nota.Titulo,
                 Conteudo = nota.Conteudo,
                 DataCriacao = nota.DataCriacao,
-                DataEdicao = nota.DataEdicao,
-                Arquivada = nota.Arquivada,
+                //DataEdicao = nota.DataEdicao,
+                Arquivada = nota.Arquivada
                 //IdUsuario = nota.IdUsuario
             };
             

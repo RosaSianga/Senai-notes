@@ -1,4 +1,5 @@
-﻿using API_Notes.Models;
+﻿using API_Notes.DTO;
+using API_Notes.Models;
 
 namespace API_Notes.Interfaces
 {
@@ -8,7 +9,7 @@ namespace API_Notes.Interfaces
 
         Nota BuscarPorID(int id);
 
-        void CadastrarNota(Nota nota);
+        void CadastrarNota(CadastrarNotaDTO nota);
 
         void AtualizarNota(int id, Nota nota);
     }

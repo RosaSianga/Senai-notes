@@ -336,3 +336,4 @@ C:\Users\FIC\Documents\Workstation\Senai-notes\API_Notes\API_Notes\obj\Debug\net
 C:\Users\FIC\Documents\Workstation\Senai-notes\API_Notes\API_Notes\obj\Debug\net9.0\API_Notes.pdb
 C:\Users\FIC\Documents\Workstation\Senai-notes\API_Notes\API_Notes\obj\Debug\net9.0\API_Notes.genruntimeconfig.cache
 C:\Users\FIC\Documents\Workstation\Senai-notes\API_Notes\API_Notes\obj\Debug\net9.0\ref\API_Notes.dll
+C:\Users\FIC\Documents\Workstation\Senai-notes\API_Notes\API_Notes\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt

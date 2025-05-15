@@ -1,3 +1,4 @@
+using API_Notes.DTO;
 using API_Notes.Interfaces;
 using API_Notes.Models;
 using API_Notes.Repositories;
@@ -16,8 +17,14 @@ public class NotaController : Controller
         _notaRepository = notaRepository;
     }
 
+    [HttpGet]
+    public IActionResult ListarNotas()
+    {
+        return Ok(_notaRepository.ListarTodos());
+    }
+
     [HttpPost]
-    public IActionResult CadastrarNota(Nota not)
+    public IActionResult CadastrarNota(CadastrarNotaDTO not)
     {
         _notaRepository.CadastrarNota(not);
 
