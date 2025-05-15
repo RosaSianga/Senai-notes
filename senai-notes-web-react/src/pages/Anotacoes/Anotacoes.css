@@ -10,7 +10,7 @@
     background-color: aqua;
     margin-left: -149px;
     width: 206vh;
-    height: 80px;
+    height: 65px;
     position: relative;
     top: -330px;
 }
@@ -70,4 +70,6 @@ margin-left: 90vw;
 .quadrado-left{
 
     background-color: aqua;
+    margin-left: -150px;
+    width: 100px;
 }

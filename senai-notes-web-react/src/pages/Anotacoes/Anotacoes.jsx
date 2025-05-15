@@ -25,7 +25,7 @@ return (
         </div>
 
         <div className="quadrado-left">
-
+    <h1>.</h1>
         </div>
         
         <footer>
