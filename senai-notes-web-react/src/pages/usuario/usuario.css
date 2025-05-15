@@ -1,0 +1,78 @@
+.valida-usuario {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.link {
+    color: black;
+    font-size: 14px;
+    font-family: Inter;
+}
+
+.page-container-usuario h1 {
+    font-size: 29px;
+    font-family: Inter;
+    font-weight: bolder;
+    margin-bottom: 1px;
+}
+
+.descricao {
+    font-family: Inter;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.usuario-container {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 40vh;
+    width: 20vw;
+
+}
+
+.borda-usuario {
+    border: 1px solid gray;
+    border-radius: 10px;
+    padding: 30px;
+    
+}
+
+.page-container-usuario {
+    width: 20vw;
+    height: 60vh;
+}
+
+.page-container-usuario img {
+
+    height: 5vh;
+    margin-bottom: 24px;
+}
+
+.page-container-usuario p {
+
+    font-size: 14px;
+}
+
+.label {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.page-container-usuario .label p {
+    font-family: Inter;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.label a {
+    color: #525866;
+    font-family: Inter;
+    font-size: 12px;
+}
+
