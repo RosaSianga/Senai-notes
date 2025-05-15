@@ -1,7 +1,7 @@
-import './login.css'
+import './usuario.css'
 import logo from '../../assets/img/logo.svg'
 
-function Login() {
+function Usuario() {
 
 
     return (
@@ -53,4 +53,4 @@ function Login() {
     )
 }
 
-export default Login
+export default Usuario

@@ -9,7 +9,7 @@ function Reset() {
 
             <header></header>
 
-            <div className="borda">
+            <div className="borda-reset">
 
                 <main className="page-container">
 
@@ -18,7 +18,7 @@ function Reset() {
                     <h1>Reset Your Password</h1>
                     <p>Chose a new password to secure your account.</p>
 
-                    <div className="login-container">
+                    <div className="reset-container">
 
                         <div className="label">
                             <p className="descricao">New Password</p>

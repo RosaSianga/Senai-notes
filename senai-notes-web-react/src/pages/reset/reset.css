@@ -1,4 +1,71 @@
 .label-p {
     margin-right: auto;
-    padding-bottom: 10px;
+    padding-bottom: 15px;
+    font-size: 12px;
+}
+
+.btn {
+    margin-top: 10px;
+}
+
+.page-container h1 {
+    font-size: 34px;
+    font-family: Inter;
+    font-weight: bolder;
+    margin-bottom: 1px;
+
+
+}
+
+.descricao {
+    font-family: Inter;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.reset-container {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 40vh;
+    width: 20vw;
+
+}
+
+.borda-reset {
+    border: 1px solid gray;
+    border-radius: 10px;
+    padding: 30px;
+    
+}
+
+.page-container {
+    width: 20vw;
+    height: 50vh;
+}
+
+.page-container img {
+
+    height: 5vh;
+    margin-bottom: 24px;
+}
+
+.label {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.label p {
+    font-family: Inter;
+    font-weight: bold;
+}
+
+.label a {
+    color: #525866;
+    font-family: Inter;
+    font-size: 12px;
 }
