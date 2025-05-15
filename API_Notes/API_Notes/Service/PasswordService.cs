@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace API_Notes.Service
 {
-    public class PasswordSerrvice
+    public class PasswordService
     {
         private readonly PasswordHasher<Usuario> _hasher = new();
 

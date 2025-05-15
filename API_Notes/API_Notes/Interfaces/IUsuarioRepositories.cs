@@ -4,7 +4,26 @@ namespace API_Notes.Interfaces
 {
     public interface IUsuarioRepositories
     {
-        List<ListarUsuario> ListarTodos();
+        List<Usuario> ListarTodos();
+
+        Usuario BuscarPorID(int id);
+
+        Usuario BuscarPorEmailSenha(string email, string senha);
+
+        void Cadastrar(Usuario usuario);    
+
+        void Atualizar(int id, Usuario usuario);    
+
+        void Deletar(int id);
+
+        
+
+
+
+
+
+
+
 
         
     }
