@@ -1,12 +1,134 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\FIC\\Documents\\Workstation\\Senai-notes\\API_Notes\\",
-  "Documents": [],
+  "WorkspaceRootPath": "C:\\Users\\FIC\\Desktop\\projeto final back\\Senai-notes\\API_Notes\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{1FA8A44D-F397-4648-A363-8871A9D2F462}|API_Notes\\API_Notes.csproj|c:\\users\\fic\\desktop\\projeto final back\\senai-notes\\api_notes\\api_notes\\api_notes.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{1FA8A44D-F397-4648-A363-8871A9D2F462}|API_Notes\\API_Notes.csproj|solutionrelative:api_notes\\api_notes.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1FA8A44D-F397-4648-A363-8871A9D2F462}|API_Notes\\API_Notes.csproj|c:\\users\\fic\\desktop\\projeto final back\\senai-notes\\api_notes\\api_notes\\context\\senainotescontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1FA8A44D-F397-4648-A363-8871A9D2F462}|API_Notes\\API_Notes.csproj|solutionrelative:api_notes\\context\\senainotescontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1FA8A44D-F397-4648-A363-8871A9D2F462}|API_Notes\\API_Notes.csproj|c:\\users\\fic\\desktop\\projeto final back\\senai-notes\\api_notes\\api_notes\\interfaces\\inotarepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1FA8A44D-F397-4648-A363-8871A9D2F462}|API_Notes\\API_Notes.csproj|solutionrelative:api_notes\\interfaces\\inotarepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1FA8A44D-F397-4648-A363-8871A9D2F462}|API_Notes\\API_Notes.csproj|c:\\users\\fic\\desktop\\projeto final back\\senai-notes\\api_notes\\api_notes\\models\\nota.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1FA8A44D-F397-4648-A363-8871A9D2F462}|API_Notes\\API_Notes.csproj|solutionrelative:api_notes\\models\\nota.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1FA8A44D-F397-4648-A363-8871A9D2F462}|API_Notes\\API_Notes.csproj|c:\\users\\fic\\desktop\\projeto final back\\senai-notes\\api_notes\\api_notes\\models\\notastag.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1FA8A44D-F397-4648-A363-8871A9D2F462}|API_Notes\\API_Notes.csproj|solutionrelative:api_notes\\models\\notastag.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1FA8A44D-F397-4648-A363-8871A9D2F462}|API_Notes\\API_Notes.csproj|c:\\users\\fic\\desktop\\projeto final back\\senai-notes\\api_notes\\api_notes\\repositories\\notarepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1FA8A44D-F397-4648-A363-8871A9D2F462}|API_Notes\\API_Notes.csproj|solutionrelative:api_notes\\repositories\\notarepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 6,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "NotasTag.cs",
+              "DocumentMoniker": "C:\\Users\\FIC\\Desktop\\projeto final back\\Senai-notes\\API_Notes\\API_Notes\\Models\\NotasTag.cs",
+              "RelativeDocumentMoniker": "API_Notes\\Models\\NotasTag.cs",
+              "ToolTip": "C:\\Users\\FIC\\Desktop\\projeto final back\\Senai-notes\\API_Notes\\API_Notes\\Models\\NotasTag.cs",
+              "RelativeToolTip": "API_Notes\\Models\\NotasTag.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-14T00:04:01.56Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "NotaRepository.cs",
+              "DocumentMoniker": "C:\\Users\\FIC\\Desktop\\projeto final back\\Senai-notes\\API_Notes\\API_Notes\\Repositories\\NotaRepository.cs",
+              "RelativeDocumentMoniker": "API_Notes\\Repositories\\NotaRepository.cs",
+              "ToolTip": "C:\\Users\\FIC\\Desktop\\projeto final back\\Senai-notes\\API_Notes\\API_Notes\\Repositories\\NotaRepository.cs",
+              "RelativeToolTip": "API_Notes\\Repositories\\NotaRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-13T23:34:49.674Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Nota.cs",
+              "DocumentMoniker": "C:\\Users\\FIC\\Desktop\\projeto final back\\Senai-notes\\API_Notes\\API_Notes\\Models\\Nota.cs",
+              "RelativeDocumentMoniker": "API_Notes\\Models\\Nota.cs",
+              "ToolTip": "C:\\Users\\FIC\\Desktop\\projeto final back\\Senai-notes\\API_Notes\\API_Notes\\Models\\Nota.cs",
+              "RelativeToolTip": "API_Notes\\Models\\Nota.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-13T23:28:21.092Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "INotaRepository.cs",
+              "DocumentMoniker": "C:\\Users\\FIC\\Desktop\\projeto final back\\Senai-notes\\API_Notes\\API_Notes\\Interfaces\\INotaRepository.cs",
+              "RelativeDocumentMoniker": "API_Notes\\Interfaces\\INotaRepository.cs",
+              "ToolTip": "C:\\Users\\FIC\\Desktop\\projeto final back\\Senai-notes\\API_Notes\\API_Notes\\Interfaces\\INotaRepository.cs",
+              "RelativeToolTip": "API_Notes\\Interfaces\\INotaRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-13T23:26:53.021Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "SenaiNotesContext.cs",
+              "DocumentMoniker": "C:\\Users\\FIC\\Desktop\\projeto final back\\Senai-notes\\API_Notes\\API_Notes\\Context\\SenaiNotesContext.cs",
+              "RelativeDocumentMoniker": "API_Notes\\Context\\SenaiNotesContext.cs",
+              "ToolTip": "C:\\Users\\FIC\\Desktop\\projeto final back\\Senai-notes\\API_Notes\\API_Notes\\Context\\SenaiNotesContext.cs",
+              "RelativeToolTip": "API_Notes\\Context\\SenaiNotesContext.cs",
+              "ViewState": "AgIAAGAAAAAAAAAAAADwv0gAAABFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-13T23:09:02.628Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "API_Notes.csproj",
+              "DocumentMoniker": "C:\\Users\\FIC\\Desktop\\projeto final back\\Senai-notes\\API_Notes\\API_Notes\\API_Notes.csproj",
+              "RelativeDocumentMoniker": "API_Notes\\API_Notes.csproj",
+              "ToolTip": "C:\\Users\\FIC\\Desktop\\projeto final back\\Senai-notes\\API_Notes\\API_Notes\\API_Notes.csproj",
+              "RelativeToolTip": "API_Notes\\API_Notes.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAlwAwAAABnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-05-13T22:23:53.395Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
+            }
+          ]
+        }
+      ]
     }
   ]
 }

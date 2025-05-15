@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "2kfPQUtjs+s=",
+  "dgSpecHash": "7xm83Q0GoTw=",
   "success": true,
-  "projectFilePath": "C:\\Users\\FIC\\Documents\\Workstation\\Senai-notes\\API_Notes\\API_Notes\\API_Notes.csproj",
+  "projectFilePath": "C:\\Users\\FIC\\Desktop\\projeto final back\\Senai-notes\\API_Notes\\API_Notes\\API_Notes.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\FIC\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\FIC\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",
