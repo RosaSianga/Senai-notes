@@ -33,7 +33,7 @@
 
 .page-container {
     width: 20vw;
-    height: 50vh;
+    height: 55vh;
 }
 
 .page-container img {
@@ -58,5 +58,17 @@
     color: #525866;
     font-family: Inter;
     font-size: 12px;
+}
+
+.valida-login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.link {
+    color: black;
+    font-size: 14px;
+    font-family: Inter;
 }
 

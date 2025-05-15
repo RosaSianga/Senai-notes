@@ -11,7 +11,7 @@ function Reset() {
 
             <div className="borda-reset">
 
-                <main className="page-container">
+                <main className="page-container-reset">
 
                     <img src={logo} alt="Logo Senai Notes" />
 

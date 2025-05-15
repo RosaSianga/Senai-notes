@@ -9,16 +9,16 @@ function Usuario() {
 
             <header></header>
 
-            <div className="borda-login">
+            <div className="borda-usuario">
 
-                <main className="page-container">
+                <main className="page-container-usuario">
 
                     <img src={logo} alt="Logo Senai Notes" />
 
-                    <h1>Welcome to Notes</h1>
-                    <p>Please log in to continue</p>
+                    <h1>Create Your Account</h1>
+                    <p>Sign up to start organizing  your notes and boost your productivity.</p>
 
-                    <div className="login-container">
+                    <div className="usuario-container">
 
                         <div className="label">
                             <p className="descricao">Email Address</p>
@@ -30,14 +30,16 @@ function Usuario() {
 
                         <div className="label">
                             <p className="descricao">Password</p>
-                            <a href='/forgot'> Forgot</a>
                         </div>
 
                         <input className="inpt" type="password" placeholder="Insira a senha" />
+                        <p className='label-p'>At least 8 characters</p>
 
-                        <button className="btn" >Entrar</button>
-
-                        <p> No account yet ? Sign Up </p>
+                        <button className="btn" >Sign up</button>
+                        <div className="valida-usuario">
+                            <p>Already have a account? </p>
+                            <a className="link" href='/login'> Login</a>
+                        </div>
 
                     </div>
 

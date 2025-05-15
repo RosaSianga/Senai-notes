@@ -1,20 +1,13 @@
-.label-p {
-    margin-right: auto;
-    padding-bottom: 15px;
-    font-size: 12px;
-}
 
 .btn {
     margin-top: 10px;
 }
 
-.page-container h1 {
+.page-container-reset h1 {
     font-size: 34px;
     font-family: Inter;
     font-weight: bolder;
     margin-bottom: 1px;
-
-
 }
 
 .descricao {
@@ -41,12 +34,12 @@
     
 }
 
-.page-container {
+.page-container-reset {
     width: 20vw;
-    height: 50vh;
+    height: 55vh;
 }
 
-.page-container img {
+.page-container-reset img {
 
     height: 5vh;
     margin-bottom: 24px;
@@ -59,9 +52,12 @@
     width: 100%;
 }
 
-.label p {
+.label-p {
     font-family: Inter;
     font-weight: bold;
+    margin-right: auto;
+    padding-bottom: 15px;
+    font-size: 12px;
 }
 
 .label a {
