@@ -2,6 +2,7 @@
 using API_Notes.DTO;
 using API_Notes.Interfaces;
 using API_Notes.Models;
+using API_Notes.ViewModel;
 
 namespace API_Notes.Repositories
 {
@@ -26,6 +27,7 @@ namespace API_Notes.Repositories
 
         public void CadastrarNota(CadastrarNotaDTO nota)
         {
+            // Cadastro
             Nota notaCadastrada = new Nota 
             {
                 Titulo = nota.Titulo,
@@ -38,11 +40,52 @@ namespace API_Notes.Repositories
             
             _context.Notas.Add(notaCadastrada);
             _context.SaveChanges();
+            
+            // Tratativa Tag
+            if (!string.IsNullOrWhiteSpace(nota.Tags))
+            {
+                var tratativaTag = nota.Tags.Split(',')
+                    .Select(a => a.Trim().ToLower())
+                    .Where(a => !string.IsNullOrWhiteSpace(a))
+                    .Distinct();
+
+                foreach (var tagTexto in tratativaTag)
+                {
+                    //verificar tag existente
+                    var tagExistente = _context.Tags.FirstOrDefault(t => t.Nome.ToLower() == tagTexto);
+
+                    // Cadastro
+                    if (tagExistente == null)
+                    {
+                        tagExistente = new Tag { Nome = tagTexto };
+                        _context.Tags.Add(tagExistente);
+                        _context.SaveChanges();
+                    }
+                    
+                    // Relacao a tabela NotasTag
+                    var notaTag = new NotasTag
+                    {
+                        IdNotas = nota.IdNotas,
+                        IdTag = tagExistente.IdTag
+                    };
+                    _context.NotasTags.Add(notaTag);
+                }
+                
+                _context.SaveChanges();
+            }
         }
 
-        public List<Nota> ListarTodos()
+        public List<ListarNotasViewModel> ListarTodos()
         {
-            return _context.Notas.ToList();
+            return _context.Notas
+                .Select(
+                    c => new ListarNotasViewModel
+            {
+                IdNotas = c.IdNotas,
+                Titulo = c.Titulo,
+                DataEdicao = c.DataEdicao
+            })
+                .ToList();
         }
     }
 }

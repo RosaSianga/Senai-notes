@@ -1,11 +1,12 @@
 ﻿using API_Notes.DTO;
 using API_Notes.Models;
+using API_Notes.ViewModel;
 
 namespace API_Notes.Interfaces
 {
     public interface INotaRepository
     {
-        List<Nota> ListarTodos();
+        List<ListarNotasViewModel> ListarTodos();
 
         Nota BuscarPorID(int id);
 
