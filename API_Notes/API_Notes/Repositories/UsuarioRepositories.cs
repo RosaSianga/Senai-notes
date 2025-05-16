@@ -1,4 +1,5 @@
 ﻿using API_Notes.Context;
+using API_Notes.DTO;
 using API_Notes.Interfaces;
 using API_Notes.Models;
 using API_Notes.Service;
@@ -55,7 +56,7 @@ namespace API_Notes.Repositories
         }
 
 
-        void IUsuarioRepositories.Cadastrar(Usuario usuario)
+        void IUsuarioRepositories.Cadastrar(CadastrarUsuarioDTO usuario)
         {
             var passwordService = new PasswordService();
 

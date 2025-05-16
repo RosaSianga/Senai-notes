@@ -1,4 +1,5 @@
-﻿using API_Notes.Models;
+﻿using API_Notes.DTO;
+using API_Notes.Models;
 
 namespace API_Notes.Interfaces
 {
@@ -10,7 +11,7 @@ namespace API_Notes.Interfaces
 
         Usuario BuscarPorEmailSenha(string email, string senha);
 
-        void Cadastrar(Usuario usuario);    
+        void Cadastrar(CadastrarUsuarioDTO usuario);    
 
         void Atualizar(int id, Usuario usuario);    
 
