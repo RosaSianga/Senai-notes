@@ -17,10 +17,10 @@ public class NotaController : Controller
         _notaRepository = notaRepository;
     }
 
-    [HttpGet("listar")]
-    public IActionResult ListarNotas()
+    [HttpGet("listar/{id}")]
+    public IActionResult ListarNotas(int id)
     {
-        return Ok(_notaRepository.ListarTodos());
+        return Ok(_notaRepository.ListarTodos(id));
     }
 
     [HttpPost("cadastrarNota")]

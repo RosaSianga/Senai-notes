@@ -4,7 +4,10 @@ public class ListarNotasViewModel
 {
     public int IdNotas { get; set; }
     public string? Titulo { get; set; }
+    public DateTime? DataCriacao { get; set; }
     public DateTime? DataEdicao { get; set; }
     
     //TODO Ajustar o IMG-url após o Scaffold
+    
+    public List<string>? Tags { get; set; }
 }

@@ -3,6 +3,7 @@ using API_Notes.DTO;
 using API_Notes.Interfaces;
 using API_Notes.Models;
 using API_Notes.ViewModel;
+using Microsoft.EntityFrameworkCore;
 
 namespace API_Notes.Repositories
 {
@@ -79,15 +80,22 @@ namespace API_Notes.Repositories
             }
         }
 
-        public List<ListarNotasViewModel> ListarTodos()
+        public List<ListarNotasViewModel> ListarTodos(int id)
         {
             return _context.Notas
+                .Where(n => n.IdUsuario == id)
+                .Include(n => n.NotasTags)
+                .ThenInclude(t => t.IdTagNavigation)
                 .Select(
                     c => new ListarNotasViewModel
             {
                 IdNotas = c.IdNotas,
                 Titulo = c.Titulo,
-                DataEdicao = c.DataEdicao
+                DataCriacao = c.DataCriacao,
+                DataEdicao = c.DataEdicao,
+                Tags = c.NotasTags!
+                    .Select(nt => nt.IdTagNavigation.Nome)
+                    .ToList()
             })
                 .ToList();
         }
