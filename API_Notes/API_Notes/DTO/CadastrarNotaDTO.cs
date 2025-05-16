@@ -7,11 +7,11 @@
         public DateTime? DataCriacao { get; set; }
         public bool? Arquivada { get; set; }
         
-        //outro teste, relacao tabela depende dele
-        public int IdNotas { get; set; }
-        
-        //teste
+        //Tags
         public string? Tags { get; set; }
+
+        // Usuario
+        public int IdUsuario { get; set; }
 
     }
 }

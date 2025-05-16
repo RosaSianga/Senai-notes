@@ -5,7 +5,7 @@
     "version": "1.0"
   },
   "paths": {
-    "/api/Nota": {
+    "/api/Nota/listar": {
       "get": {
         "tags": [
           "Nota"
@@ -15,7 +15,9 @@
             "description": "OK"
           }
         }
-      },
+      }
+    },
+    "/api/Nota/cadastrarNota": {
       "post": {
         "tags": [
           "Nota"
@@ -68,6 +70,14 @@
           "arquivada": {
             "type": "boolean",
             "nullable": true
+          },
+          "tags": {
+            "type": "string",
+            "nullable": true
+          },
+          "idUsuario": {
+            "type": "integer",
+            "format": "int32"
           }
         },
         "additionalProperties": false

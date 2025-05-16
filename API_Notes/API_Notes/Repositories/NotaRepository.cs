@@ -33,9 +33,8 @@ namespace API_Notes.Repositories
                 Titulo = nota.Titulo,
                 Conteudo = nota.Conteudo,
                 DataCriacao = nota.DataCriacao,
-                //DataEdicao = nota.DataEdicao,
-                Arquivada = nota.Arquivada
-                //IdUsuario = nota.IdUsuario
+                Arquivada = nota.Arquivada,
+                IdUsuario = nota.IdUsuario
             };
             
             _context.Notas.Add(notaCadastrada);
@@ -57,7 +56,10 @@ namespace API_Notes.Repositories
                     // Cadastro
                     if (tagExistente == null)
                     {
-                        tagExistente = new Tag { Nome = tagTexto };
+                        tagExistente = new Tag {
+                            Nome = tagTexto,
+                            IdUsuario = nota.IdUsuario
+                        };
                         _context.Tags.Add(tagExistente);
                         _context.SaveChanges();
                     }
@@ -65,8 +67,10 @@ namespace API_Notes.Repositories
                     // Relacao a tabela NotasTag
                     var notaTag = new NotasTag
                     {
-                        IdNotas = nota.IdNotas,
-                        IdTag = tagExistente.IdTag
+                        //IdNotas = nota.IdNotas,
+                        IdNotas = notaCadastrada.IdNotas,
+                        IdTag = tagExistente.IdTag,
+                        
                     };
                     _context.NotasTags.Add(notaTag);
                 }
