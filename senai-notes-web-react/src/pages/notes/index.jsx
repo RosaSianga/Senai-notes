@@ -10,6 +10,10 @@ import settings from '../../assets/img/Settings.svg';
 import tag from '../../assets/img/Tag.svg';
 import setinha from '../../assets/img/Setinha.svg';
 import imgNote from '../../assets/img/Image-notes.svg'
+import imgdescricao from '../../assets/img/Rectangle 44.svg'
+import imgtag from '../../assets/img/Tag.svg'
+import imgrelogio from '../../assets/img/Circle Clock.svg'
+import arquivo from '../../assets/img/Archive.svg'
 
 
 function Notes() {
@@ -81,9 +85,39 @@ function Notes() {
 
                         <div className="inferior-centro">
 
+                        <img className='img-centro' src={imgdescricao} alt="" />
+                        <img className='img-tag-centro' src={imgtag} alt="" />
+                        <img className='img-relogio-centro' src={imgrelogio} alt="" />
+                        <h1 className='titulo-centro'>React Performance Optimization</h1>
+                        <p className='tags-centro'>Tags</p>
+                        <p className='Last-edited-centro'>Last edited</p>
+                        <p className='dev'>Dev, React</p>
+                        <p className='data'>29 Oct 2024</p>
+
+                        <p className='titulo-segundario'>Key performance optimization techniques:</p>
+                        <p className='code'>1. Code Splitting</p>
+                        <p className='usereact'>- Use React.lazy() for route-based splitting</p>
+                        <p className='implement'>- Implement dynamic imports for heavy components</p>
+                        <p className='titulo-terciario'>2. Memoization</p>
+                        <p className='useMemo'>- useMemo for expensive calculations</p>
+                        <p className='useCall'>- useCallback for function props</p>
+                        <p className='titulo-quatro'>3. Virtual List Implementation</p>
+                        <p className='window'>- Use react-window for long lists</p>
+                        <p className='implement2'>- Implement infinite scrolling</p>
+                        <p className='todo'>TODO: Benchmark current application and identify bottlenecks</p>
+
+                        <button className='save'>Save note</button>
+                        <button className='cancel'>Cancel</button>
+                        
+
                         </div>
 
                         <div className="inferior-direita">
+
+                            <img className='lixo' src={lixeira} alt="" />
+                            <img className='arquivo' src={arquivo} alt="" />
+                            <button className='arquive'>Archive note</button>
+                            <button className='delete'>Delete Note</button>
 
                         </div>
                     </div>

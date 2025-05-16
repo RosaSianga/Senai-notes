@@ -3,19 +3,16 @@
 }
 
 .notas-esquerda {
-    background-color: rgb(196, 191, 191);
     width: 15vw;
     height: 100vh;
 }
 
 .notas-direita {
-    background-color: red;
     width: 85vw;
     height: 100vh;
 }
 
 .superior {
-    background-color: aqua;
     width: 100%;
     height: 15%;
     display: flex;
@@ -56,20 +53,17 @@
 
 
 .inferior {
-    background-color: blueviolet;
     width: 100%;
     height: 85%;
     display: flex;
 }
 
 .inferior-esquerda {
-    background-color: brown;
     width: 25%;
     height: 100%;
 }
 
 .botao-new-note {
-    background-color: #335CFF;
     font-family: Inter;
     font-size: 15px;
     margin-top: 10px;
@@ -97,13 +91,11 @@
 }
 
 .inferior-centro {
-    background-color: yellow;
     width: 55%;
     height: 100%;
 }
 
 .inferior-direita {
-    background-color: green;
     width: 20%;
     height: 100%;
 }
@@ -138,4 +130,240 @@
     font-family: Inter;
     font-size: 12px;
     color: #717784
+}
+
+.img-centro {
+
+
+    width: 75vh;
+}
+
+.titulo-centro {
+
+    font-size: 45px;
+    position: relative;
+    top: -30px;
+}
+
+.tags-centro {
+
+    font-size: 25px;
+    position: relative;
+    top: 5px;
+    margin-left: 41px;
+}
+
+.Last-edited-centro {
+
+    font-size: 22px;
+    position: relative;
+    top: 13px;
+    margin-left: 44px;
+}
+
+.dev{
+
+    margin-left: 150px;
+    position: relative;
+    top: -44px;
+    font-size: 14;
+}
+
+.data{
+
+    margin-left: 150px;
+    position: relative;
+    top: -28px;
+    font-size: 14;
+}
+
+
+.img-tag-centro {
+
+    position: relative;
+    top: 86px;
+    margin-left: 10px;
+    width: 22px;
+
+}
+
+.img-relogio-centro {
+
+    position: relative;
+    top: 120px;
+    margin-left: -19px;
+    width: 20px;
+
+}
+
+.titulo-segundario {
+
+    position: relative;
+    top: 40px;
+    margin-left: 19px;
+    font-size: 25px;
+}
+
+.code {
+
+    position: relative;
+    top: 60px;
+    margin-left: 20px;
+    font-size: 22px;
+
+}
+
+.usereact {
+
+    position: relative;
+    top: 70px;
+    margin-left: 20px;
+    font-size: 22px;
+
+}
+
+.implement {
+
+
+    position: relative;
+    top: 78px;
+    margin-left: 20px;
+    font-size: 22px;
+
+}
+
+.titulo-terciario {
+
+    position: relative;
+    top: 94px;
+    margin-left: 19px;
+    font-size: 25px;
+
+}
+
+.useMemo {
+
+    position: relative;
+    top: 100px;
+    margin-left: 20px;
+    font-size: 22px;
+
+}
+
+.useCall {
+    
+    position: relative;
+    top: 105px;
+    margin-left: 20px;
+    font-size: 22px;
+
+
+}
+
+.titulo-quatro{
+
+
+    position: relative;
+    top: 118px;
+    margin-left: 19px;
+    font-size: 25px;
+
+}
+
+.window{
+
+    position: relative;
+    top: 125px;
+    margin-left: 20px;
+    font-size: 22px;
+
+
+}
+
+.implement2{
+
+    position: relative;
+    top: 130px;
+    margin-left: 20px;
+    font-size: 22px;
+
+}
+
+.todo{
+
+    position: relative;
+    top: 180px;
+    margin-left: 20px;
+    font-size: 25px;
+
+
+}
+
+.save{
+
+    position: relative;
+    top: 300px;
+    margin-left: 20px;
+    width: 160px;
+    height: 40px;
+    background-color: #335CFF;
+    border-radius: 14px;
+
+}
+
+.cancel{
+
+
+    position: relative;
+    top: 300px;
+    margin-left: 30px;
+    width: 160px;
+    height: 40px;
+    border-radius: 14px;
+
+}
+
+.arquive{
+
+    width: 200px;
+    height: 40px;
+    margin-left: 10px;
+    position: relative;
+    top: 20px;
+    font-size: 20px;
+    border-radius: 14px;
+
+}
+
+.delete{
+
+
+    
+    width: 200px;
+    height: 40px;
+    margin-left: 40px;
+    position: relative;
+    top: 40px;
+    font-size: 20px;
+    border-radius: 14px;
+
+}
+
+.lixo{
+
+
+    width: 30px;
+    position: relative;
+    top: 90px;
+
+}
+
+
+.arquivo{
+
+     width: 30px;
+     margin-left: -30px;
+    position: relative;
+    top: 30px;
+
 }
