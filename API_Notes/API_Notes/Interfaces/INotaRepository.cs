@@ -1,4 +1,5 @@
-﻿using API_Notes.Models;
+﻿using API_Notes.DTO;
+using API_Notes.Models;
 
 namespace API_Notes.Interfaces
 {
@@ -11,7 +12,7 @@ namespace API_Notes.Interfaces
         Nota BuscarPorId(int id);
 
         // C - Create (cadastro)
-        void Cadastrar(CadastrarNota nota);
+        void Cadastrar(CadastrarNotaDTO nota);
 
         // U - Update (Atualização)
         // Recebe um identificador para encontrar o Produto, e recebe o Produto Novo para subistituir o Antigo
