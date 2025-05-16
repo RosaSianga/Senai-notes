@@ -12,6 +12,8 @@ namespace API_Notes.Interfaces
 
         void CadastrarNota(CadastrarNotaDTO nota);
 
+        void BuscarNota(int idNota);
+
         void AtualizarNota(int id, Nota nota);
     }
 }

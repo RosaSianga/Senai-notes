@@ -21,6 +21,7 @@ namespace API_Notes.Repositories
             throw new NotImplementedException();
         }
 
+        // Validar a necessidade do metodo
         public Nota BuscarPorID(int id)
         {
             return _context.Notas.FirstOrDefault(n => n.IdNotas == id);
@@ -29,7 +30,7 @@ namespace API_Notes.Repositories
         public void CadastrarNota(CadastrarNotaDTO nota)
         {
             // Cadastro
-            Nota notaCadastrada = new Nota 
+            Nota notaCadastrada = new Nota
             {
                 Titulo = nota.Titulo,
                 Conteudo = nota.Conteudo,
@@ -37,10 +38,10 @@ namespace API_Notes.Repositories
                 Arquivada = nota.Arquivada,
                 IdUsuario = nota.IdUsuario
             };
-            
+
             _context.Notas.Add(notaCadastrada);
             _context.SaveChanges();
-            
+
             // Tratativa Tag
             if (!string.IsNullOrWhiteSpace(nota.Tags))
             {
@@ -57,25 +58,25 @@ namespace API_Notes.Repositories
                     // Cadastro
                     if (tagExistente == null)
                     {
-                        tagExistente = new Tag {
+                        tagExistente = new Tag
+                        {
                             Nome = tagTexto,
                             IdUsuario = nota.IdUsuario
                         };
                         _context.Tags.Add(tagExistente);
                         _context.SaveChanges();
                     }
-                    
+
                     // Relacao a tabela NotasTag
                     var notaTag = new NotasTag
                     {
                         //IdNotas = nota.IdNotas,
                         IdNotas = notaCadastrada.IdNotas,
                         IdTag = tagExistente.IdTag,
-                        
                     };
                     _context.NotasTags.Add(notaTag);
                 }
-                
+
                 _context.SaveChanges();
             }
         }
@@ -88,16 +89,21 @@ namespace API_Notes.Repositories
                 .ThenInclude(t => t.IdTagNavigation)
                 .Select(
                     c => new ListarNotasViewModel
-            {
-                IdNotas = c.IdNotas,
-                Titulo = c.Titulo,
-                DataCriacao = c.DataCriacao,
-                DataEdicao = c.DataEdicao,
-                Tags = c.NotasTags!
-                    .Select(nt => nt.IdTagNavigation.Nome)
-                    .ToList()
-            })
+                    {
+                        IdNotas = c.IdNotas,
+                        Titulo = c.Titulo,
+                        DataCriacao = c.DataCriacao,
+                        DataEdicao = c.DataEdicao,
+                        Tags = c.NotasTags!
+                            .Select(nt => nt.IdTagNavigation.Nome)
+                            .ToList()
+                    })
                 .ToList();
+        }
+
+        public void BuscarNota(int idNota)
+        {
+            throw new NotImplementedException();
         }
     }
 }
