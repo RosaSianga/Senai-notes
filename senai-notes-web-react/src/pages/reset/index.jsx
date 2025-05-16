@@ -16,21 +16,21 @@ function Reset() {
                     <img src={logo} alt="Logo Senai Notes" />
 
                     <h1>Reset Your Password</h1>
-                    <p>Chose a new password to secure your account.</p>
+                    <p className='descricao'>Chose a new password to secure your account.</p>
 
                     <div className="reset-container">
 
                         <div className="label">
-                            <p className="descricao">New Password</p>
+                            <p className="descricao-email">New Password</p>
                             <p></p>
                         </div>
 
 
                         <input className="inpt" type="password" />
-                        <p className='label-p'>At least 8 characters</p>
+                        <p className='descricao'>At least 8 characters</p>
 
                         <div className="label">
-                             <p className="descricao">Confirm New Password</p>
+                             <p className="descricao-senha">Confirm New Password</p>
                             <p></p>
                         </div>
 

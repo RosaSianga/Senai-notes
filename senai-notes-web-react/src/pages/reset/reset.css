@@ -34,8 +34,8 @@
 }
 
 .page-container-reset {
-    width: 23vw;
-    height: 55vh;
+    width: 30vw; /*estava 23 */
+    height: 70vh; /* estava 55 */
     border: 1px solid gray;
     border-radius: 10px;
     padding: 30px;

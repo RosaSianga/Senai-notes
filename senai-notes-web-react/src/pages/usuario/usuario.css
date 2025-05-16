@@ -17,21 +17,13 @@
     margin-bottom: 1px;
 }
 
-.descricao {
-    font-family: Inter;
-    font-weight: bold;
-    font-size: 15px;
-}
-
 .usuario-container {
-
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 40vh;
     width: 20vw;
-
 }
 
 .borda-usuario {
@@ -42,8 +34,8 @@
 }
 
 .page-container-usuario {
-    width: 23vw;
-    height: 60vh;
+    width: 30vw; /* estava 23 */
+    height: 85vh; /* estava 60 */
     border: 1px solid gray;
     border-radius: 10px;
     padding: 30px;
@@ -53,15 +45,13 @@
 }
 
 .page-container-usuario img {
-
     height: 5vh;
     margin-bottom: 24px;
 }
 
-.page-container-usuario p {
-
+/* .page-container-usuario p {
     font-size: 14px;
-}
+} */
 
 .label {
     display: flex;
@@ -70,14 +60,20 @@
     width: 100%;
 }
 
-.page-container-usuario .label p {
+/* .page-container-usuario .label p {
     font-family: Inter;
     font-weight: bold;
     font-size: 15px;
-}
+} */
 
 .label a {
     color: #525866;
     font-family: Inter;
     font-size: 12px;
+}
+
+.usuario-p {
+    font-size: 12px;
+    font-family: Inter;
+    font-weight: normal;
 }

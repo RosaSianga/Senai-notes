@@ -10,6 +10,8 @@ import settings from '../../assets/img/Settings.svg';
 import tag from '../../assets/img/Tag.svg';
 import setinha from '../../assets/img/Setinha.svg';
 import imgNote from '../../assets/img/Image-notes.svg'
+import imgDescricao from '../../assets/img/Imagem-Descricao.svg';
+import clock from '../../assets/img/clock.svg';
 
 
 function Notes() {
@@ -81,9 +83,58 @@ function Notes() {
 
                         <div className="inferior-centro">
 
+                            <img className="imagem" src={imgDescricao} alt="Imagem do detalhamento do notes" />
+
+                            <h1 className='titulo'>React Performance Optimization</h1>
+
+                            <div className="inf-descricao">
+                                <p className='tag-descricao'>
+                                    <img src={tag} alt="Imagem da Tag" />
+                                    Tags
+                                </p>
+                                <p className='tag-descricao'>Dev, React</p>
+                            </div>
+
+                            <div className="inf-descricao">
+                                <p className='tag-descricao'>
+                                    <img src={clock} alt="Imagem da data de criação" />
+                                    Last Edited
+                                </p>
+                                <p className='tag-descricao'>29 Oct 2024</p>
+                            </div>
+
+                            <div className="detalhe">
+                                <p className='texto'>Texto do detalhe do notes</p>
+                                <p className='texto'>Texto do detalhe do notes</p>
+                                <p className='texto'>Texto do detalhe do notes</p>
+                                <p className='texto'>Texto do detalhe do notes</p>
+                                <p className='texto'>Texto do detalhe do notes</p>
+                                <p className='texto'>Texto do detalhe do notes</p>
+                            </div>
+
+
+                            <div className="area-botoes">
+                                <button className='botao-save'> Salve Notes </button>
+
+                                <button className='botao-cancel'> Cancel </button>
+
+                            </div>
+
                         </div>
 
+
                         <div className="inferior-direita">
+
+                            <button className='botao-notes'>
+                                <img src={archive} alt="Imagem Arquivo" />
+                                Arqchive Notes
+                            </button>
+
+
+                            <button className='botao-notes'>
+                                <img src={lixeira} alt="Imagem Lixeira" />
+                                Delete Notes
+                            </button>
 
                         </div>
                     </div>

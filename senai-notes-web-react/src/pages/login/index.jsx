@@ -77,7 +77,7 @@ function Login() {
                     <div className="login-container">
 
                         <div className="label">
-                            <p className="descricao">Email Address</p>
+                            <p className="descricao-email">Email Address</p>
                             <p></p>
                         </div>
 
@@ -85,7 +85,7 @@ function Login() {
                         <input className="inpt" value={email} onChange={event => setEmail(event.target.value)} type="email" placeholder="email@example.com" />
 
                         <div className="label">
-                            <p className="descricao">Password</p>
+                            <p className="descricao-senha">Password</p>
                             <a href='/forgot'> Forgot</a>
                         </div>
 

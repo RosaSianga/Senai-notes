@@ -11,8 +11,6 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 25vh;
-    width: 25vw;
 }
 
 .borda-forgot {
@@ -23,8 +21,8 @@
 }
 
 .page-container-forgot {
-    width: 28vw;
-    height: 40vh;
+    width: 35vw; /*estava 28 */
+    height: 55vh; /* estava 40 */
     border: 1px solid gray;
     border-radius: 10px;
     padding: 20px;
