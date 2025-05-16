@@ -1,5 +1,4 @@
 
-import './App.css'
 import Login from "./pages/login";
 import Forgot from "./pages/forgot";
 import Reset from "./pages/reset";

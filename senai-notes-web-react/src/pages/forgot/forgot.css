@@ -3,31 +3,34 @@
     font-family: Inter;
     font-weight: bolder;
     margin-bottom: 1px;
-
 }
 
 
 .forgot-container {
-
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 25vh;
     width: 25vw;
-
 }
 
 .borda-forgot {
-    border: 1px solid gray;
-    border-radius: 10px;
-    padding: 20px;
-    
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .page-container-forgot {
-    width: 25vw;
+    width: 28vw;
     height: 40vh;
+    border: 1px solid gray;
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .page-container-forgot img {

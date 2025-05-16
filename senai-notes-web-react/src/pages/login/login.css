@@ -3,8 +3,6 @@
     font-family: Inter;
     font-weight: bolder;
     margin-bottom: 1px;
-
-
 }
 
 .descricao {
@@ -25,15 +23,23 @@
 }
 
 .borda-login {
-    border: 1px solid gray;
-    border-radius: 10px;
-    padding: 30px;
-    
+
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .page-container {
-    width: 20vw;
+    width: 23vw;
     height: 55vh;
+    border: 1px solid gray;
+    border-radius: 10px;
+    padding: 20px;
+    padding-left: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .page-container img {
@@ -71,4 +77,3 @@
     font-size: 14px;
     font-family: Inter;
 }
-

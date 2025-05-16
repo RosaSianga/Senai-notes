@@ -17,7 +17,7 @@
 .superior {
     background-color: aqua;
     width: 100%;
-    height: 15%;
+    height: 10%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -58,7 +58,7 @@
 .inferior {
     background-color: blueviolet;
     width: 100%;
-    height: 85%;
+    height: 90%;
     display: flex;
 }
 
@@ -109,7 +109,7 @@
 }
 
 .logo {
-    width: 15vw;
+    width: 10vw;
 }
 
 .botao-notes {
@@ -134,8 +134,8 @@
 }
 
 .tags p {
-    margin-right: 140px;
+    margin-left: 18PX;
     font-family: Inter;
-    font-size: 12px;
+    font-size: 15px;
     color: #717784
 }
