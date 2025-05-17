@@ -17,7 +17,7 @@ namespace API_Notes.Controllers
 
         private PasswordService _passwordService = new PasswordService();
 
-        public UsuarioControllers(UsuarioRepositories usuarioRepositories)
+        public UsuarioControllers(IUsuarioRepositories usuarioRepositories)
         {
             _usuarioRepositories = usuarioRepositories;
         }

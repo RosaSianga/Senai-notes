@@ -89,7 +89,7 @@ namespace API_Notes.Repositories
 
         List<Usuario> IUsuarioRepositories.ListarTodos()
         {
-            throw new NotImplementedException();
+            return _context.Usuarios.ToList();
         }
 
     }
