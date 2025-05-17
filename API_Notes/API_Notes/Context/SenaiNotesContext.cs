@@ -31,8 +31,8 @@ public partial class SenaiNotesContext : DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     => 
-    //optionsBuilder.UseSqlServer("Data Source=DESKTOP-A2J49GH\\SQLEXPRESS;Initial Catalog=SENAI_NOTES;User Id=sa;Password=Senai@134;TrustServerCertificate=true;");
-    optionsBuilder.UseSqlServer("Data Source=localhost, 1433;Initial Catalog=SENAI_NOTES;User Id=sa;Password=Senai@134;TrustServerCertificate=true;");
+    optionsBuilder.UseSqlServer("Data Source=DESKTOP-A2J49GH\\SQLEXPRESS;Initial Catalog=SENAI_NOTES;User Id=sa;Password=Senai@134;TrustServerCertificate=true;");
+    //optionsBuilder.UseSqlServer("Data Source=localhost, 1433;Initial Catalog=SENAI_NOTES;User Id=sa;Password=Senai@134;TrustServerCertificate=true;");
 
 /*    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
