@@ -42,6 +42,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    max-height: 630px;
+    max-width: 500px;
 }
 
 .page-container-usuario img {

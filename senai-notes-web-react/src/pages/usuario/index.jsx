@@ -45,7 +45,7 @@ function Usuario() {
                         <input className="inpt" value={senha} onChange={event => setSenha(event.target.value)} type="password" placeholder="Insira a senha" />
                         <p className='descricao'>At least 8 characters</p>
 
-                        <button className="btn" >Sign up</button>
+                        <button className="btn" onClick={() => clickSignUp()} >Sign up</button>
                         <div className="valida-usuario">
                             <p className='usuario-p'>Already have a account? </p>
                             <a className="link" href='/login'> Login</a>

@@ -1,46 +1,33 @@
 {
   "users": [
     {
+      "token": "agbjklo5624pifdrs",
       "id": "1",
       "name": "Rose",
       "email": "rsianga@email.com",
       "senha": "123456"
     },
     {
+      "token": "agbjklo5624pifdrs",
       "id": "2",
       "name": "Teste",
       "email": "teste@email.com",
       "senha": "123456"
     },
     {
-      "id": "98ec",
+      "id": "d5b4",
       "email": "rsianga@email.com",
       "senha": "123456"
     },
     {
-      "id": "91fe",
+      "id": "def3",
       "email": "rsianga@email.com",
-      "senha": "123456"
+      "senha": "12345"
     },
     {
-      "id": "37a2",
+      "id": "beff",
       "email": "rsianga@email.com",
-      "senha": "123456"
-    },
-    {
-      "id": "e22a",
-      "email": "rsianga@email.com",
-      "senha": "123456"
-    },
-    {
-      "id": "cc19",
-      "email": "rsianga@email.com",
-      "senha": "123456"
-    },
-    {
-      "id": "ba68",
-      "email": "rsianga@email.com",
-      "senha": "123456"
+      "senha": "12345"
     }
   ]
 }

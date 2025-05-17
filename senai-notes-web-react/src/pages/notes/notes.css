@@ -6,6 +6,7 @@
     /* background-color: rgb(196, 191, 191); */
     width: 15vw;
     height: 100vh;
+    border-right: 1px solid #ccc;
 }
 
 .notas-direita {
@@ -17,10 +18,11 @@
 .superior {
     /* background-color: aqua; */
     width: 100%;
-    height: 15%;
+    height: 10%;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    border-bottom: 1px solid #ccc;
 }
 
 .superior h1 {
@@ -58,7 +60,7 @@
 .inferior {
     /* background-color: blueviolet; */
     width: 100%;
-    height: 85%;
+    height: 90%;
     display: flex;
 }
 
@@ -66,6 +68,7 @@
     /* background-color: brown; */
     width: 20%;
     height: 100%;
+    border-right: 1px solid #ccc;
 }
 
 .botao-new-note {
@@ -86,6 +89,9 @@
     justify-content: left;
     background-color: transparent;
     width: 100%;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 10px;
+    /* background-color: #F3F5F8; */
 }
 
 .nota-incluida img {
@@ -98,10 +104,21 @@
     font-size: 12px;
 }
 
+
+.tags-notas {
+    display: flex;
+}
+
+.tag1 {
+    background-color: #E0E4EA;
+    margin-right: 5px;
+}
+
 .inferior-centro {
     /* background-color: yellow; */
     width: 65%;
     height: 100%;
+    border-right: 1px solid #ccc;
 }
 
 .inferior-direita {
@@ -112,6 +129,14 @@
 
 .logo {
     width: 10vw;
+}
+
+.inferior-direita .botao-notes {
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 10px;
+    margin-left: 10px;
+    width: 90%;
 }
 
 .botao-notes {
@@ -135,6 +160,12 @@
 
 }
 
+.tags {
+    border-top: 1px solid #ccc;
+    height: 80vh;
+    margin-top: 15px;
+}
+
 .tags p {
     margin-left: 5PX;
     margin-top: 10px;
@@ -144,15 +175,14 @@
 }
 
 .imagem {
-    display: flex;
-    justify-content: center;
-    height: 28vh;
-    margin: 10px;
+    background-image: url("../../assets/img/Imagem-Descricao.svg");
+    background-size: cover;
+    height: 25vh;
 }
 
-.titulo{
+.titulo {
     font-family: Inter;
-    font-size: 25px;
+    font-size: 27px;
     margin-left: 10px;
 }
 
@@ -173,22 +203,27 @@
     align-items: center;
     font-family: "Inter";
     font-size: 10px;
+
 }
 
 .detalhe {
     background-color: white;
     width: 95%;
-    height: 35%;
+    height: 50%;
     margin-left: 10px;
     margin-top: 10px;
     margin-bottom: 15px;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
 }
 
 .texto {
     font-family: Inter;
-    font-size: 10px;
+    font-size: 15px;
     margin-top: 10px;
-    margin-left: 10px;
+    width: 54vw;
+    height: 43vh;
+    border: none;
 }
 
 .area-botoes {
@@ -218,7 +253,6 @@
     font-weight: normal;
     border: none;
     border-radius: 10px;
-    background-color: transparent;
     color: black;
     margin-right: 10px;
 }

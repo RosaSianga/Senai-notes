@@ -38,10 +38,12 @@ function Login() {
 
                 let json = await response.json();
 
+                let token = json.token;
                 let userId = json.id;
 
 
                 // GUARDAR INFORMAÇÃO NA PAGINA
+                localStorage.setItem("meuToken", token);
                 localStorage.setItem("meuId", userId);
 
                  window.location.href = "/notes"
