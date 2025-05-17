@@ -505,3 +505,4 @@ C:\Users\FIC\Desktop\projeto final back\Senai-notes\API_Notes\API_Notes\obj\Debu
 C:\Users\FIC\Desktop\projeto final back\Senai-notes\API_Notes\API_Notes\obj\Debug\net9.0\API_Notes.csproj.Up2Date
 C:\Users\FIC\Desktop\projeto final back\Senai-notes\API_Notes\API_Notes\obj\Debug\net9.0\API_Notes.genruntimeconfig.cache
 C:\Users\FIC\Desktop\projeto final back\Senai-notes\API_Notes\API_Notes\obj\Debug\net9.0\ref\API_Notes.dll
+C:\Users\FIC\Desktop\projeto final back\Senai-notes\API_Notes\API_Notes\obj\Debug\net9.0\API_Notes.sourcelink.json

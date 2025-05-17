@@ -2,6 +2,7 @@
 using API_Notes.DTO;
 using API_Notes.Interfaces;
 using API_Notes.Models;
+using API_Notes.ViemModel;
 
 namespace API_Notes.Repositories
 {
@@ -76,9 +77,23 @@ namespace API_Notes.Repositories
             return _context.Notas.ToList();
         }
 
-        List<Tag> ITagRepository.ListarTodos()
+        List<ListarTagsViewModel> ITagRepository.ListarTodos(int id)
         {
-            throw new NotImplementedException();
+            return _context.Tags
+                .Where(t => t.IdUsuario == id)
+                .Select(
+                c => new ListarTagsViewModel
+                {
+                    IdTag = c.IdTag,
+                    Nome = c.Nome
+                    .ToList()
+
+                }
+
+                );
+
+
+
         }
     }
 }

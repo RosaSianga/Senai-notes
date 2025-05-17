@@ -16,10 +16,10 @@ namespace API_Notes.Controllers
             _tagRepository = tagRepository;
         }
 
-        [HttpGet]
-        public IActionResult ListarTag()
+        [HttpGet("listartag/{id}")]
+        public IActionResult ListarTag(int id)
         {
-            return Ok(_tagRepository.ListarTodos);
+            return Ok(_tagRepository.ListarTodos(id));
         }
         [HttpPost]
         public IActionResult CadastrarNota(CadastrarTagDTO notaDTO)
