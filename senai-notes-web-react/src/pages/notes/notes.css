@@ -5,13 +5,13 @@
 .notas-esquerda {
     width: 15vw;
     height: 100vh;
+    border-right: 1px solid #717784;
 }
 
 .notas-direita {
     width: 85vw;
-    height: 100vh;
+    height: 100vh
 }
-
 .superior {
     width: 100%;
     height: 15%;
@@ -22,7 +22,7 @@
 
 .superior h1 {
     font-size: 25px;
-    font-family: Inter;
+    font-family: "inter";
     margin-left: 25px;
 }
 
@@ -61,15 +61,19 @@
 .inferior-esquerda {
     width: 25%;
     height: 100%;
+    border-right: 1px solid #717784;
 }
 
 .botao-new-note {
-    font-family: Inter;
+    font-family: "inter";
     font-size: 15px;
     margin-top: 10px;
     border: none;
     border-radius: 10px;
     width: 90%;
+    height: 30px;
+    color: white;
+    background-color: #335CFF;
 }
 
 .nota-incluida {
@@ -86,7 +90,7 @@
 }
 
 .inf-tag {
-    font-family: Inter;
+    font-family: "inter";
     font-size: 12px;
 }
 
@@ -98,6 +102,7 @@
 .inferior-direita {
     width: 20%;
     height: 100%;
+    border: 1px gray;
 }
 
 .logo {
@@ -107,13 +112,14 @@
 .botao-notes {
     width: 100%;
     margin-top: auto;
-    margin-right: 10px;
+    margin-right: 15px;
     border: none;
     background-color: transparent;
     display: flex;
     align-items: center;
     font-family: "Inter";
-    font-size: 12px;
+    font-size: 15px;
+    margin-bottom: 10px;
 }
 
 .botao-notes .seta {
@@ -121,14 +127,14 @@
 }
 
 .botao-notes img {
-    margin-right: 5px;
+    margin-right: 15px;
 
 }
 
 .tags p {
     margin-right: 140px;
     font-family: Inter;
-    font-size: 12px;
+    font-size: 16px;
     color: #717784
 }
 
@@ -140,85 +146,93 @@
 
 .titulo-centro {
 
-    font-size: 45px;
+    font-size: 35px;
     position: relative;
-    top: -30px;
+    top: -10px;
+    font-family: "inter";
 }
 
 .tags-centro {
 
-    font-size: 25px;
+    font-size: 15px;
     position: relative;
     top: 5px;
     margin-left: 41px;
+    font-family: "inter";
 }
 
 .Last-edited-centro {
 
-    font-size: 22px;
+    font-size: 12px;
     position: relative;
     top: 13px;
     margin-left: 44px;
+    font-family: "inter";
 }
 
 .dev{
 
     margin-left: 150px;
     position: relative;
-    top: -44px;
-    font-size: 14;
+    top: -27px;
+    font-size: 14px;
+    font-family: "inter";
 }
 
 .data{
 
     margin-left: 150px;
     position: relative;
-    top: -28px;
+    top: -21px;
     font-size: 14;
+    font-family: "inter";
 }
 
 
 .img-tag-centro {
 
     position: relative;
-    top: 86px;
-    margin-left: 10px;
-    width: 22px;
+    top: 66px;
+    margin-left: -540px;
+    width: 18px;
 
 }
 
 .img-relogio-centro {
 
     position: relative;
-    top: 120px;
-    margin-left: -19px;
-    width: 20px;
+    top: 90px;
+    margin-left: -17px;
+    width: 18px;
 
 }
 
 .titulo-segundario {
 
     position: relative;
-    top: 40px;
+    top: -10px;
     margin-left: 19px;
-    font-size: 25px;
+    font-size: 20px;
+    font-family: "inter";
 }
 
 .code {
 
     position: relative;
-    top: 60px;
-    margin-left: 20px;
+    top: 5px;
+    margin-left: 15px;
     font-size: 22px;
+    font-family: "inter";
 
 }
 
 .usereact {
 
     position: relative;
-    top: 70px;
+    top: 10px;
     margin-left: 20px;
-    font-size: 22px;
+    font-size: 17px;
+    font-family: "inter"
 
 }
 
@@ -226,112 +240,112 @@
 
 
     position: relative;
-    top: 78px;
+    top: 15px;
     margin-left: 20px;
-    font-size: 22px;
-
+    font-size: 17px;
+    font-family: "inter";
 }
 
 .titulo-terciario {
 
     position: relative;
-    top: 94px;
+    top: 20px;
     margin-left: 19px;
-    font-size: 25px;
-
+    font-size: 17px;
+    font-family: "inter";
 }
 
 .useMemo {
 
     position: relative;
-    top: 100px;
+    top: 20px;
     margin-left: 20px;
-    font-size: 22px;
-
+    font-size: 17px;
+    font-family: "inter";
 }
 
 .useCall {
     
     position: relative;
-    top: 105px;
+    top: 25px;
     margin-left: 20px;
-    font-size: 22px;
-
-
+    font-size: 17px;
+    font-family: "inter";
 }
 
 .titulo-quatro{
-
-
     position: relative;
-    top: 118px;
+    top: 34px;
     margin-left: 19px;
-    font-size: 25px;
-
+    font-size: 15px;
+    font-family: "inter";
 }
 
 .window{
-
     position: relative;
-    top: 125px;
+    top: 40px;
     margin-left: 20px;
-    font-size: 22px;
-
-
+    font-size: 17px;
+    font-family: "inter";
 }
 
 .implement2{
 
     position: relative;
-    top: 130px;
+    top: 45px;
     margin-left: 20px;
-    font-size: 22px;
-
+    font-size: 17px;
+    font-family: "inter";
 }
 
 .todo{
 
     position: relative;
-    top: 180px;
+    top: 60px;
     margin-left: 20px;
-    font-size: 25px;
-
-
+    font-size: 15px;
+    font-family: "inter";
 }
 
 .save{
 
     position: relative;
-    top: 300px;
+    top: 100px;
     margin-left: 20px;
     width: 160px;
-    height: 40px;
+    height: 30px;
     background-color: #335CFF;
-    border-radius: 14px;
-
+    color: white;
+    border-radius: 5px;
+    border: none;
+    font-family: "inter";
 }
 
 .cancel{
 
 
     position: relative;
-    top: 300px;
+    top: 100px;
     margin-left: 30px;
     width: 160px;
-    height: 40px;
-    border-radius: 14px;
-
+    height: 30px;
+    border-radius: 5px;
+    border: none;
+    font-family: "inter";
 }
 
 .arquive{
 
     width: 200px;
-    height: 40px;
+    height: 25px;
     margin-left: 10px;
     position: relative;
     top: 20px;
     font-size: 20px;
-    border-radius: 14px;
+    border-radius: 5px;
+    font-family: "inter";
+    background-color: white;
+    border-color: darkgrey;
 
 }
 
@@ -340,30 +354,33 @@
 
     
     width: 200px;
-    height: 40px;
-    margin-left: 40px;
+    height: 25px;
+    margin-left: 30px;
     position: relative;
-    top: 40px;
+    top: 47px;
     font-size: 20px;
-    border-radius: 14px;
-
+    border-radius: 5px;
+    font-family: "inter";
+    background-color: white;
+    border-color: darkgray;
 }
 
 .lixo{
 
 
-    width: 30px;
+    width: 24px;
     position: relative;
-    top: 90px;
+    top: 78px;
+    margin-left: -1px;
 
 }
 
 
 .arquivo{
 
-     width: 30px;
-     margin-left: -30px;
+     width: 23px;
+     margin-left: -26px;
     position: relative;
-    top: 30px;
+    top: 25px;
 
 }
