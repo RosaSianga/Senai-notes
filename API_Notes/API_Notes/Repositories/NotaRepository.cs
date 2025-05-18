@@ -101,9 +101,24 @@ namespace API_Notes.Repositories
                 .ToList();
         }
 
-        public void BuscarNota(int idNota)
+        public BuscarNotaViewModel BuscarNota(int idNota)
         {
-            throw new NotImplementedException();
+            return _context.Notas
+                .Where(n => n.IdNotas == idNota)
+                .Include(n => n.NotasTags)
+                .ThenInclude(t => t.IdTagNavigation)
+                .Select(
+                    n => new BuscarNotaViewModel()
+                    {
+                        Titulo = n.Titulo,
+                        Conteudo = n.Conteudo,
+                        DataCriacao = n.DataCriacao,
+                        DataEdicao = n.DataEdicao,
+                        Tags = n.NotasTags
+                            .Select(t => t.IdTagNavigation.Nome)
+                            .ToList()
+                    })
+                .FirstOrDefault();
         }
     }
 }

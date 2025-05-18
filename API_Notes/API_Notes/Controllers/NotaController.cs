@@ -30,4 +30,10 @@ public class NotaController : Controller
 
         return Created("ok", not);
     }
+
+    [HttpGet("buscarNota/{idNota}")]
+    public IActionResult BuscarNota(int idNota)
+    {
+        return Ok(_notaRepository.BuscarNota(idNota));
+    }
 }
