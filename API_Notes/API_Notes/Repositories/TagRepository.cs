@@ -3,6 +3,7 @@ using API_Notes.DTO;
 using API_Notes.Interfaces;
 using API_Notes.Models;
 using API_Notes.ViemModel;
+using Microsoft.EntityFrameworkCore;
 
 namespace API_Notes.Repositories
 {
@@ -77,7 +78,7 @@ namespace API_Notes.Repositories
             return _context.Notas.ToList();
         }
 
-        List<ListarTagsViewModel> ITagRepository.ListarTodos(int id)
+        public List<ListarTagsViewModel> ListarTodos(int id) 
         {
             return _context.Tags
                 .Where(t => t.IdUsuario == id)
@@ -86,14 +87,8 @@ namespace API_Notes.Repositories
                 {
                     IdTag = c.IdTag,
                     Nome = c.Nome
-                    .ToList()
-
-                }
-
-                );
-
-
-
+                })
+                .ToList();
         }
     }
 }
