@@ -14,6 +14,6 @@ namespace API_Notes.Interfaces
 
 
 
-        void AtualizarNota(int id, Nota nota);
+        void AtualizarNota(int idNota, AtualizarNotaDTO nota);
     }
 }

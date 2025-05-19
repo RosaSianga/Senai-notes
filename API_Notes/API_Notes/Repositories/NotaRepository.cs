@@ -4,6 +4,7 @@ using API_Notes.Interfaces;
 using API_Notes.Models;
 using API_Notes.ViewModel;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Query.SqlExpressions;
 
 namespace API_Notes.Repositories
 {
@@ -14,11 +15,6 @@ namespace API_Notes.Repositories
         public NotaRepository(SenaiNotesContext context)
         {
             _context = context;
-        }
-
-        public void AtualizarNota(int id, Nota nota)
-        {
-            throw new NotImplementedException();
         }
 
         // Validar a necessidade do metodo
@@ -43,7 +39,7 @@ namespace API_Notes.Repositories
             _context.SaveChanges();
 
             // Tratativa Tag
-            if (!string.IsNullOrWhiteSpace(nota.Tags))
+            if (string.IsNullOrWhiteSpace(nota.Tags) == false)
             {
                 var tratativaTag = nota.Tags.Split(',')
                     .Select(a => a.Trim().ToLower())
@@ -119,6 +115,76 @@ namespace API_Notes.Repositories
                             .ToList()
                     })
                 .FirstOrDefault();
+        }
+
+        public void AtualizarNota(int idNota, AtualizarNotaDTO nota)
+        {
+            Nota notaEncontrada = _context.Notas.Find(idNota);
+            
+            notaEncontrada.Titulo = nota.Titulo;
+            notaEncontrada.Conteudo = nota.Conteudo;
+            notaEncontrada.DataEdicao = nota.DataEdicao;
+            
+            _context.SaveChanges();
+            
+            // Tratativa Tag
+            if (string.IsNullOrWhiteSpace(nota.Tags) == false)
+            {
+                // Coleta das novas Tags
+                var novasTags = nota.Tags
+                    .Split(',')
+                    .Select(a => a.Trim().ToLower())
+                    .Where(a => !string.IsNullOrWhiteSpace(a))
+                    .Distinct()
+                    .ToList();
+               
+                // Buscar Tags vinculadas as notas
+               var validacaoTags = _context.NotasTags
+                   .Where(vt => vt.IdNotas == idNota)
+                   .Include(vt => vt.IdTagNavigation)
+                   .ToList();
+               
+               // Remover as Tags que não estão na lista nova
+                foreach (var tagAtual in validacaoTags)
+                {
+                    if (novasTags.Contains(tagAtual.IdTagNavigation.Nome.ToLower()) == false)
+                    {
+                        _context.NotasTags.Remove(tagAtual);
+                    }
+                    
+                    // Adicionar novas tags que nao existem
+                    foreach (var tagTexto in novasTags)
+                    {
+                        var tagExistente = _context.Tags.FirstOrDefault(t => t.Nome.ToLower() == tagTexto && t.IdUsuario == nota.IdUsuario);
+
+                        //Se a tag não existe, crie 
+                        if (tagExistente == null)
+                        {
+                            tagExistente = new Tag
+                            {
+                                Nome = tagTexto,
+                                IdUsuario = nota.IdUsuario
+                            };
+                            _context.Tags.Add(tagExistente);
+                            _context.SaveChanges();
+                        }
+                        //Verifica se a relacao já existe
+                        bool relacaoExistente = _context.NotasTags
+                            .Any(re => re.IdNotas == idNota && re.IdTag == tagAtual.IdTag);
+                        if (relacaoExistente == false)
+                        {
+                            _context.NotasTags.Add(new NotasTag()
+                            {
+                                IdNotas = idNota,
+                                IdTag = tagAtual.IdTag
+                            });
+                        }
+                    }    
+                    _context.SaveChanges();
+                   
+                }
+                _context.SaveChanges();
+            }
         }
     }
 }

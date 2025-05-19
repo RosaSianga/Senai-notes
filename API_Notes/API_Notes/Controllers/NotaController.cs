@@ -36,4 +36,11 @@ public class NotaController : Controller
     {
         return Ok(_notaRepository.BuscarNota(idNota));
     }
+
+    [HttpPut("editarNota/{idNota}")]
+    public IActionResult AtualizarNota(int idNota, AtualizarNotaDTO nota)
+    {
+        _notaRepository.AtualizarNota(idNota, nota);
+        return Ok(nota);
+    }
 }
