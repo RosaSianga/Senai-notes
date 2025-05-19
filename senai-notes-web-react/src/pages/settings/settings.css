@@ -1,14 +1,14 @@
-.tela {
+.tela-settings {
     display: flex;
 }
 
-.notas-direita {
+.painel-direito {
     /* background-color: red; */
     width: 85vw;
     height: 100vh;
 }
 
-.inferior {
+.painel-inferior {
     /* background-color: blueviolet; */
     width: 100%;
     height: 90%;

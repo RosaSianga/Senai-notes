@@ -1,0 +1,95 @@
+.inferior-centro {
+    /* background-color: yellow; */
+    width: 65%;
+    height: 100%;
+    border-right: 1px solid #ccc;
+}
+
+.imagem {
+    background-image: url("../../assets/img/Imagem-Descricao.svg");
+    background-size: cover;
+    height: 25vh;
+}
+
+.titulo {
+    font-family: Inter;
+    font-size: 27px;
+    margin-left: 10px;
+}
+
+.inf-descricao {
+    display: flex;
+    justify-content: space-between;
+    width: 20vw;
+    margin-left: 10px;
+    margin-top: 5px;
+}
+
+.tag-descricao {
+    width: 100%;
+    margin-right: 10px;
+    border: none;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    font-family: "Inter";
+    font-size: 10px;
+
+}
+
+.detalhe {
+    background-color: white;
+    width: 95%;
+    height: 50%;
+    margin-left: 10px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+}
+
+.texto {
+    font-family: Inter;
+    font-size: 15px;
+    margin-top: 10px;
+    width: 54vw;
+    height: 43vh;
+    border: none;
+}
+
+.area-botoes {
+    display: flex;
+    justify-content: left;
+    margin-left: 15px;
+}
+
+.botao-save {
+    width: 15vh;
+    height: 3vw;
+    font-family: Inter;
+    font-size: 12px;
+    font-weight: normal;
+    border: none;
+    border-radius: 10px;
+    background-color: #335CFF;
+    color: #FFFFFF;
+    margin-right: 10px;
+}
+
+.botao-cancel {
+    width: 15vh;
+    height: 3vw;
+    font-family: Inter;
+    font-size: 10px;
+    font-weight: normal;
+    border: none;
+    border-radius: 10px;
+    color: black;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+}
+
+.inferior-centro .icon {
+    font-size: 15px;
+    margin-right: 15px;
+}

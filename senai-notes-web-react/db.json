@@ -3,31 +3,34 @@
     {
       "token": "agbjklo5624pifdrs",
       "id": "1",
-      "name": "Rose",
+      "nome": "Rose",
       "email": "rsianga@email.com",
       "senha": "123456"
     },
     {
       "token": "agbjklo5624pifdrs",
       "id": "2",
-      "name": "Teste",
+      "nome": "Teste",
       "email": "teste@email.com",
       "senha": "123456"
     },
     {
-      "id": "d5b4",
+      "id": "d9be",
+      "estruturaUser": {
+        "nome": "Rose Maria",
+        "email": "rose@email.com",
+        "senha": "a1b1c1"
+      }
+    },
+    {
+      "id": "363e",
+      "email": "rose@email.com",
+      "senha": "a1b1c1"
+    },
+    {
+      "id": "16e7",
       "email": "rsianga@email.com",
       "senha": "123456"
-    },
-    {
-      "id": "def3",
-      "email": "rsianga@email.com",
-      "senha": "12345"
-    },
-    {
-      "id": "beff",
-      "email": "rsianga@email.com",
-      "senha": "12345"
     }
   ]
 }

@@ -8,6 +8,61 @@ function Usuario() {
     const [email, setEmail] = useState("");
     const [senha, setSenha] = useState("");
 
+    const clickSignUp = async () => {
+
+        debugger;
+        if (nome == "") {
+            alert("preencha o nome do usuário.");
+            return;
+        }
+
+        if (email == "") {
+            alert("preencha o email.");
+            return;
+        }
+
+        if (senha == "") {
+            alert("preencha a senha.");
+            return;
+        }
+
+        let emailValid = validarEmail(email);
+        console.log(emailValid);
+
+        if (emailValid == false) {
+            alert("Email inválido. Tente novamente");
+        } else {
+
+            let estruturaUser = {
+                nome: nome,
+                email: email,
+                senha: senha
+            };
+
+            let response = await fetch("http://localhost:3000/users", {
+
+                headers: {
+                    "Authorization": "Bearer " + localStorage.getItem("meuToken"),
+                    "content-Type": "application/json"
+                },
+                method: "POST",
+                body: JSON.stringify({
+                    estruturaUser
+                })
+            });
+
+            console.log(response);
+
+            if (response.ok == true) {
+
+                alert("Usuário cadastrado com sucesso");
+
+                window.location.href = "/login"
+
+            }
+        }
+    }
+
     return (
         <>
 
@@ -63,6 +118,13 @@ function Usuario() {
 
         </>
     )
+}
+
+
+function validarEmail(email) {
+    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return regex.test(email);
+
 }
 
 export default Usuario
