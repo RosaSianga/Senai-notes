@@ -6,7 +6,7 @@ namespace API_Notes.Interfaces
 {
     public interface INotaRepository
     {
-        List<ListarNotasViewModel> ListarTodos(int id);
+        List<ListarNotasViewModel> ListarTodos(int idUsuario);
         public BuscarNotaViewModel BuscarNota(int idNota);
         void CadastrarNota(CadastrarNotaDTO nota);
 
@@ -14,6 +14,10 @@ namespace API_Notes.Interfaces
 
         void AtualizarNota(int idNota, AtualizarNotaDTO nota);
 
-        void DeletarNota(int idNota, Nota nota);
+        void DeletarNota(int idNota);
+        
+        void ArquivarNota(int idNota);
+        
+        void DesarquivarNota(int idNota);
     }
 }

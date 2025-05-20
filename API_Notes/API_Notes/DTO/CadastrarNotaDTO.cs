@@ -5,7 +5,8 @@
         public string? Titulo { get; set; }
         public string? Conteudo { get; set; }
         public DateTime? DataCriacao { get; set; }
-        public bool? Arquivada { get; set; }
+        
+        public string? ImgUrl { get; set; }
         
         //Tags
         public string? Tags { get; set; }

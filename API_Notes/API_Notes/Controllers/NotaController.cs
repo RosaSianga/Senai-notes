@@ -17,10 +17,10 @@ public class NotaController : Controller
         _notaRepository = notaRepository;
     }
 
-    [HttpGet("listar/{id}")]
-    public IActionResult ListarNotas(int id)
+    [HttpGet("listar/{idUsuario}")]
+    public IActionResult ListarNotas(int idUsuario)
     {
-        return Ok(_notaRepository.ListarTodos(id));
+        return Ok(_notaRepository.ListarTodos(idUsuario));
     }
 
     [HttpPost("cadastrarNota")]
@@ -42,5 +42,33 @@ public class NotaController : Controller
     {
         _notaRepository.AtualizarNota(idNota, nota);
         return Ok(nota);
+    }
+
+    [HttpDelete("excluirNota/{idNota}")]
+    public IActionResult DeletarNota(int idNota)
+    {
+            _notaRepository.DeletarNota(idNota);
+            return NoContent();
+        /*try
+        {
+        }
+        catch (Exception e)
+        {
+            return NotFound("Produto Não Encontrado");
+        } */
+    }
+
+    [HttpPut("arquivarNota/{IdNota}")]
+    public IActionResult ArquivarNota(int IdNota)
+    {
+        _notaRepository.ArquivarNota(IdNota);
+        return Ok("Nota Arquivada");
+    }
+
+    [HttpPut("desarquivarNota/{IdNota}")]
+    public IActionResult DesarquivarNota(int IdNota)
+    {
+        _notaRepository.DesarquivarNota(IdNota);
+        return Ok("Nota Desarquivada");
     }
 }

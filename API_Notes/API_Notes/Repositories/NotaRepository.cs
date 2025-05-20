@@ -31,8 +31,9 @@ namespace API_Notes.Repositories
                 Titulo = nota.Titulo,
                 Conteudo = nota.Conteudo,
                 DataCriacao = nota.DataCriacao,
-                Arquivada = nota.Arquivada,
-                IdUsuario = nota.IdUsuario
+                Arquivada = false,
+                IdUsuario = nota.IdUsuario,
+                ImgUrl = nota.ImgUrl
             };
 
             _context.Notas.Add(notaCadastrada);
@@ -77,10 +78,10 @@ namespace API_Notes.Repositories
             }
         }
 
-        public List<ListarNotasViewModel> ListarTodos(int id)
+        public List<ListarNotasViewModel> ListarTodos(int idUsuario)
         {
             return _context.Notas
-                .Where(n => n.IdUsuario == id)
+                .Where(n => n.IdUsuario == idUsuario && n.Arquivada == false)
                 .Include(n => n.NotasTags)
                 .ThenInclude(t => t.IdTagNavigation)
                 .Select(
@@ -90,6 +91,7 @@ namespace API_Notes.Repositories
                         Titulo = c.Titulo,
                         DataCriacao = c.DataCriacao,
                         DataEdicao = c.DataEdicao,
+                        ImgUrl = c.ImgUrl,
                         Tags = c.NotasTags!
                             .Select(nt => nt.IdTagNavigation.Nome)
                             .ToList()
@@ -124,6 +126,7 @@ namespace API_Notes.Repositories
             notaEncontrada.Titulo = nota.Titulo;
             notaEncontrada.Conteudo = nota.Conteudo;
             notaEncontrada.DataEdicao = nota.DataEdicao;
+            notaEncontrada.ImgUrl = nota.ImgUrl;
             
             _context.SaveChanges();
             
@@ -188,9 +191,39 @@ namespace API_Notes.Repositories
             }
         }
 
-        public void DeletarNota(int idNota, Nota nota)
+        public void DeletarNota(int idNota)
         {
-            throw new NotImplementedException();
+            // o banco nao permite a remocao de registro em que a chave depende de outra tabela. Remova a intermediária e depois a nota.
+            var notaDeletada = _context.Notas
+                .Include(t => t.NotasTags)
+                .FirstOrDefault(n => n.IdNotas == idNota);
+           
+
+
+            //NotasTag tagDeletada = _context.NotasTags.FirstOrDefault(n => n.IdNotas == idNota);
+            
+            // tratativa
+            if (notaDeletada == null)
+            {
+                throw new Exception();
+            }
+
+            _context.Remove(notaDeletada);
+            _context.SaveChanges();
+        }
+
+        public void ArquivarNota(int idNota)
+        {
+            var notaArquivada = _context.Notas.Find(idNota);
+            notaArquivada.Arquivada = true;
+            _context.SaveChanges();
+        }
+
+        public void DesarquivarNota(int idNota)
+        {
+            var notaDesarquivada = _context.Notas.Find(idNota);
+            notaDesarquivada.Arquivada = false;
+            _context.SaveChanges();
         }
     }
 }
