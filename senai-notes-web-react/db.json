@@ -13,24 +13,97 @@
       "nome": "Teste",
       "email": "teste@email.com",
       "senha": "123456"
+    }
+   ],
+  "tags": [
+    {
+      "name": "React",
+      "id": "7b8e"
     },
     {
-      "id": "d9be",
-      "estruturaUser": {
-        "nome": "Rose Maria",
-        "email": "rose@email.com",
-        "senha": "a1b1c1"
-      }
+      "name": "Node",
+      "id": "c565"
     },
     {
-      "id": "363e",
-      "email": "rose@email.com",
-      "senha": "a1b1c1"
+      "name": "JavaScript",
+      "id": "3338"
     },
     {
-      "id": "16e7",
-      "email": "rsianga@email.com",
-      "senha": "123456"
+      "name": "CSS",
+      "id": "52fe"
+    },
+    {
+      "name": "HTML",
+      "id": "db30"
+    }
+  ],
+  "notes": [
+    {
+      "id": "9999",
+      "userId": "1",
+      "title": "React Development",
+      "description": "Texto.",
+      "image": "assets/sample.png",
+      "tags": [
+        "React",
+        "Node"
+      ],
+      "date": "2025-05-19T19:53:40.182Z"
+    },
+    {
+      "id": "d7b9",
+      "userId": "1",
+      "title": "Node Development",
+      "description": "Texto 2.",
+      "image": "assets/sample.png",
+      "tags": [
+        "Node",
+        "    Teste"
+      ],
+      "date": "2025-05-19T18:44:08.198Z"
+    },
+    {
+      "id": "af12",
+      "userId": "1",
+      "title": "JavaScript Development",
+      "description": "Texto",
+      "image": "assets/sample.png",
+      "tags": [
+        "JavaScript"
+      ],
+      "date": "2025-05-19T16:57:26.196Z"
+    },
+    {
+      "id": "415b",
+      "userId": "1",
+      "title": "CSS Development",
+      "description": "Texto",
+      "image": "assets/sample.png",
+      "tags": [
+        "CSS"
+      ],
+      "date": "2025-05-19T16:53:53.996Z"
+    },
+    {
+      "title": "HTML Development",
+      "userId": "1",
+      "description": "Texto",
+      "image": "assets/sample.png",
+      "tags": [
+        "HTML"
+      ],
+      "date": "29 Oct, 2024",
+      "id": "7375",
+      "archived": true
+    },
+    {
+      "id": "27f2",
+      "userId": "1",
+      "title": "Nova anotação",
+      "description": "Escreva aqui sua descrição",
+      "tags": [],
+      "image": "assets/sample.png",
+      "date": "2025-05-19T19:58:19.516Z"
     }
   ]
 }

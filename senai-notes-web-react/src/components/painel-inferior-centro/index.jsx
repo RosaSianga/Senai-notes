@@ -13,14 +13,14 @@ function PainelInferiorCentro() {
 
                 <div className="imagem"></div>
 
-                <h1 className='titulo'>React Performance Optimization</h1>
+                <input type="text" className='titulo' placeholder='Insira o titulo da nota' />
 
                 <div className="inf-descricao">
                     <p className='tag-descricao'>
                         <FontAwesomeIcon icon={faTags} className='icon' />
                         Tags
                     </p>
-                    <p className='tag-descricao'>Dev, React</p>
+                    <input type="text" className='tag-descricao'/>
                 </div>
 
                 <div className="inf-descricao">
