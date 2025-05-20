@@ -187,5 +187,10 @@ namespace API_Notes.Repositories
                 _context.SaveChanges();
             }
         }
+
+        public void DeletarNota(int idNota, Nota nota)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

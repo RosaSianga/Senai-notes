@@ -12,8 +12,8 @@ namespace API_Notes.Interfaces
 
         Nota BuscarPorID(int id);
 
-
-
         void AtualizarNota(int idNota, AtualizarNotaDTO nota);
+
+        void DeletarNota(int idNota, Nota nota);
     }
 }
