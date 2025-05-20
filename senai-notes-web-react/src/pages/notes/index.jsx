@@ -4,7 +4,6 @@ import archive from '../../assets/img/Archive.svg';
 import lixeira from '../../assets/img/Delete.svg';
 import home from '../../assets/img/Home.svg';
 import perfil from '../../assets/img/Perfil.svg';
-import refresh from '../../assets/img/Refresh.svg';
 import search from '../../assets/img/Search.svg';
 import settings from '../../assets/img/Settings.svg';
 import tag from '../../assets/img/Tag.svg';
@@ -88,7 +87,7 @@ function Notes() {
                         <img className='img-centro' src={imgdescricao} alt="" />
                         <img className='img-tag-centro' src={imgtag} alt="" />
                         <img className='img-relogio-centro' src={imgrelogio} alt="" />
-                        <h1 className='titulo-centro'>React Performance Optimization</h1>
+                        <input className='titulo-centro' type="text" />
                         <p className='tags-centro'>Tags</p>
                         <p className='Last-edited-centro'>Last edited</p>
                         <p className='dev'>Dev, React</p>
@@ -128,7 +127,8 @@ function Notes() {
 
             </div>
 
-        </>
+        </> 
+        
     )
 }
 
