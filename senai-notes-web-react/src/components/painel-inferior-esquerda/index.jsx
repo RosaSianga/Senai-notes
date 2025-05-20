@@ -5,7 +5,6 @@ import { useEffect, useState } from 'react';
 
 function PainelInferiorEsquerda() {
 
-    const [tag, setTag] = useState([]);
     const [notes, setNotes] = useState([]);
     const [noteSelecionado, SetNoteSelecionado] = useState([]);
 
@@ -32,19 +31,52 @@ function PainelInferiorEsquerda() {
     }
 
     const clickNote = (note) => {
+        debugger;
         SetNoteSelecionado(note);
+
+    }
+
+    const ClickCriarNote = async () => {
+
+        let estuturaNote = {
+            userId: "1",
+            title: "Teste novo note",
+            description: "Teste",
+            tags: [],
+            date: new Date().toLocaleDateString()
+        };
+
+
+        let response = await fetch("http://localhost:3000/notes", {
+            method: "POST",
+            headers: {
+                "content-type": "application/json"
+            },
+            body: JSON.stringify(
+                estuturaNote
+            )
+        });
+
+        console.log(response);
+
+        if (response.ok == true) {
+            alert("Nova anotação criado com sucesso");
+            await getNotas();
+        } else {
+            alert("Nota não criada");
+        }
 
     }
 
     return (
         <>
             <nav className="inferior-esquerda">
-                <button className='botao-new-note'> + Create New Note </button>
+                <button className='botao-new-note' onClick={ClickCriarNote}> + Create New Note </button>
 
                 {notes.map(note => (
 
-                    <div className='nota-incluida' >
-                        <img src={imgNote} alt="Imagem da Nota" onClick={() => clickNote(note)}/>
+                    <div className='nota-incluida' onClick={() => clickNote(note)}>
+                        <img src={imgNote} alt="Imagem da Nota" />
                         <div className="inf-tag">
                             <p>{note.title} </p>
                             <div className="tags-notas">
@@ -60,11 +92,8 @@ function PainelInferiorEsquerda() {
 
                 ))}
 
-
-
             </nav>
-
-
+            
         </>
     )
 }

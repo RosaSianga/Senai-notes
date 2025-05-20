@@ -21,12 +21,16 @@ function Notes() {
 
                     <div className="inferior">
 
-                        <PainelInferiorEsquerda />                        
-
+                        <PainelInferiorEsquerda />
+                        {/* 
+                        {noteSelecionado == null && (
+                            <> */}
                         <PainelInferiorCentro />
 
                         <PainelInferiorDireita />
+                        {/* </>
 
+                        )} */}
                     </div>
 
                 </main>
