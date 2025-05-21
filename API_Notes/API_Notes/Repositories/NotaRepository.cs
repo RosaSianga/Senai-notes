@@ -237,7 +237,32 @@ namespace API_Notes.Repositories
                 .Include(nv => nv.NotasTags)
                 .ThenInclude(t => t.IdTagNavigation)
                 .Where(c => c.Conteudo
-                    .Contains(palavraPesquisa))
+                    .Contains(palavraPesquisa) && c.Arquivada == false)
+                .Select(n => new PesquisaViewModel()
+                {
+                    IdNotas = n.IdNotas,
+                    Titulo = n.Titulo,
+                    DataCriacao = n.DataCriacao,
+                    DataEdicao = n.DataEdicao,
+                    ImgUrl = n.ImgUrl,
+                    Tags = n.NotasTags
+                        .Select(t => new ListarTagsViewModel
+                        {
+                            IdTag = t.IdTagNavigation.IdTag,
+                            Nome = t.IdTagNavigation.Nome
+                        })
+                        .ToList()
+                }).ToList();
+
+            return resultadoPesquisa;
+        }
+        public List<PesquisaViewModel> CampoPesquisaArquivada(string palavraPesquisa)
+        {
+            var resultadoPesquisa = _context.Notas
+                .Include(nv => nv.NotasTags)
+                .ThenInclude(t => t.IdTagNavigation)
+                .Where(c => c.Conteudo
+                    .Contains(palavraPesquisa) && c.Arquivada == true)
                 .Select(n => new PesquisaViewModel()
                 {
                     IdNotas = n.IdNotas,

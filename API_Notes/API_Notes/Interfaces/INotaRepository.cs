@@ -20,5 +20,7 @@ namespace API_Notes.Interfaces
 
         List<PesquisaViewModel> CampoPesquisa(string palavraPesquisa);
 
+        List<PesquisaViewModel> CampoPesquisaArquivada(string palavraPesquisa);
+
     }
 }

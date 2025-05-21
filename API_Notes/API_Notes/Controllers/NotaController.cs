@@ -63,4 +63,10 @@ public class NotaController : Controller
     {
         return Ok(_notaRepository.CampoPesquisa(palavraPesquisada));
     }
+
+    [HttpGet("CampoPesquisaArquivada/{palavraPesquisada}")]
+    public IActionResult CampoPesquisaArquivada(string palavraPesquisada)
+    {
+        return Ok(_notaRepository.CampoPesquisaArquivada(palavraPesquisada));
+    }
 }   
