@@ -56,7 +56,7 @@ namespace API_Notes.Repositories
         }
 
 
-        void IUsuarioRepositories.Cadastrar(CadastrarUsuarioDTO usuario)
+        void IUsuarioRepositories.Cadastrar(Usuario usuario)
         {
             var passwordService = new PasswordService();
 

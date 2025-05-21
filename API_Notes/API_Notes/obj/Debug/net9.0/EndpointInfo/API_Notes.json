@@ -26,17 +26,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/CadastrarUsuarioDTO"
+                "$ref": "#/components/schemas/Usuario"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/CadastrarUsuarioDTO"
+                "$ref": "#/components/schemas/Usuario"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/CadastrarUsuarioDTO"
+                "$ref": "#/components/schemas/Usuario"
               }
             }
           }
@@ -170,29 +170,6 @@
   },
   "components": {
     "schemas": {
-      "CadastrarUsuarioDTO": {
-        "type": "object",
-        "properties": {
-          "idUsuario": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "email": {
-            "type": "string",
-            "nullable": true
-          },
-          "senha": {
-            "type": "string",
-            "nullable": true
-          },
-          "dataCriacao": {
-            "type": "string",
-            "format": "date-time",
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
       "ConfiguracaoUsuario": {
         "type": "object",
         "properties": {

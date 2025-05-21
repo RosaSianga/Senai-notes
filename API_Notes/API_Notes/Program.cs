@@ -6,7 +6,11 @@ using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddControllers();
+builder.Services.AddControllers()
+    .AddNewtonsoftJson(options =>
+    {
+        options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
+    });
 builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<SenaiNotesContext, SenaiNotesContext>();
 builder.Services.AddTransient<IUsuarioRepositories, UsuarioRepositories>();
@@ -44,6 +48,6 @@ app.UseSwaggerUI();
 app.MapControllers();
 
 app.UseAuthentication();
-app.UseAuthentication();
+app.UseAuthorization();
 
 app.Run();

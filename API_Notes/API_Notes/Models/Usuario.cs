@@ -13,6 +13,8 @@ public partial class Usuario
 
     public DateTime? DataCriacao { get; set; }
 
+    public string? Nome { get; set; }
+
     public virtual ICollection<ConfiguracaoUsuario> ConfiguracaoUsuarios { get; set; } = new List<ConfiguracaoUsuario>();
 
     public virtual ICollection<Nota> Nota { get; set; } = new List<Nota>();

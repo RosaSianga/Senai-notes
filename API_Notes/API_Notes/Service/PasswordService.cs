@@ -1,12 +1,16 @@
-﻿using API_Notes.Models;
+﻿using API_Notes.DTO;
+using API_Notes.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
 namespace API_Notes.Service
 {
+
+   
     public class PasswordService
     {
         private readonly PasswordHasher<Usuario> _hasher = new();
+
 
         public string HashPassword(Usuario usuario)
         {

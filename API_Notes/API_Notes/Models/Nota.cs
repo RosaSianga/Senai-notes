@@ -19,6 +19,8 @@ public partial class Nota
 
     public bool? Arquivada { get; set; }
 
+    public string? ImgUrl { get; set; }
+
     public virtual Usuario? IdUsuarioNavigation { get; set; }
 
     public virtual ICollection<NotasTag> NotasTags { get; set; } = new List<NotasTag>();

@@ -499,7 +499,6 @@ C:\Users\fic\Desktop\Projeto final senai back end\Senai-notes\API_Notes\API_Note
 C:\Users\fic\Desktop\Projeto final senai back end\Senai-notes\API_Notes\API_Notes\obj\Debug\net9.0\staticwebassets\msbuild.buildMultiTargeting.API_Notes.props
 C:\Users\fic\Desktop\Projeto final senai back end\Senai-notes\API_Notes\API_Notes\obj\Debug\net9.0\staticwebassets\msbuild.buildTransitive.API_Notes.props
 C:\Users\fic\Desktop\Projeto final senai back end\Senai-notes\API_Notes\API_Notes\obj\Debug\net9.0\staticwebassets.pack.json
-C:\Users\fic\Desktop\Projeto final senai back end\Senai-notes\API_Notes\API_Notes\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt
 C:\Users\fic\Desktop\Projeto final senai back end\Senai-notes\API_Notes\API_Notes\obj\Debug\net9.0\API_Notes.csproj.Up2Date
 C:\Users\fic\Desktop\Projeto final senai back end\Senai-notes\API_Notes\API_Notes\obj\Debug\net9.0\API_Notes.dll
 C:\Users\fic\Desktop\Projeto final senai back end\Senai-notes\API_Notes\API_Notes\obj\Debug\net9.0\refint\API_Notes.dll

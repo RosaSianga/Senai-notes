@@ -9,7 +9,7 @@
     "Parameters": [
       {
         "Name": "usuario",
-        "Type": "API_Notes.DTO.CadastrarUsuarioDTO",
+        "Type": "API_Notes.Models.Usuario",
         "IsRequired": true
       }
     ],

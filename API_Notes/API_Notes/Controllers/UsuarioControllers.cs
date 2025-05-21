@@ -5,6 +5,7 @@ using API_Notes.Repositories;
 using API_Notes.Service;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace API_Notes.Controllers
 {
@@ -30,7 +31,7 @@ namespace API_Notes.Controllers
         }
 
         [HttpPost("cadastrar")]
-        public IActionResult CadastrarUsuario(CadastrarUsuarioDTO usuario)
+        public IActionResult CadastrarUsuario(Usuario usuario)
         {
             _usuarioRepositories.Cadastrar(usuario);
 
@@ -87,16 +88,23 @@ namespace API_Notes.Controllers
         public IActionResult Login(LoginDTO login)
         {
             var usuario = _usuarioRepositories.BuscarPorEmailSenha(login.Email, login.Senha);
-            if (usuario == null)
             {
-                return Unauthorized("Email ou senha invalidos");
+                if (usuario == null)
+                {
+                    return Unauthorized("Email ou senha invalido");
+                }
+
+                var tokenService = new TokenService();
+
+                var token = tokenService.GenerateToken(usuario.Senha);
+
+                return Ok(token);
+
+
+
+
+
             }
-
-            var tokenService = new TokenService();
-
-            var token = tokenService.GenerateToken(usuario.Email);
-
-            return Ok(token);
         }
 
     } 

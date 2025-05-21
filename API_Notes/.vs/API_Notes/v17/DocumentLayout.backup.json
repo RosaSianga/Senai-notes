@@ -3,20 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\fic\\Desktop\\Projeto final senai back end\\Senai-notes\\API_Notes\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{1FA8A44D-F397-4648-A363-8871A9D2F462}|API_Notes\\API_Notes.csproj|c:\\users\\fic\\desktop\\projeto final senai back end\\senai-notes\\api_notes\\api_notes\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{1FA8A44D-F397-4648-A363-8871A9D2F462}|API_Notes\\API_Notes.csproj|solutionrelative:api_notes\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1FA8A44D-F397-4648-A363-8871A9D2F462}|API_Notes\\API_Notes.csproj|c:\\users\\fic\\desktop\\projeto final senai back end\\senai-notes\\api_notes\\api_notes\\context\\senainotescontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1FA8A44D-F397-4648-A363-8871A9D2F462}|API_Notes\\API_Notes.csproj|solutionrelative:api_notes\\context\\senainotescontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{1FA8A44D-F397-4648-A363-8871A9D2F462}|API_Notes\\API_Notes.csproj|c:\\users\\fic\\desktop\\projeto final senai back end\\senai-notes\\api_notes\\api_notes\\repositories\\usuariorepositories.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1FA8A44D-F397-4648-A363-8871A9D2F462}|API_Notes\\API_Notes.csproj|solutionrelative:api_notes\\repositories\\usuariorepositories.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1FA8A44D-F397-4648-A363-8871A9D2F462}|API_Notes\\API_Notes.csproj|c:\\users\\fic\\desktop\\projeto final senai back end\\senai-notes\\api_notes\\api_notes\\interfaces\\iusuariorepositories.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1FA8A44D-F397-4648-A363-8871A9D2F462}|API_Notes\\API_Notes.csproj|solutionrelative:api_notes\\interfaces\\iusuariorepositories.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{1FA8A44D-F397-4648-A363-8871A9D2F462}|API_Notes\\API_Notes.csproj|c:\\users\\fic\\desktop\\projeto final senai back end\\senai-notes\\api_notes\\api_notes\\controllers\\usuariocontrollers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1FA8A44D-F397-4648-A363-8871A9D2F462}|API_Notes\\API_Notes.csproj|solutionrelative:api_notes\\controllers\\usuariocontrollers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1FA8A44D-F397-4648-A363-8871A9D2F462}|API_Notes\\API_Notes.csproj|c:\\users\\fic\\desktop\\projeto final senai back end\\senai-notes\\api_notes\\api_notes\\viewmodels\\listarusuarioviewmodels.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1FA8A44D-F397-4648-A363-8871A9D2F462}|API_Notes\\API_Notes.csproj|solutionrelative:api_notes\\viewmodels\\listarusuarioviewmodels.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1FA8A44D-F397-4648-A363-8871A9D2F462}|API_Notes\\API_Notes.csproj|c:\\users\\fic\\desktop\\projeto final senai back end\\senai-notes\\api_notes\\api_notes\\service\\passwordservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -27,12 +27,8 @@
       "RelativeMoniker": "D:0:0:{1FA8A44D-F397-4648-A363-8871A9D2F462}|API_Notes\\API_Notes.csproj|solutionrelative:api_notes\\service\\tokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1FA8A44D-F397-4648-A363-8871A9D2F462}|API_Notes\\API_Notes.csproj|c:\\users\\fic\\desktop\\projeto final senai back end\\senai-notes\\api_notes\\api_notes\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{1FA8A44D-F397-4648-A363-8871A9D2F462}|API_Notes\\API_Notes.csproj|solutionrelative:api_notes\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1FA8A44D-F397-4648-A363-8871A9D2F462}|API_Notes\\API_Notes.csproj|c:\\users\\fic\\desktop\\projeto final senai back end\\senai-notes\\api_notes\\api_notes\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1FA8A44D-F397-4648-A363-8871A9D2F462}|API_Notes\\API_Notes.csproj|solutionrelative:api_notes\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1FA8A44D-F397-4648-A363-8871A9D2F462}|API_Notes\\API_Notes.csproj|c:\\users\\fic\\desktop\\projeto final senai back end\\senai-notes\\api_notes\\api_notes\\interfaces\\iusuariorepositories.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1FA8A44D-F397-4648-A363-8871A9D2F462}|API_Notes\\API_Notes.csproj|solutionrelative:api_notes\\interfaces\\iusuariorepositories.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1FA8A44D-F397-4648-A363-8871A9D2F462}|API_Notes\\API_Notes.csproj|c:\\users\\fic\\desktop\\projeto final senai back end\\senai-notes\\api_notes\\api_notes\\dto\\logindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -43,8 +39,12 @@
       "RelativeMoniker": "D:0:0:{1FA8A44D-F397-4648-A363-8871A9D2F462}|API_Notes\\API_Notes.csproj|solutionrelative:api_notes\\dto\\cadastrarusuariodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1FA8A44D-F397-4648-A363-8871A9D2F462}|API_Notes\\API_Notes.csproj|c:\\users\\fic\\desktop\\projeto final senai back end\\senai-notes\\api_notes\\api_notes\\context\\senainotescontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1FA8A44D-F397-4648-A363-8871A9D2F462}|API_Notes\\API_Notes.csproj|solutionrelative:api_notes\\context\\senainotescontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1FA8A44D-F397-4648-A363-8871A9D2F462}|API_Notes\\API_Notes.csproj|c:\\users\\fic\\desktop\\projeto final senai back end\\senai-notes\\api_notes\\api_notes\\viewmodels\\listarusuarioviewmodels.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1FA8A44D-F397-4648-A363-8871A9D2F462}|API_Notes\\API_Notes.csproj|solutionrelative:api_notes\\viewmodels\\listarusuarioviewmodels.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1FA8A44D-F397-4648-A363-8871A9D2F462}|API_Notes\\API_Notes.csproj|c:\\users\\fic\\desktop\\projeto final senai back end\\senai-notes\\api_notes\\api_notes\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1FA8A44D-F397-4648-A363-8871A9D2F462}|API_Notes\\API_Notes.csproj|solutionrelative:api_notes\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1FA8A44D-F397-4648-A363-8871A9D2F462}|API_Notes\\API_Notes.csproj|c:\\users\\fic\\desktop\\projeto final senai back end\\senai-notes\\api_notes\\api_notes\\api_notes.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
@@ -58,33 +58,92 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "UsuarioRepositories.cs",
-              "DocumentMoniker": "C:\\Users\\fic\\Desktop\\Projeto final senai back end\\Senai-notes\\API_Notes\\API_Notes\\Repositories\\UsuarioRepositories.cs",
-              "RelativeDocumentMoniker": "API_Notes\\Repositories\\UsuarioRepositories.cs",
-              "ToolTip": "C:\\Users\\fic\\Desktop\\Projeto final senai back end\\Senai-notes\\API_Notes\\API_Notes\\Repositories\\UsuarioRepositories.cs",
-              "RelativeToolTip": "API_Notes\\Repositories\\UsuarioRepositories.cs",
-              "ViewState": "AgIAAFIAAAAAAAAAAAArwFsAAAAuAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-14T00:51:16.875Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "UsuarioControllers.cs",
               "DocumentMoniker": "C:\\Users\\fic\\Desktop\\Projeto final senai back end\\Senai-notes\\API_Notes\\API_Notes\\Controllers\\UsuarioControllers.cs",
               "RelativeDocumentMoniker": "API_Notes\\Controllers\\UsuarioControllers.cs",
               "ToolTip": "C:\\Users\\fic\\Desktop\\Projeto final senai back end\\Senai-notes\\API_Notes\\API_Notes\\Controllers\\UsuarioControllers.cs",
               "RelativeToolTip": "API_Notes\\Controllers\\UsuarioControllers.cs",
-              "ViewState": "AgIAAEcAAAAAAAAAAAAswBMAAAAjAAAAAAAAAA==",
+              "ViewState": "AgIAABoAAAAAAAAAAAAUwCYAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-14T00:42:20.128Z",
+              "WhenOpened": "2025-05-14T00:42:20.128Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "ListarUsuarioViewModels.cs",
+              "DocumentMoniker": "C:\\Users\\fic\\Desktop\\Projeto final senai back end\\Senai-notes\\API_Notes\\API_Notes\\ViewModels\\ListarUsuarioViewModels.cs",
+              "RelativeDocumentMoniker": "API_Notes\\ViewModels\\ListarUsuarioViewModels.cs",
+              "ToolTip": "C:\\Users\\fic\\Desktop\\Projeto final senai back end\\Senai-notes\\API_Notes\\API_Notes\\ViewModels\\ListarUsuarioViewModels.cs",
+              "RelativeToolTip": "API_Notes\\ViewModels\\ListarUsuarioViewModels.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-17T00:16:12.312Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\fic\\Desktop\\Projeto final senai back end\\Senai-notes\\API_Notes\\API_Notes\\Program.cs",
+              "RelativeDocumentMoniker": "API_Notes\\Program.cs",
+              "ToolTip": "C:\\Users\\fic\\Desktop\\Projeto final senai back end\\Senai-notes\\API_Notes\\API_Notes\\Program.cs",
+              "RelativeToolTip": "API_Notes\\Program.cs",
+              "ViewState": "AgIAAB0AAAAAAAAAAIBJwCwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-14T00:14:27.602Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\fic\\Desktop\\Projeto final senai back end\\Senai-notes\\API_Notes\\API_Notes\\appsettings.json",
+              "RelativeDocumentMoniker": "API_Notes\\appsettings.json",
+              "ToolTip": "C:\\Users\\fic\\Desktop\\Projeto final senai back end\\Senai-notes\\API_Notes\\API_Notes\\appsettings.json",
+              "RelativeToolTip": "API_Notes\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-05-16T00:39:16.939Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "PasswordService.cs",
+              "DocumentMoniker": "C:\\Users\\fic\\Desktop\\Projeto final senai back end\\Senai-notes\\API_Notes\\API_Notes\\Service\\PasswordService.cs",
+              "RelativeDocumentMoniker": "API_Notes\\Service\\PasswordService.cs",
+              "ToolTip": "C:\\Users\\fic\\Desktop\\Projeto final senai back end\\Senai-notes\\API_Notes\\API_Notes\\Service\\PasswordService.cs",
+              "RelativeToolTip": "API_Notes\\Service\\PasswordService.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABQAAAA4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-13T23:38:55.416Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "UsuarioRepositories.cs",
+              "DocumentMoniker": "C:\\Users\\fic\\Desktop\\Projeto final senai back end\\Senai-notes\\API_Notes\\API_Notes\\Repositories\\UsuarioRepositories.cs",
+              "RelativeDocumentMoniker": "API_Notes\\Repositories\\UsuarioRepositories.cs",
+              "ToolTip": "C:\\Users\\fic\\Desktop\\Projeto final senai back end\\Senai-notes\\API_Notes\\API_Notes\\Repositories\\UsuarioRepositories.cs",
+              "RelativeToolTip": "API_Notes\\Repositories\\UsuarioRepositories.cs",
+              "ViewState": "AgIAAB0AAAAAAAAAAAAnwEgAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-14T00:51:16.875Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "SenaiNotesContext.cs",
+              "DocumentMoniker": "C:\\Users\\fic\\Desktop\\Projeto final senai back end\\Senai-notes\\API_Notes\\API_Notes\\Context\\SenaiNotesContext.cs",
+              "RelativeDocumentMoniker": "API_Notes\\Context\\SenaiNotesContext.cs",
+              "ToolTip": "C:\\Users\\fic\\Desktop\\Projeto final senai back end\\Senai-notes\\API_Notes\\API_Notes\\Context\\SenaiNotesContext.cs",
+              "RelativeToolTip": "API_Notes\\Context\\SenaiNotesContext.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABEAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-13T23:30:31.756Z"
             },
             {
               "$type": "Document",
@@ -96,77 +155,11 @@
               "RelativeToolTip": "API_Notes\\Service\\TokenService.cs",
               "ViewState": "AgIAAAoAAAAAAAAAAAAQwBYAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-14T00:08:50.675Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "PasswordService.cs",
-              "DocumentMoniker": "C:\\Users\\fic\\Desktop\\Projeto final senai back end\\Senai-notes\\API_Notes\\API_Notes\\Service\\PasswordService.cs",
-              "RelativeDocumentMoniker": "API_Notes\\Service\\PasswordService.cs",
-              "ToolTip": "C:\\Users\\fic\\Desktop\\Projeto final senai back end\\Senai-notes\\API_Notes\\API_Notes\\Service\\PasswordService.cs",
-              "RelativeToolTip": "API_Notes\\Service\\PasswordService.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAvwBAAAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-13T23:38:55.416Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ListarUsuarioViewModels.cs",
-              "DocumentMoniker": "C:\\Users\\fic\\Desktop\\Projeto final senai back end\\Senai-notes\\API_Notes\\API_Notes\\ViewModels\\ListarUsuarioViewModels.cs",
-              "RelativeDocumentMoniker": "API_Notes\\ViewModels\\ListarUsuarioViewModels.cs",
-              "ToolTip": "C:\\Users\\fic\\Desktop\\Projeto final senai back end\\Senai-notes\\API_Notes\\API_Notes\\ViewModels\\ListarUsuarioViewModels.cs",
-              "RelativeToolTip": "API_Notes\\ViewModels\\ListarUsuarioViewModels.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAvAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-17T00:16:12.312Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "IUsuarioRepositories.cs",
-              "DocumentMoniker": "C:\\Users\\fic\\Desktop\\Projeto final senai back end\\Senai-notes\\API_Notes\\API_Notes\\Interfaces\\IUsuarioRepositories.cs",
-              "RelativeDocumentMoniker": "API_Notes\\Interfaces\\IUsuarioRepositories.cs",
-              "ToolTip": "C:\\Users\\fic\\Desktop\\Projeto final senai back end\\Senai-notes\\API_Notes\\API_Notes\\Interfaces\\IUsuarioRepositories.cs",
-              "RelativeToolTip": "API_Notes\\Interfaces\\IUsuarioRepositories.cs",
-              "ViewState": "AgIAAA4AAAAAAAAAAAAkwBQAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-14T00:48:27.902Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-14T00:08:50.675Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 8,
-              "Title": "LoginDTO.cs",
-              "DocumentMoniker": "C:\\Users\\fic\\Desktop\\Projeto final senai back end\\Senai-notes\\API_Notes\\API_Notes\\DTO\\LoginDTO.cs",
-              "RelativeDocumentMoniker": "API_Notes\\DTO\\LoginDTO.cs",
-              "ToolTip": "C:\\Users\\fic\\Desktop\\Projeto final senai back end\\Senai-notes\\API_Notes\\API_Notes\\DTO\\LoginDTO.cs",
-              "RelativeToolTip": "API_Notes\\DTO\\LoginDTO.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAApAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-15T23:21:48.919Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\fic\\Desktop\\Projeto final senai back end\\Senai-notes\\API_Notes\\API_Notes\\appsettings.json",
-              "RelativeDocumentMoniker": "API_Notes\\appsettings.json",
-              "ToolTip": "C:\\Users\\fic\\Desktop\\Projeto final senai back end\\Senai-notes\\API_Notes\\API_Notes\\appsettings.json",
-              "RelativeToolTip": "API_Notes\\appsettings.json",
-              "ViewState": "AgIAAAMAAADwYinRFEwuwAkAAACwAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-05-16T00:39:16.939Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
               "Title": "CadastrarUsuarioDTO.cs",
               "DocumentMoniker": "C:\\Users\\fic\\Desktop\\Projeto final senai back end\\Senai-notes\\API_Notes\\API_Notes\\DTO\\CadastrarUsuarioDTO.cs",
               "RelativeDocumentMoniker": "API_Notes\\DTO\\CadastrarUsuarioDTO.cs",
@@ -174,34 +167,31 @@
               "RelativeToolTip": "API_Notes\\DTO\\CadastrarUsuarioDTO.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-15T22:12:44.361Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-15T22:12:44.361Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 7,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\fic\\Desktop\\Projeto final senai back end\\Senai-notes\\API_Notes\\API_Notes\\Program.cs",
-              "RelativeDocumentMoniker": "API_Notes\\Program.cs",
-              "ToolTip": "C:\\Users\\fic\\Desktop\\Projeto final senai back end\\Senai-notes\\API_Notes\\API_Notes\\Program.cs",
-              "RelativeToolTip": "API_Notes\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAAAAAAAAAAAA==",
+              "Title": "LoginDTO.cs",
+              "DocumentMoniker": "C:\\Users\\fic\\Desktop\\Projeto final senai back end\\Senai-notes\\API_Notes\\API_Notes\\DTO\\LoginDTO.cs",
+              "RelativeDocumentMoniker": "API_Notes\\DTO\\LoginDTO.cs",
+              "ToolTip": "C:\\Users\\fic\\Desktop\\Projeto final senai back end\\Senai-notes\\API_Notes\\API_Notes\\DTO\\LoginDTO.cs",
+              "RelativeToolTip": "API_Notes\\DTO\\LoginDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-14T00:14:27.602Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-15T23:21:48.919Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "SenaiNotesContext.cs",
-              "DocumentMoniker": "C:\\Users\\fic\\Desktop\\Projeto final senai back end\\Senai-notes\\API_Notes\\API_Notes\\Context\\SenaiNotesContext.cs",
-              "RelativeDocumentMoniker": "API_Notes\\Context\\SenaiNotesContext.cs",
-              "ToolTip": "C:\\Users\\fic\\Desktop\\Projeto final senai back end\\Senai-notes\\API_Notes\\API_Notes\\Context\\SenaiNotesContext.cs",
-              "RelativeToolTip": "API_Notes\\Context\\SenaiNotesContext.cs",
-              "ViewState": "AgIAABQAAAAAAAAAAAAgwCMAAAAJAAAAAAAAAA==",
+              "DocumentIndex": 6,
+              "Title": "IUsuarioRepositories.cs",
+              "DocumentMoniker": "C:\\Users\\fic\\Desktop\\Projeto final senai back end\\Senai-notes\\API_Notes\\API_Notes\\Interfaces\\IUsuarioRepositories.cs",
+              "RelativeDocumentMoniker": "API_Notes\\Interfaces\\IUsuarioRepositories.cs",
+              "ToolTip": "C:\\Users\\fic\\Desktop\\Projeto final senai back end\\Senai-notes\\API_Notes\\API_Notes\\Interfaces\\IUsuarioRepositories.cs",
+              "RelativeToolTip": "API_Notes\\Interfaces\\IUsuarioRepositories.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAADwvw0AAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-13T23:30:31.756Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-14T00:48:27.902Z"
             },
             {
               "$type": "Document",
