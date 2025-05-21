@@ -5,9 +5,13 @@ import PainelSuperior from '../../components/painel-superior';
 import PainelInferiorEsquerda from '../../components/painel-inferior-esquerda';
 import PainelInferiorCentro from '../../components/painel-inferior-centro';
 import PainelInferiorDireita from '../../components/painel-inferior-direita';
+import { useState } from 'react';
 
 
 function Notes() {
+
+
+    const [noteSelecionada, setNoteSelecionada] = useState(null);
 
     return (
         <>
@@ -21,16 +25,22 @@ function Notes() {
 
                     <div className="inferior">
 
-                        <PainelInferiorEsquerda />
-                        {/* 
-                        {noteSelecionado == null && (
-                            <> */}
-                        <PainelInferiorCentro />
+                        <PainelInferiorEsquerda enviarNotaSelecionada={note => setNoteSelecionada(note)} />
 
-                        <PainelInferiorDireita />
-                        {/* </>
+                        {noteSelecionada != null && (
+                            <>
+                                <PainelInferiorCentro recebeNotaSelecionada={noteSelecionada} />
 
-                        )} */}
+                                <PainelInferiorDireita />
+                            </>
+
+                        )}
+
+                        {noteSelecionada == null && (
+                            <>
+                                <p>Não existe uma nota selecionada</p>
+                            </>
+                        )}
                     </div>
 
                 </main>

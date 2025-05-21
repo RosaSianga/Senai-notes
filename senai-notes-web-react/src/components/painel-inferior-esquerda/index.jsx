@@ -3,10 +3,9 @@ import './painel-inferior-esquerda.css';
 import imgNote from '../../assets/img/Image-notes.svg'
 import { useEffect, useState } from 'react';
 
-function PainelInferiorEsquerda() {
+function PainelInferiorEsquerda({enviarNotaSelecionada}) {
 
     const [notes, setNotes] = useState([]);
-    const [noteSelecionado, SetNoteSelecionado] = useState([]);
 
 
     useEffect(() => {
@@ -31,8 +30,8 @@ function PainelInferiorEsquerda() {
     }
 
     const clickNote = (note) => {
-        debugger;
-        SetNoteSelecionado(note);
+
+        enviarNotaSelecionada(note);
 
     }
 
@@ -43,7 +42,7 @@ function PainelInferiorEsquerda() {
             title: "Teste novo note",
             description: "Teste",
             tags: [],
-            date: new Date().toLocaleDateString()
+            date: new Date().toISOString()
         };
 
 
