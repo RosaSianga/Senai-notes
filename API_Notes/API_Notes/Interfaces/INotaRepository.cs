@@ -17,7 +17,8 @@ namespace API_Notes.Interfaces
         void DeletarNota(int idNota);
         
         void ArquivarNota(int idNota);
-        
-        void DesarquivarNota(int idNota);
+
+        List<PesquisaViewModel> CampoPesquisa(string palavraPesquisa);
+
     }
 }

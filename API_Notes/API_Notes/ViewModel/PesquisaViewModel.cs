@@ -1,6 +1,6 @@
 namespace API_Notes.ViewModel;
 
-public class ListarNotasViewModel
+public class PesquisaViewModel
 {
     public int IdNotas { get; set; }
     public string? Titulo { get; set; }

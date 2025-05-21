@@ -337,3 +337,7 @@ C:/Users/FIC/Documents/Workstation/Senai-notes/API_Notes/API_Notes/obj/Debug/net
 C:/Users/FIC/Documents/Workstation/Senai-notes/API_Notes/API_Notes/obj/Debug/net9.0/ref/API_Notes.dll
 /home/alcides/Home/Development/WorkSpace/Senai-notes/API_Notes/API_Notes/bin/Debug/net9.0/appsettings-azure.json
 /home/alcides/Home/Development/WorkSpace/Senai-notes/API_Notes/API_Notes/bin/Debug/net9.0/appsettings.json
+/home/alcides/Home/Development/WorkSpace/Senai-notes/API_Notes/API_Notes/bin/Debug/net9.0/Microsoft.AspNetCore.JsonPatch.dll
+/home/alcides/Home/Development/WorkSpace/Senai-notes/API_Notes/API_Notes/bin/Debug/net9.0/Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+/home/alcides/Home/Development/WorkSpace/Senai-notes/API_Notes/API_Notes/bin/Debug/net9.0/Newtonsoft.Json.dll
+/home/alcides/Home/Development/WorkSpace/Senai-notes/API_Notes/API_Notes/bin/Debug/net9.0/Newtonsoft.Json.Bson.dll

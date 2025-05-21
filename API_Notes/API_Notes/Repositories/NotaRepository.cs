@@ -93,7 +93,11 @@ namespace API_Notes.Repositories
                         DataEdicao = c.DataEdicao,
                         ImgUrl = c.ImgUrl,
                         Tags = c.NotasTags!
-                            .Select(nt => nt.IdTagNavigation.Nome)
+                            .Select(nt => new ListarTagsViewModel
+                            {
+                                IdTag = nt.IdTagNavigation.IdTag,
+                                Nome = nt.IdTagNavigation.Nome
+                            })
                             .ToList()
                     })
                 .ToList();
@@ -154,7 +158,6 @@ namespace API_Notes.Repositories
                     {
                         _context.NotasTags.Remove(tagAtual);
                     }
-
                 }
 
                 // Adicionar novas tags que nao existem
@@ -186,48 +189,72 @@ namespace API_Notes.Repositories
                             IdTag = tagExistente.IdTag
                         });
                     }
-
                 }
-        _context.SaveChanges();
+
+                _context.SaveChanges();
             }
-}
+        }
 
-public void DeletarNota(int idNota)
-{
-    // o banco nao permite a remocao de registro em que a chave depende de outra tabela. Remova a intermediária e depois a nota.
-    var notaDeletada = _context.Notas
-        .Include(t => t.NotasTags)
-        .FirstOrDefault(n => n.IdNotas == idNota);
+        public void DeletarNota(int idNota)
+        {
+            var tagDeletada = _context.NotasTags
+                .Where(td => td.IdNotas == idNota)
+                .ToList();
 
-    //NotasTag tagDeletada = _context.NotasTags.FirstOrDefault(n => n.IdNotas == idNota);
-    foreach (var batata in notaDeletada.NotasTags)
-    {
-        var tagRemovida = _context.NotasTags()
+            var notaDeletada = _context.Notas
+                .FirstOrDefault(n => n.IdNotas == idNota);
+
+            foreach (var tags in tagDeletada)
+            {
+                _context.NotasTags.Remove(tags);
+                _context.SaveChanges();
             }
 
 
-    // tratativa
-    if (notaDeletada == null)
-    {
-        throw new Exception();
-    }
+            _context.Remove(notaDeletada);
 
-    _context.Remove(notaDeletada);
-    _context.SaveChanges();
-}
+            _context.SaveChanges();
+        }
 
-public void ArquivarNota(int idNota)
-{
-    var notaArquivada = _context.Notas.Find(idNota);
-    notaArquivada.Arquivada = true;
-    _context.SaveChanges();
-}
+        public void ArquivarNota(int idNota)
+        {
+            var notaArquivada = _context.Notas.Find(idNota);
+            if (notaArquivada.Arquivada == false)
+            {
+                notaArquivada.Arquivada = true;
+            }
+            else
+            {
+                notaArquivada.Arquivada = false;
+            }
 
-public void DesarquivarNota(int idNota)
-{
-    var notaDesarquivada = _context.Notas.Find(idNota);
-    notaDesarquivada.Arquivada = false;
-    _context.SaveChanges();
-}
+            _context.SaveChanges();
+        }
+
+        public List<PesquisaViewModel> CampoPesquisa(string palavraPesquisa)
+        {
+            var resultadoPesquisa = _context.Notas
+                .Include(nv => nv.NotasTags)
+                .ThenInclude(t => t.IdTagNavigation)
+                .Where(c => c.Conteudo
+                    .Contains(palavraPesquisa))
+                .Select(n => new PesquisaViewModel()
+                {
+                    IdNotas = n.IdNotas,
+                    Titulo = n.Titulo,
+                    DataCriacao = n.DataCriacao,
+                    DataEdicao = n.DataEdicao,
+                    ImgUrl = n.ImgUrl,
+                    Tags = n.NotasTags
+                        .Select(t => new ListarTagsViewModel
+                        {
+                            IdTag = t.IdTagNavigation.IdTag,
+                            Nome = t.IdTagNavigation.Nome
+                        })
+                        .ToList()
+                }).ToList();
+
+            return resultadoPesquisa;
+        }
     }
 }

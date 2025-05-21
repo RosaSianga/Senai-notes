@@ -49,26 +49,18 @@ public class NotaController : Controller
     {
             _notaRepository.DeletarNota(idNota);
             return NoContent();
-        /*try
-        {
-        }
-        catch (Exception e)
-        {
-            return NotFound("Produto Não Encontrado");
-        } */
     }
 
     [HttpPut("arquivarNota/{IdNota}")]
     public IActionResult ArquivarNota(int IdNota)
     {
         _notaRepository.ArquivarNota(IdNota);
-        return Ok("Nota Arquivada");
+        return Ok();
     }
 
-    [HttpPut("desarquivarNota/{IdNota}")]
-    public IActionResult DesarquivarNota(int IdNota)
+    [HttpGet("CampoPesquisa/{palavraPesquisada}")]
+    public IActionResult PesquisarNota(string palavraPesquisada)
     {
-        _notaRepository.DesarquivarNota(IdNota);
-        return Ok("Nota Desarquivada");
+        return Ok(_notaRepository.CampoPesquisa(palavraPesquisada));
     }
-}
+}   
