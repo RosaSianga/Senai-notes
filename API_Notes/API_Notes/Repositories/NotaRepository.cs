@@ -122,14 +122,14 @@ namespace API_Notes.Repositories
         public void AtualizarNota(int idNota, AtualizarNotaDTO nota)
         {
             Nota notaEncontrada = _context.Notas.Find(idNota);
-            
+
             notaEncontrada.Titulo = nota.Titulo;
             notaEncontrada.Conteudo = nota.Conteudo;
             notaEncontrada.DataEdicao = nota.DataEdicao;
             notaEncontrada.ImgUrl = nota.ImgUrl;
-            
+
             _context.SaveChanges();
-            
+
             // Tratativa Tag
             if (string.IsNullOrWhiteSpace(nota.Tags) == false)
             {
@@ -186,44 +186,48 @@ namespace API_Notes.Repositories
                             IdTag = tagExistente.IdTag
                         });
                     }
+
                 }
-                _context.SaveChanges();
+        _context.SaveChanges();
             }
-        }
+}
 
-        public void DeletarNota(int idNota)
-        {
-            // o banco nao permite a remocao de registro em que a chave depende de outra tabela. Remova a intermediária e depois a nota.
-            var notaDeletada = _context.Notas
-                .Include(t => t.NotasTags)
-                .FirstOrDefault(n => n.IdNotas == idNota);
-           
+public void DeletarNota(int idNota)
+{
+    // o banco nao permite a remocao de registro em que a chave depende de outra tabela. Remova a intermediária e depois a nota.
+    var notaDeletada = _context.Notas
+        .Include(t => t.NotasTags)
+        .FirstOrDefault(n => n.IdNotas == idNota);
 
-
-            //NotasTag tagDeletada = _context.NotasTags.FirstOrDefault(n => n.IdNotas == idNota);
-            
-            // tratativa
-            if (notaDeletada == null)
-            {
-                throw new Exception();
+    //NotasTag tagDeletada = _context.NotasTags.FirstOrDefault(n => n.IdNotas == idNota);
+    foreach (var batata in notaDeletada.NotasTags)
+    {
+        var tagRemovida = _context.NotasTags()
             }
 
-            _context.Remove(notaDeletada);
-            _context.SaveChanges();
-        }
 
-        public void ArquivarNota(int idNota)
-        {
-            var notaArquivada = _context.Notas.Find(idNota);
-            notaArquivada.Arquivada = true;
-            _context.SaveChanges();
-        }
+    // tratativa
+    if (notaDeletada == null)
+    {
+        throw new Exception();
+    }
 
-        public void DesarquivarNota(int idNota)
-        {
-            var notaDesarquivada = _context.Notas.Find(idNota);
-            notaDesarquivada.Arquivada = false;
-            _context.SaveChanges();
-        }
+    _context.Remove(notaDeletada);
+    _context.SaveChanges();
+}
+
+public void ArquivarNota(int idNota)
+{
+    var notaArquivada = _context.Notas.Find(idNota);
+    notaArquivada.Arquivada = true;
+    _context.SaveChanges();
+}
+
+public void DesarquivarNota(int idNota)
+{
+    var notaDesarquivada = _context.Notas.Find(idNota);
+    notaDesarquivada.Arquivada = false;
+    _context.SaveChanges();
+}
     }
 }
