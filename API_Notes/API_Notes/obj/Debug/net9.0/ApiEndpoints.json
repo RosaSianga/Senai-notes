@@ -1,94 +1,5 @@
 [
   {
-    "ContainingType": "API_Notes.Controllers.NotaController",
-    "Method": "ListarNotas",
-    "RelativePath": "api/Nota",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "API_Notes.Controllers.NotaController",
-    "Method": "CadastrarNota",
-    "RelativePath": "api/Nota",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "dto",
-        "Type": "API_Notes.DTO.CadastrarNotaDTO",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "API_Notes.Controllers.NotaController",
-    "Method": "ListarPorId",
-    "RelativePath": "api/Nota/{id}",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "API_Notes.Controllers.NotaController",
-    "Method": "Editar",
-    "RelativePath": "api/Nota/{id}",
-    "HttpMethod": "PUT",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": true
-      },
-      {
-        "Name": "prod",
-        "Type": "API_Notes.Models.Nota",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "API_Notes.Controllers.NotaController",
-    "Method": "Deletar",
-    "RelativePath": "api/Nota/{id}",
-    "HttpMethod": "DELETE",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "API_Notes.Controllers.TagController",
-    "Method": "ListarTag",
-    "RelativePath": "api/Tag",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
     "ContainingType": "API_Notes.Controllers.TagController",
     "Method": "CadastrarNota",
     "RelativePath": "api/Tag",
@@ -103,6 +14,26 @@
       }
     ],
     "ReturnTypes": []
+  },
+  {
+    "ContainingType": "API_Notes.Controllers.TagController",
+    "Method": "Get_tagRepository",
+    "RelativePath": "api/Tag",
+    "HttpMethod": "",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "API_Notes.Interfaces.ITagRepository",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
   },
   {
     "ContainingType": "API_Notes.Controllers.TagController",
@@ -146,6 +77,22 @@
     "Method": "Deletar",
     "RelativePath": "api/Tag/{id}",
     "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "API_Notes.Controllers.TagController",
+    "Method": "ListarTodos",
+    "RelativePath": "api/Tag/listartag/{id}",
+    "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [

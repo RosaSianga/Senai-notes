@@ -5,112 +5,10 @@
     "version": "1.0"
   },
   "paths": {
-    "/api/Nota": {
+    "/api/Tag/listartag/{id}": {
       "get": {
         "tags": [
-          "Nota"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      },
-      "post": {
-        "tags": [
-          "Nota"
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/CadastrarNotaDTO"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/CadastrarNotaDTO"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/CadastrarNotaDTO"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/api/Nota/{id}": {
-      "get": {
-        "tags": [
-          "Nota"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      },
-      "put": {
-        "tags": [
-          "Nota"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Nota"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Nota"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/Nota"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      },
-      "delete": {
-        "tags": [
-          "Nota"
+          "Tag"
         ],
         "parameters": [
           {
@@ -131,16 +29,6 @@
       }
     },
     "/api/Tag": {
-      "get": {
-        "tags": [
-          "Tag"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      },
       "post": {
         "tags": [
           "Tag"
@@ -258,53 +146,6 @@
   },
   "components": {
     "schemas": {
-      "CadastrarNotaDTO": {
-        "type": "object",
-        "properties": {
-          "idNotas": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "idUsuario": {
-            "type": "integer",
-            "format": "int32",
-            "nullable": true
-          },
-          "titulo": {
-            "type": "string",
-            "nullable": true
-          },
-          "conteudo": {
-            "type": "string",
-            "nullable": true
-          },
-          "dataCriacao": {
-            "type": "string",
-            "format": "date-time",
-            "nullable": true
-          },
-          "dataEdicao": {
-            "type": "string",
-            "format": "date-time",
-            "nullable": true
-          },
-          "arquivada": {
-            "type": "boolean",
-            "nullable": true
-          },
-          "idUsuarioNavigation": {
-            "$ref": "#/components/schemas/Usuario"
-          },
-          "notasTags": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/NotasTag"
-            },
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
       "CadastrarTagDTO": {
         "type": "object",
         "properties": {

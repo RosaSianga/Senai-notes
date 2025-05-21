@@ -3,6 +3,7 @@ using API_Notes.DTO;
 using API_Notes.Interfaces;
 using API_Notes.Models;
 using API_Notes.ViemModel;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace API_Notes.Repositories
@@ -23,18 +24,13 @@ namespace API_Notes.Repositories
 
             _context.SaveChanges();
         }
-
+        
         public Tag BuscarPorId(int id)
         {
             
             return _context.Tags.FirstOrDefault(p => p.IdTag == id);
         }
-
-        public void Cadastrar(CadastrarNotaDTO tag)
-        {
-            throw new NotImplementedException();
-        }
-
+       
         public void Cadastrar(CadastrarTagDTO tag)
         {
             throw new NotImplementedException();
@@ -54,7 +50,7 @@ namespace API_Notes.Repositories
 
             _context.SaveChanges();
         }
-
+       
         public void Deletar(int id)
         {
             // 1 - Encontrar o que eu quero excluir
@@ -90,5 +86,7 @@ namespace API_Notes.Repositories
                 })
                 .ToList();
         }
+
+        
     }
 }

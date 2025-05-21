@@ -1,6 +1,7 @@
 ﻿using API_Notes.DTO;
 using API_Notes.Interfaces;
 using API_Notes.Models;
+using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -47,12 +48,17 @@ namespace API_Notes.Controllers
             return Ok(tag);
         }
 
+        public ITagRepository Get_tagRepository()
+        {
+            return _tagRepository;
+        }
+
         [HttpPut("{id}")]
         public IActionResult Editar(int id, Tag prod)
         {
             try
             {
-                
+
                 _tagRepository.Atualizar(id, prod);
 
                 return Ok(prod);
