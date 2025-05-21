@@ -13,10 +13,58 @@ import imgdescricao from '../../assets/img/Rectangle 44.svg'
 import imgtag from '../../assets/img/Tag.svg'
 import imgrelogio from '../../assets/img/Circle Clock.svg'
 import arquivo from '../../assets/img/Archive.svg'
+import { userEffect, useState} from 'react';
 
 
 function Notes() {
 
+
+    const [Notes, setNotes] = useState([]);
+
+    userEffect(() => {
+
+        getNotes();
+
+    }, []);
+
+    const getNotes = async () => {
+
+        let response = await fetch("http://localhost:3000/tags", {
+
+            headers: {
+                
+                "authorization": "Bearer" + localStorage.getItem("meuToken")
+
+            }
+
+
+        });
+
+        console.log(response);
+
+        if (response.ok == true) {
+
+            let json = await response.json(); // Pegue as informações dos chats.
+
+            setNotes(json);
+
+        } else {
+
+            if (response.status == 401) {
+
+                alert("Token inválido. Faça login novamente.");
+                localStorage.clear();
+                window.location.href = "/login";
+
+            }
+
+        }
+
+    
+
+
+    }
+    
 
     return (
         <>
@@ -68,7 +116,7 @@ function Notes() {
                     <div className="inferior">
 
                         <div className="inferior-esquerda">
-                            <button className='botao-new-note'> + Create New Note </button>
+                            <button className='botao-new-note' onClick={() => Notes()}> + Create New Note </button>
 
                             <div className='nota-incluida'>
                                 <img src={imgNote} alt="Imagem da Nota" />

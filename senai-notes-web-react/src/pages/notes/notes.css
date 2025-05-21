@@ -392,11 +392,16 @@
 
 }
 
-.inferior-centro .save:hover,
-.inferior-centro .cancel:hover{
+.inferior-centro .save:hover{
 
         background-color: #87bfff !important;
 
+
+}
+
+.inferior-centro .cancel:hover{
+
+    background-color: #ccc;
 
 }
 
