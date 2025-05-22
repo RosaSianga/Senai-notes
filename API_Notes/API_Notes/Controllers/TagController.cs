@@ -12,7 +12,7 @@ namespace API_Notes.Controllers
     [ApiController]
     public class TagController : ControllerBase
     {
-        public ITagRepository _tagRepository; 
+        public ITagRepository _tagRepository;
 
         public TagController(ITagRepository tagRepository)
         {
@@ -20,52 +20,28 @@ namespace API_Notes.Controllers
         }
 
 
-        [HttpGet("listartag/{id}")]
+        [HttpGet("listartag/{userId}")]
         [SwaggerOperation(
             Summary = "Lista todas as Tags",
             Description = "Este método lista todas as tags com base do ID do usuario"
-            )]
-        public IActionResult ListarTodos(int id)
+        )]
+        public IActionResult ListarTodos(int userId)
         {
-            return Ok(_tagRepository.ListarTodos(id));
-        }
-        
-        [HttpPost]
-        public IActionResult CadastrarNota(CadastrarTagDTO notaDTO)
-        {
-            
-            _tagRepository.Cadastrar(notaDTO);
-
-            return Created();
-
-        }
-                    
-        [HttpGet("{id}")]
-        public IActionResult ListarPorId(int id)
-        {
-            Tag tag = _tagRepository.BuscarPorId(id);
-
-            if (tag != null)
-
-            {
-                // 404 - Nao encontrado
-                return NotFound();
-            }
-
-            return Ok(tag);
+            return Ok(_tagRepository.ListarTodos(userId));
         }
 
-        public ITagRepository Get_tagRepository()
+        [HttpGet("RetornoTag/{tagId},{userId}")]
+        public IActionResult BuscarTag(int tagId, int userId)
         {
-            return _tagRepository;
+            return Ok(_tagRepository.BuscarTag(tagId, userId));
         }
+
 
         [HttpPut("{id}")]
         public IActionResult Editar(int id, Tag prod)
         {
             try
             {
-
                 _tagRepository.Atualizar(id, prod);
 
                 return Ok(prod);
@@ -92,6 +68,5 @@ namespace API_Notes.Controllers
                 return NotFound("Tag não encontrada.");
             }
         }
-
     }
 }

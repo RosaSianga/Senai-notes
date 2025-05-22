@@ -6,17 +6,16 @@ namespace API_Notes.Interfaces
 {
     public interface ITagRepository
     {
-        List<ListarTagsViewModel> ListarTodos(int id);
+        List<ListarTagsViewModel> ListarTodos(int userId);
 
+        List<RetornoTagViewModel> BuscarTag(int tagId, int userId);
 
-        Tag BuscarPorId(int id);
-
-        void Cadastrar(CadastrarTagDTO tag);
+        //Tag BuscarPorId(int id);
 
         void Atualizar(int id, Tag tag);
-
+        
         void Deletar(int id);
-
+        
     }
 
 }

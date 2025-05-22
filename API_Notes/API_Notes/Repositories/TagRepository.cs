@@ -11,6 +11,7 @@ namespace API_Notes.Repositories
     public class TagRepository : ITagRepository
     {
         private readonly SenaiNotesContext _context;
+
         public TagRepository(SenaiNotesContext context)
         {
             _context = context;
@@ -25,33 +26,13 @@ namespace API_Notes.Repositories
 
             _context.SaveChanges();
         }
-        
+
         public Tag BuscarPorId(int id)
         {
-            
             return _context.Tags.FirstOrDefault(p => p.IdTag == id);
         }
-       
-        public void Cadastrar(CadastrarTagDTO tag)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void CadastrarTag(Tag tag)
-        {
-            Tag tagCadastroDTO = new Tag
-
-            {
-                Nome = tag.Nome,
-                IdUsuario = tag.IdUsuario
-
-            };
-
-            _context.Tags.Add(tagCadastroDTO);
-
-            _context.SaveChanges();
-        }
-       
+        
+        
         public void Deletar(int id)
         {
             // 1 - Encontrar o que eu quero excluir
@@ -63,6 +44,7 @@ namespace API_Notes.Repositories
             {
                 throw new Exception();
             }
+
             // Caso eu encontre o produto, removo ele
             _context.Notas.Remove(tagEncontrado);
 
@@ -70,26 +52,51 @@ namespace API_Notes.Repositories
             _context.SaveChanges();
         }
 
-        public List<Nota> ListarTodos()
+
+        // Listagem de Tag
+        public List<ListarTagsViewModel> ListarTodos(int userId)
+            /* {
+                  return _context.Tags
+                      .Include(t => t.NotasTags)
+                      .ThenInclude(t => t.IdNotasNavigation)
+                      //.Where(t => t.IdUsuario == id && t. )
+                      .Select(
+                      c => new ListarTagsViewModel
+                      {
+                          IdTag = c.IdTag,
+                          Nome = c.Nome
+                      })
+                      .ToList();
+              } */
         {
-            return _context.Notas.ToList();
+            var listaTags = _context.NotasTags
+                .Where(t => t.IdNotasNavigation.IdUsuario == userId && t.IdNotasNavigation.Arquivada == false)
+                .Select(c =>
+                    new ListarTagsViewModel
+                    {
+                        IdTag = c.IdTagNavigation.IdTag,
+                        Nome = c.IdTagNavigation.Nome,
+                    })
+                .ToList();
+
+            return listaTags;
         }
 
-        public List<ListarTagsViewModel> ListarTodos(int id) 
+        // Retorno da Tag Selecionada
+        public List<RetornoTagViewModel> BuscarTag(int tagId, int userId)
         {
-            return _context.Tags
-                .Include(t => t.NotasTags)
-                .ThenInclude(t => t.IdNotasNavigation)
-                //.Where(t => t.IdUsuario == id && t. )
-                .Select(
-                c => new ListarTagsViewModel
+            var tagRetorno = _context.NotasTags
+                //.Include(t => _context.Notas)
+                .Where(n => n.IdTag == tagId && n.IdNotasNavigation.Arquivada == false && n.IdNotasNavigation.IdUsuario == userId)
+                .Select(n => new RetornoTagViewModel
                 {
-                    IdTag = c.IdTag,
-                    Nome = c.Nome
+                    IdNotas = n.IdNotasNavigation.IdNotas,
+                    Titulo = n.IdNotasNavigation.Titulo,
+                    DataCriacao = n.IdNotasNavigation.DataCriacao,
+                    DataEdicao = n.IdNotasNavigation.DataEdicao
                 })
                 .ToList();
-        }
-
-        
+            return tagRetorno;
+        } 
     }
 }
