@@ -14,7 +14,11 @@ builder.Services.AddControllers()
     }
     
     );
-builder.Services.AddSwaggerGen();
+builder.Services.AddSwaggerGen(options =>
+{
+    options.EnableAnnotations();
+});
+
 builder.Services.AddDbContext<SenaiNotesContext>();
 //builder.Services.AddTransient<INotaRepository, NotaRepository>();
 builder.Services.AddTransient<ITagRepository, TagRepository>();

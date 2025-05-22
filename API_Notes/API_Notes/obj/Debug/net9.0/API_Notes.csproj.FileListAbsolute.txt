@@ -506,3 +506,9 @@ C:\Users\FIC\Desktop\projeto final back\Senai-notes\API_Notes\API_Notes\obj\Debu
 C:\Users\FIC\Desktop\projeto final back\Senai-notes\API_Notes\API_Notes\obj\Debug\net9.0\API_Notes.genruntimeconfig.cache
 C:\Users\FIC\Desktop\projeto final back\Senai-notes\API_Notes\API_Notes\obj\Debug\net9.0\ref\API_Notes.dll
 C:\Users\FIC\Desktop\projeto final back\Senai-notes\API_Notes\API_Notes\obj\Debug\net9.0\API_Notes.sourcelink.json
+C:\Users\FIC\Documents\Workstation\Senai-notes\API_Notes\API_Notes\bin\Debug\net9.0\Microsoft.AspNetCore.JsonPatch.dll
+C:\Users\FIC\Documents\Workstation\Senai-notes\API_Notes\API_Notes\bin\Debug\net9.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+C:\Users\FIC\Documents\Workstation\Senai-notes\API_Notes\API_Notes\bin\Debug\net9.0\Newtonsoft.Json.dll
+C:\Users\FIC\Documents\Workstation\Senai-notes\API_Notes\API_Notes\bin\Debug\net9.0\Newtonsoft.Json.Bson.dll
+C:\Users\FIC\Documents\Workstation\Senai-notes\API_Notes\API_Notes\bin\Debug\net9.0\Swashbuckle.AspNetCore.Annotations.dll
+C:\Users\FIC\Documents\Workstation\Senai-notes\API_Notes\API_Notes\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt

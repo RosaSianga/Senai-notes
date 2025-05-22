@@ -4,6 +4,7 @@ using API_Notes.Models;
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Swashbuckle.AspNetCore.Annotations;
 
 namespace API_Notes.Controllers
 {
@@ -12,12 +13,18 @@ namespace API_Notes.Controllers
     public class TagController : ControllerBase
     {
         public ITagRepository _tagRepository; 
+
         public TagController(ITagRepository tagRepository)
         {
             _tagRepository = tagRepository;
         }
 
+
         [HttpGet("listartag/{id}")]
+        [SwaggerOperation(
+            Summary = "Lista todas as Tags",
+            Description = "Este método lista todas as tags com base do ID do usuario"
+            )]
         public IActionResult ListarTodos(int id)
         {
             return Ok(_tagRepository.ListarTodos(id));

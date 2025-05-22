@@ -15,6 +15,7 @@ namespace API_Notes.Repositories
         {
             _context = context;
         }
+
         public void Atualizar(int id, Tag tag)
         {
             Tag tagEncontrado = _context.Tags.Find(id);
@@ -77,7 +78,9 @@ namespace API_Notes.Repositories
         public List<ListarTagsViewModel> ListarTodos(int id) 
         {
             return _context.Tags
-                .Where(t => t.IdUsuario == id)
+                .Include(t => t.NotasTags)
+                .ThenInclude(t => t.IdNotasNavigation)
+                //.Where(t => t.IdUsuario == id && t. )
                 .Select(
                 c => new ListarTagsViewModel
                 {

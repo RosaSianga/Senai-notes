@@ -8,9 +8,9 @@ namespace API_Notes.Context;
 
 public partial class SenaiNotesContext : DbContext
 {
-    public SenaiNotesContext()
+    /* public SenaiNotesContext()
     {
-    }
+    } */
     private IConfiguration _configuration;
     public SenaiNotesContext(DbContextOptions<SenaiNotesContext> options, IConfiguration config)
         : base(options)
