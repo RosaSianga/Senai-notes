@@ -39,7 +39,7 @@ function Login() {
                 let json = await response.json();
 
                 let token = json.token;
-                let userId = json.id;
+                let userId = 1; /*codigo fixo para teste - json.userId; */
 
 
                 // GUARDAR INFORMAÇÃO NA PAGINA

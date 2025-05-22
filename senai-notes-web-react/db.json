@@ -28,6 +28,21 @@
       "id": "1a78",
       "email": "rsianga@email.com",
       "senha": "12345"
+    },
+    {
+      "id": "8fe4",
+      "email": "rsianga@email.com",
+      "senha": "12345"
+    },
+    {
+      "id": "edeb",
+      "email": "rsianga@email.com",
+      "senha": "12345"
+    },
+    {
+      "id": "b529",
+      "email": "rsianga@email.com",
+      "senha": "12345"
     }
   ],
   "tags": [
@@ -99,10 +114,12 @@
     {
       "id": "628e",
       "userId": "1",
-      "title": "Teste novo note",
-      "description": "Teste",
-      "tags": [],
-      "date": "2025-05-20T23:21:10.349Z"
+      "title": "Teste novo note atualizado3",
+      "description": "Teste de atualização",
+      "tags": [
+        "Teste"
+      ],
+      "date": "2025-05-21T22:59:27.940Z"
     },
     {
       "id": "725b",

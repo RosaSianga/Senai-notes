@@ -10,13 +10,20 @@ import { faArrowRight } from '@fortawesome/free-solid-svg-icons/faArrowRight';
 
 function PainelEsquerdo() {
 
+        const clickHome = () => {
+
+         window.location.href = "/notes"
+
+    }
+
+
     return (
         <>
             <nav className='notas-esquerda'>
 
                 <img className="logo" src={logo} alt="Logo Senai Notes" />
 
-                <button className='botao-notes'>
+                <button className='botao-notes' onClick={() => clickHome()}>
                     <FontAwesomeIcon icon={faHouse} className='icon'/>
                     All Notes
                     <FontAwesomeIcon icon={faArrowRight} className='seta' />

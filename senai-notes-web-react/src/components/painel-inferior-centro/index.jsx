@@ -8,26 +8,41 @@ import { useEffect, useState } from 'react';
 
 function PainelInferiorCentro({ recebeNotaSelecionada }) {
 
-    const [title, setTitle] = useState("");
+    const [titulo, setTitulo] = useState("");
     const [tags, setTags] = useState("");
-    const [description, setDescription] = useState("");
+    const [conteudo, setConteudo] = useState("");
 
 
     useEffect(() => {
         if (recebeNotaSelecionada) {
-            setTitle(recebeNotaSelecionada.title);
-            setTags(recebeNotaSelecionada.tags.join(", "));
-            setDescription(recebeNotaSelecionada.description);
+            setTitulo(recebeNotaSelecionada.titulo);
+            setTags(recebeNotaSelecionada.tags.map(tag => tag.nome).join(", "));
+            setConteudo(recebeNotaSelecionada.conteudo);
         }
     }, [recebeNotaSelecionada]);
 
 
-    const ClickSalvar = async () => {
+    const clickSalvar = async () => {
 
+        const response = await fetch(`http://localhost:3000/notes/${recebeNotaSelecionada.idNotas}`, {
+            method: "PUT",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+                ...recebeNotaSelecionada,
+                titulo,
+                conteudo,
+                tags: tags.split(",").map(t => t.trim()),
+                dataEdicao: new Date().toISOString()
+            })
+        });
 
-        
+        if (response.ok == true) {
+            alert("Anotação atualizada com sucesso");
+            window.location.reload()
 
-
+        } else {
+            alert("Erro ao atualizar nota");
+        }
     }
 
     return (
@@ -36,14 +51,14 @@ function PainelInferiorCentro({ recebeNotaSelecionada }) {
 
                 <div className="imagem"></div>
 
-                <input type="text" className='titulo' placeholder='Insira o titulo da nota' value={title} />
+                <input type="text" className='titulo' placeholder='Insira o titulo da nota' value={titulo} onChange={event => setTitulo(event.target.value)} />
 
                 <div className="inf-descricao">
                     <p className='tag-descricao'>
                         <FontAwesomeIcon icon={faTags} className='icon' />
                         Tags
                     </p>
-                    <input type="text" className='tag-descricao' value={tags} />
+                    <input type="text" className='tag-descricao' value={tags} onChange={event => setTags(event.target.value)} />
                 </div>
 
                 <div className="inf-descricao">
@@ -51,16 +66,16 @@ function PainelInferiorCentro({ recebeNotaSelecionada }) {
                         <FontAwesomeIcon icon={faClock} className='icon' />
                         Last Edited
                     </p>
-                    <p className='tag-descricao'>{new Date(recebeNotaSelecionada?.date).toLocaleDateString()}</p>
+                    <p className='tag-descricao'>{new Date(recebeNotaSelecionada?.dataCriacao).toLocaleDateString()}</p>
                 </div>
 
                 <div className="detalhe">
-                    <textarea className="texto" name="texto" value={description}> </textarea>
+                    <textarea className="texto" name="texto" value={conteudo} onChange={event => setConteudo(event.target.value)} > </textarea>
                 </div>
 
 
                 <div className="area-botoes">
-                    <button className='botao-save'> Salve Notes onClick={() => clickSalvar()} </button>
+                    <button className='botao-save' onClick={() => clickSalvar()}> Salve Notes </button>
 
                     <button className='botao-cancel'> Cancel </button>
 
