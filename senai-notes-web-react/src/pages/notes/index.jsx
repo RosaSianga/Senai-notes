@@ -13,15 +13,15 @@ import imgdescricao from '../../assets/img/Rectangle 44.svg'
 import imgtag from '../../assets/img/Tag.svg'
 import imgrelogio from '../../assets/img/Circle Clock.svg'
 import arquivo from '../../assets/img/Archive.svg'
-import { userEffect, useState} from 'react';
+import { useEffect, useState } from 'react';
 
 
 function Notes() {
 
 
-    const [Notes, setNotes] = useState([]);
+    const [setNotes] = useState([]);
 
-    userEffect(() => {
+    useEffect(() => {
 
         getNotes();
 
@@ -32,8 +32,8 @@ function Notes() {
         let response = await fetch("http://localhost:3000/tags", {
 
             headers: {
-                
-                "authorization": "Bearer" + localStorage.getItem("meuToken")
+
+                "authorization": `Bearer ${localStorage.getItem("meuToken")}`
 
             }
 
@@ -60,11 +60,50 @@ function Notes() {
 
         }
 
-    
+        const CreateNewNotes = async () => {
 
+            let novoTitulo = prompt("insira o titulo do chat")
+
+            if (novoTitulo == null || novoTitulo == "") {
+
+                alert("Insira um titulo")
+                return
+
+            }
+
+            let userId = localStorage.getNotes("meuId")
+
+            let nNote = {
+
+                NotesTitle: novoTitulo,
+                id: crypto.randomUUID(),
+                userId: userId,
+                messages: []
+
+            }
+
+            let response = await fetch("http://localhost:3000/tags", {
+                method: "POST",
+                headers: {
+                    "Authorization": "Bearer " + localStorage.getItem("meuToken"),
+                    "content-Type": "application/json"
+                },
+                body: JSON.stringify(
+                    nNote
+                )
+            });
+
+            if (response.ok) {
+
+                await getNotes();
+
+            }
+
+        }
 
     }
-    
+
+
 
     return (
         <>
@@ -116,46 +155,55 @@ function Notes() {
                     <div className="inferior">
 
                         <div className="inferior-esquerda">
-                            <button className='botao-new-note' onClick={() => Notes()}> + Create New Note </button>
+                            <button className='botao-new-note' onClick={() => CreateNewNotes}> + Create New Note </button>
 
                             <div className='nota-incluida'>
                                 <img src={imgNote} alt="Imagem da Nota" />
-                                <div className="inf-tag">
-                                    <p>React Perfomance </p>
-                                    <p>Dev</p>
-                                    <p>15/05/2025</p>
-                                </div>
+                                {Notes.map(Notes =>
 
+                                    <div className="inf-tag">
+
+                                        <p>React Perfomance </p>
+                                        <p>Dev</p>
+                                        <p>15/05/2025</p>
+
+                                    </div>
+
+
+                                {Notes.notes.title}
+                                )}
                             </div>
 
                         </div>
 
                         <div className="inferior-centro">
 
-                        <img className='img-centro' src={imgdescricao} alt="" />
-                        <img className='img-tag-centro' src={imgtag} alt="" />
-                        <img className='img-relogio-centro' src={imgrelogio} alt="" />
-                        <input className='titulo-centro' type="text" />
-                        <p className='tags-centro'>Tags</p>
-                        <p className='Last-edited-centro'>Last edited</p>
-                        <p className='dev'>Dev, React</p>
-                        <p className='data'>29 Oct 2024</p>
+                            <img className='img-centro' src={imgdescricao} alt="" />
+                            <img className='img-tag-centro' src={imgtag} alt="" />
+                            <img className='img-relogio-centro' src={imgrelogio} alt="" />
+                            <input className='titulo-centro' type="text" />
+                            <p className='tags-centro'>Tags</p>
+                            <p className='Last-edited-centro'>Last edited</p>
+                            <p className='dev'>Dev, React</p>
+                            <p className='data'>29 Oct 2024</p>
 
-                        <p className='titulo-segundario'>Key performance optimization techniques:</p>
-                        <p className='code'>1. Code Splitting</p>
-                        <p className='usereact'>- Use React.lazy() for route-based splitting</p>
-                        <p className='implement'>- Implement dynamic imports for heavy components</p>
-                        <p className='titulo-terciario'>2. Memoization</p>
-                        <p className='useMemo'>- useMemo for expensive calculations</p>
-                        <p className='useCall'>- useCallback for function props</p>
-                        <p className='titulo-quatro'>3. Virtual List Implementation</p>
-                        <p className='window'>- Use react-window for long lists</p>
-                        <p className='implement2'>- Implement infinite scrolling</p>
-                        <p className='todo'>TODO: Benchmark current application and identify bottlenecks</p>
 
-                        <button className='save'>Save note</button>
-                        <button className='cancel'>Cancel</button>
-                        
+
+                            <p className='titulo-segundario'>Key performance optimization techniques:</p>
+                            <p className='code'>1. Code Splitting</p>
+                            <p className='usereact'>- Use React.lazy() for route-based splitting</p>
+                            <p className='implement'>- Implement dynamic imports for heavy components</p>
+                            <p className='titulo-terciario'>2. Memoization</p>
+                            <p className='useMemo'>- useMemo for expensive calculations</p>
+                            <p className='useCall'>- useCallback for function props</p>
+                            <p className='titulo-quatro'>3. Virtual List Implementation</p>
+                            <p className='window'>- Use react-window for long lists</p>
+                            <p className='implement2'>- Implement infinite scrolling</p>
+                            <p className='todo'>TODO: Benchmark current application and identify bottlenecks</p>
+
+                            <button className='save'>Save note</button>
+                            <button className='cancel'>Cancel</button>
+
 
                         </div>
 
@@ -175,8 +223,8 @@ function Notes() {
 
             </div>
 
-        </> 
-        
+        </>
+
     )
 }
 
