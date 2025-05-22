@@ -2,140 +2,15 @@
     display: flex;
 }
 
-.notas-esquerda {
-    background-color: rgb(196, 191, 191);
-    width: 15vw;
-    height: 100vh;
-}
-
 .notas-direita {
-    background-color: red;
+    /* background-color: red; */
     width: 85vw;
     height: 100vh;
 }
 
-.superior {
-    background-color: aqua;
-    width: 100%;
-    height: 15%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.superior h1 {
-    font-size: 25px;
-    font-family: Inter;
-    margin-left: 25px;
-}
-
-.pesquisa {
-    margin-top: auto;
-    margin-bottom: 30px;
-    margin-right: 10px;
-
-    display: flex;
-    align-items: center;
-    border: none;
-    background-color: #F7F9FB;
-
-    padding-left: 10px;
-    padding-right: 10px;
-}
-
-.input {
-    margin-top: 0vh;
-    width: 220px;
-    height: 15px;
-    border-radius: 16px;
-    border: none;
-    color: black;
-    background-color: transparent;
-    padding: 12px;
-}
-
-
 .inferior {
-    background-color: blueviolet;
+    /* background-color: blueviolet; */
     width: 100%;
-    height: 85%;
+    height: 90%;
     display: flex;
-}
-
-.inferior-esquerda {
-    background-color: brown;
-    width: 25%;
-    height: 100%;
-}
-
-.botao-new-note {
-    background-color: #335CFF;
-    font-family: Inter;
-    font-size: 15px;
-    margin-top: 10px;
-    border: none;
-    border-radius: 10px;
-    width: 90%;
-}
-
-.nota-incluida {
-    display: flex;
-    align-items: center;
-    justify-content: left;
-    background-color: transparent;
-    width: 100%;
-}
-
-.nota-incluida img {
-    width: 18%;
-    margin: 10px;
-}
-
-.inf-tag {
-    font-family: Inter;
-    font-size: 12px;
-}
-
-.inferior-centro {
-    background-color: yellow;
-    width: 55%;
-    height: 100%;
-}
-
-.inferior-direita {
-    background-color: green;
-    width: 20%;
-    height: 100%;
-}
-
-.logo {
-    width: 15vw;
-}
-
-.botao-notes {
-    width: 100%;
-    margin-top: auto;
-    margin-right: 10px;
-    border: none;
-    background-color: transparent;
-    display: flex;
-    align-items: center;
-    font-family: "Inter";
-    font-size: 12px;
-}
-
-.botao-notes .seta {
-    margin-left: auto;
-}
-
-.botao-notes img {
-    margin-right: 5px;
-
-}
-
-.tags p {
-    margin-right: 140px;
-    font-family: Inter;
-    font-size: 12px;
-    color: #717784
 }

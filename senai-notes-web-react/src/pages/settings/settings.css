@@ -1,0 +1,16 @@
+.tela-settings {
+    display: flex;
+}
+
+.painel-direito {
+    /* background-color: red; */
+    width: 85vw;
+    height: 100vh;
+}
+
+.painel-inferior {
+    /* background-color: blueviolet; */
+    width: 100%;
+    height: 90%;
+    display: flex;
+}

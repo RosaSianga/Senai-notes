@@ -1,8 +1,67 @@
 import './usuario.css'
 import logo from '../../assets/img/logo.svg'
+import { useState } from 'react';
 
 function Usuario() {
 
+    const [nome, setNome] = useState("");
+    const [email, setEmail] = useState("");
+    const [senha, setSenha] = useState("");
+
+    const clickSignUp = async () => {
+
+        debugger;
+        if (nome == "") {
+            alert("preencha o nome do usuário.");
+            return;
+        }
+
+        if (email == "") {
+            alert("preencha o email.");
+            return;
+        }
+
+        if (senha == "") {
+            alert("preencha a senha.");
+            return;
+        }
+
+        let emailValid = validarEmail(email);
+        console.log(emailValid);
+
+        if (emailValid == false) {
+            alert("Email inválido. Tente novamente");
+        } else {
+
+            let estruturaUser = {
+                nome: nome,
+                email: email,
+                senha: senha
+            };
+
+            let response = await fetch("http://localhost:3000/users", {
+
+                headers: {
+                    "Authorization": "Bearer " + localStorage.getItem("meuToken"),
+                    "content-Type": "application/json"
+                },
+                method: "POST",
+                body: JSON.stringify({
+                    estruturaUser
+                })
+            });
+
+            console.log(response);
+
+            if (response.ok == true) {
+
+                alert("Usuário cadastrado com sucesso");
+
+                window.location.href = "/login"
+
+            }
+        }
+    }
 
     return (
         <>
@@ -16,28 +75,34 @@ function Usuario() {
                     <img src={logo} alt="Logo Senai Notes" />
 
                     <h1>Create Your Account</h1>
-                    <p>Sign up to start organizing  your notes and boost your productivity.</p>
+                    <p className='descricao'>Sign up to start organizing  your notes and boost your productivity.</p>
 
                     <div className="usuario-container">
 
                         <div className="label">
-                            <p className="descricao">Email Address</p>
+                            <p className="descricao-nome">Name</p>
                             <p></p>
                         </div>
 
-
-                        <input className="inpt" type="email" placeholder="email@example.com" />
+                        <input className="inpt" value={nome} onChange={event => setNome(event.target.value)} type="text" placeholder="Insira o nome" />
 
                         <div className="label">
-                            <p className="descricao">Password</p>
+                            <p className="descricao-senha">Email Address</p>
+                            <p></p>
                         </div>
 
-                        <input className="inpt" type="password" placeholder="Insira a senha" />
-                        <p className='label-p'>At least 8 characters</p>
+                        <input className="inpt" value={email} onChange={event => setEmail(event.target.value)} type="email" placeholder="email@example.com" />
 
-                        <button className="btn" >Sign up</button>
+                        <div className="label">
+                            <p className="descricao-senha">Password</p>
+                        </div>
+
+                        <input className="inpt" value={senha} onChange={event => setSenha(event.target.value)} type="password" placeholder="Insira a senha" />
+                        <p className='descricao'>At least 8 characters</p>
+
+                        <button className="btn" onClick={() => clickSignUp()} >Sign up</button>
                         <div className="valida-usuario">
-                            <p>Already have a account? </p>
+                            <p className='usuario-p'>Already have a account? </p>
                             <a className="link" href='/login'> Login</a>
                         </div>
 
@@ -53,6 +118,13 @@ function Usuario() {
 
         </>
     )
+}
+
+
+function validarEmail(email) {
+    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return regex.test(email);
+
 }
 
 export default Usuario

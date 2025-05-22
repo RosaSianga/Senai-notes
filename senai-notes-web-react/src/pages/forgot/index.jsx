@@ -16,12 +16,12 @@ function Forgot() {
                     <img src={logo} alt="Logo Senai Notes" />
 
                     <h1>Forgotten your password?</h1>
-                    <p>Enter your email below, and we'll send you a link  to reset it.</p>
+                    <p className='descricao'>Enter your email below, and we'll send you a link  to reset it.</p>
 
                     <div className="forgot-container">
 
                         <div className="label">
-                            <p className="descricao">Email Address</p>
+                            <p className="descricao-email">Email Address</p>
                             <p></p>
                         </div>
 

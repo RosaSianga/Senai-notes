@@ -9,6 +9,7 @@ function Login() {
 
     const clickLogin = async () => {
 
+
         let emailValid = validarEmail(email);
         console.log(emailValid);
 
@@ -37,13 +38,15 @@ function Login() {
 
                 let json = await response.json();
 
-                let userId = json.user.id;
+                let token = json.token;
+                let userId = 1; /*codigo fixo para teste - json.userId; */
 
 
                 // GUARDAR INFORMAÇÃO NA PAGINA
+                localStorage.setItem("meuToken", token);
                 localStorage.setItem("meuId", userId);
 
-                // window.location.href = "/Chat"
+                 window.location.href = "/notes"
 
             } else {
 
@@ -76,21 +79,22 @@ function Login() {
                     <div className="login-container">
 
                         <div className="label">
-                            <p className="descricao">Email Address</p>
+                            <p className="descricao-email">Email Address</p>
                             <p></p>
                         </div>
 
 
-                        <input className="inpt" type="email" placeholder="email@example.com" />
+                        <input className="inpt" value={email} onChange={event => setEmail(event.target.value)} type="email" placeholder="email@example.com" />
 
                         <div className="label">
-                            <p className="descricao">Password</p>
+                            <p className="descricao-senha">Password</p>
                             <a href='/forgot'> Forgot</a>
                         </div>
 
-                        <input className="inpt" type="password" placeholder="Insira a senha" />
+                        <input className="inpt" value={senha} onChange={event => setSenha(event.target.value)} type="password" placeholder="Insira a senha" />
 
                         <button className="btn" onClick={() => clickLogin()}>Entrar</button>
+
                         <div className="valida-usuario">
                             <p> No account yet ? </p>
                             <a className="link" href='/usuario'> Sign Up</a>
