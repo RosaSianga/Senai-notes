@@ -19,7 +19,23 @@ builder.Services.AddDbContext<SenaiNotesContext, SenaiNotesContext>();
 
 builder.Services.AddTransient<INotaRepository, NotaRepository>();
 
+builder.Services.AddCors(
+    options =>
+    {
+        options.AddPolicy(
+            name: "minhasOrigens",
+            policy =>
+            {
+                policy.WithOrigins("http://localhost:5173");
+                policy.AllowAnyHeader();
+                policy.AllowAnyMethod();
+            }
+        );
+    });
+
 var app = builder.Build();
+
+app.UseCors("minhasOrigens");
 
 // Antes de Iniciar o Projeto, caso queira testar na sua máquina, descomente a linha abaixo e rode a aplicacao
 //app.MapGet("/", () => "Hello World!");
