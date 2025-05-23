@@ -33,43 +33,73 @@ namespace API_Notes.Repositories
             _context.Notas.Add(notaCadastrada);
             _context.SaveChanges();
 
-            // Tratativa Tag
-            if (string.IsNullOrWhiteSpace(nota.Tags) == false)
+            // Tratativa Tag usando como entrada de Tags a string
+            /*      if (string.IsNullOrWhiteSpace(nota.Tags) == false)
+                  {
+                      var tratativaTag = nota.Tags.Split(',')
+                          .Select(a => a.Trim().ToLower())
+                          .Where(a => !string.IsNullOrWhiteSpace(a))
+                          .Distinct();
+
+                      foreach (var tagTexto in tratativaTag)
+                      {
+                          //verificar tag existente
+                          var tagExistente = _context.Tags.FirstOrDefault(t => t.Nome.ToLower() == tagTexto);
+
+                          // Cadastro
+                          if (tagExistente == null)
+                          {
+                              tagExistente = new Tag
+                              {
+                                  Nome = tagTexto,
+                                  IdUsuario = nota.IdUsuario
+                              };
+                              _context.Tags.Add(tagExistente);
+                              _context.SaveChanges();
+                          }
+
+                          // Relacao a tabela NotasTag
+                          var notaTag = new NotasTag
+                          {
+                              //IdNotas = nota.IdNotas,
+                              IdNotas = notaCadastrada.IdNotas,
+                              IdTag = tagExistente.IdTag,
+                          };
+                          _context.NotasTags.Add(notaTag);
+                      }
+
+                      _context.SaveChanges();
+                  } */
+
+// Tratativa de tags usando a List
+            var tratativaTag = nota.Tags
+                .Select(a => a.ToLower())
+                .Distinct();
+
+            foreach (var tagTexto in tratativaTag)
             {
-                var tratativaTag = nota.Tags.Split(',')
-                    .Select(a => a.Trim().ToLower())
-                    .Where(a => !string.IsNullOrWhiteSpace(a))
-                    .Distinct();
+                var tagExistente = _context.Tags.FirstOrDefault(t => t.Nome == tagTexto);
 
-                foreach (var tagTexto in tratativaTag)
+                if (tagExistente == null)
                 {
-                    //verificar tag existente
-                    var tagExistente = _context.Tags.FirstOrDefault(t => t.Nome.ToLower() == tagTexto);
-
-                    // Cadastro
-                    if (tagExistente == null)
+                    tagExistente = new Tag
                     {
-                        tagExistente = new Tag
-                        {
-                            Nome = tagTexto,
-                            IdUsuario = nota.IdUsuario
-                        };
-                        _context.Tags.Add(tagExistente);
-                        _context.SaveChanges();
-                    }
-
-                    // Relacao a tabela NotasTag
-                    var notaTag = new NotasTag
-                    {
-                        //IdNotas = nota.IdNotas,
-                        IdNotas = notaCadastrada.IdNotas,
-                        IdTag = tagExistente.IdTag,
+                        Nome = tagTexto,
+                        IdUsuario = nota.IdUsuario
                     };
-                    _context.NotasTags.Add(notaTag);
+                    _context.Tags.Add(tagExistente);
+                    _context.SaveChanges();
                 }
 
-                _context.SaveChanges();
+                var notaTag = new NotasTag
+                {
+                    IdNotas = notaCadastrada.IdNotas,
+                    IdTag = tagExistente.IdTag
+                };
+                _context.NotasTags.Add(notaTag);
             }
+
+            _context.SaveChanges();
         }
 
         public List<ListarNotasViewModel> ListarTodos(int idUsuario)
@@ -250,6 +280,7 @@ namespace API_Notes.Repositories
 
             return resultadoPesquisa;
         }
+
         public List<PesquisaViewModel> CampoPesquisaArquivada(string palavraPesquisa)
         {
             var resultadoPesquisa = _context.Notas

@@ -9,10 +9,12 @@
         public string? ImgUrl { get; set; }
         
         //Tags
-        public string? Tags { get; set; }
+        //public string? Tags { get; set; }
 
         // Usuario
         public int IdUsuario { get; set; }
+        
+          public List<string> Tags { get; set; }
 
     }
 }
