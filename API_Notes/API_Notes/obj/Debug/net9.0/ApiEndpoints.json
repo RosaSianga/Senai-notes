@@ -1,0 +1,28 @@
+[
+  {
+    "ContainingType": "API_Notes.Controllers.NotaController",
+    "Method": "CadastrarNota",
+    "RelativePath": "api/Nota/cadastrarNota",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "not",
+        "Type": "API_Notes.DTO.CadastrarNotaDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "API_Notes.Controllers.NotaController",
+    "Method": "ListarNotas",
+    "RelativePath": "api/Nota/listar",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  }
+]

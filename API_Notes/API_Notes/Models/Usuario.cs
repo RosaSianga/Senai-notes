@@ -1,4 +1,4 @@
-﻿using System;
+﻿    using System;
 using System.Collections.Generic;
 
 namespace API_Notes.Models;
@@ -12,6 +12,8 @@ public partial class Usuario
     public string Senha { get; set; } = null!;
 
     public DateTime? DataCriacao { get; set; }
+
+    public string? Nome { get; set; }
 
     public virtual ICollection<ConfiguracaoUsuario> ConfiguracaoUsuarios { get; set; } = new List<ConfiguracaoUsuario>();
 
