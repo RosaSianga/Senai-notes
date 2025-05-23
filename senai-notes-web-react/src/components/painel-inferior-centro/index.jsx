@@ -17,22 +17,45 @@ function PainelInferiorCentro({ recebeNotaSelecionada }) {
         if (recebeNotaSelecionada) {
             setTitulo(recebeNotaSelecionada.titulo);
             setTags(recebeNotaSelecionada.tags.map(tag => tag.nome).join(", "));
-            setConteudo(recebeNotaSelecionada.conteudo);
+
+            getConteudoNota();         
         }
     }, [recebeNotaSelecionada]);
 
 
+    const getConteudoNota = async () => {
+
+        let response = await fetch(`https://apisenainotesgrupo5temp.azurewebsites.net/api/Nota/buscarNota/${recebeNotaSelecionada.idNotas}`, {
+            method: "GET",
+            headers: {
+                "content-type": "application/json"
+            }
+        });
+
+        if (response.ok == true) {
+
+            let json = await response.json();
+
+            setConteudo(json.conteudo);
+        } else {
+            alert("Erro ao buscar conteudo da nota")
+        }
+    }
+
     const clickSalvar = async () => {
 
-        const response = await fetch(`http://localhost:3000/notes/${recebeNotaSelecionada.idNotas}`, {
+        let userId = localStorage.getItem("meuId");
+
+        const response = await fetch(`https://apisenainotesgrupo5temp.azurewebsites.net/api/Nota/editarNota/${recebeNotaSelecionada.idNotas}`, {
             method: "PUT",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
-                ...recebeNotaSelecionada,
                 titulo,
                 conteudo,
-                tags: tags.split(",").map(t => t.trim()),
-                dataEdicao: new Date().toISOString()
+                dataEdicao: new Date().toISOString(),
+                imgUrl: " ",
+                tags: tags,
+                idUsuario: userId
             })
         });
 

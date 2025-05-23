@@ -3,7 +3,7 @@ import './painel-inferior-esquerda.css';
 import imgNote from '../../assets/img/Image-notes.svg'
 import { useEffect, useState } from 'react';
 
-function PainelInferiorEsquerda({ enviarNotaSelecionada }) {
+function PainelInferiorEsquerda({ enviarNotaSelecionada, tagSelecionada, enviarTextoPesquisa }) {
 
     const [notes, setNotes] = useState([]);
 
@@ -14,9 +14,15 @@ function PainelInferiorEsquerda({ enviarNotaSelecionada }) {
 
     }, []);
 
+    useEffect(() => {
+
+        getNotas();
+
+    }, [tagSelecionada]);
+
 
     const getNotas = async () => {
-
+debugger
         let userId = localStorage.getItem("meuId");
 
         let response = await fetch("https://apisenainotesgrupo5temp.azurewebsites.net/api/Nota/listar/" + userId, {
@@ -30,9 +36,17 @@ function PainelInferiorEsquerda({ enviarNotaSelecionada }) {
 
             let json = await response.json();
 
+            if (tagSelecionada) {
+                json = json.filter(note => note.tags.map(tag => tag.nome));
+
+            }
+
+            if(enviarTextoPesquisa) {
+                json = json.filter(note => note.startsWith(texto));
+            }
+
             setNotes(json);
         }
-
     }
 
     const clickNote = (note) => {
@@ -43,18 +57,17 @@ function PainelInferiorEsquerda({ enviarNotaSelecionada }) {
 
     const ClickCriarNote = async () => {
 
-        debugger;
         let userId = localStorage.getItem("meuId");
 
         let estuturaNote = {
             titulo: "Teste novo note",
             conteudo: "Descricao nota",
             dataCriacao: new Date().toISOString(),
-            tags: [],
+            tags: "",
             idUsuario: userId
         };
 
-        let response = await fetch("https://apisenainotesgrupo5temp.azurewebsites.net//api/Nota/cadastrarNota", {     
+        let response = await fetch("https://apisenainotesgrupo5temp.azurewebsites.net/api/Nota/cadastrarNota", {
             method: "POST",
             headers: {
                 "content-type": "application/json"
@@ -92,8 +105,8 @@ function PainelInferiorEsquerda({ enviarNotaSelecionada }) {
                                 ))}
 
                             </div>
-                            <p>{new Date(note.datacriacao).toLocaleDateString()}</p>
-                            <p>{new Date(note.dataEdicao).toLocaleDateString()}</p>
+                            <p>{new Date(note.dataCriacao).toLocaleDateString()}</p>
+
                         </div>
 
                     </div>

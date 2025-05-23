@@ -9,7 +9,7 @@ import { faArrowRight } from '@fortawesome/free-solid-svg-icons/faArrowRight';
 import { useEffect, useState } from 'react';
 
 
-function PainelEsquerdo() {
+function PainelEsquerdo({ enviarTag}) {
 
     const [tags, setTags] = useState([]);
 
@@ -19,7 +19,7 @@ function PainelEsquerdo() {
 
     }, []);
 
-        const getTags = async () => {
+    const getTags = async () => {
 
         let response = await fetch("http://localhost:3000/tags")
 
@@ -39,7 +39,13 @@ function PainelEsquerdo() {
 
     }
 
+    const clickTag = (tag) => {
 
+        enviarTag(tag);
+
+    }
+
+    
     return (
         <>
             <nav className='notas-esquerda'>
@@ -60,11 +66,13 @@ function PainelEsquerdo() {
                 <div className="tags">
                     <p>Tags</p>
 
-                    <button className='botao-notes'>
-                        <FontAwesomeIcon icon={faTag} className='icon' />
-                        Cooking
-                    </button>
+                    {tags.map(tag => (
+                        <button className='botao-notes' onClick={() => clickTag(tag)}>
+                            <FontAwesomeIcon icon={faTag} className='icon' />
+                            {tag.nome}
+                        </button>
 
+                    ))}
                 </div>
 
 
