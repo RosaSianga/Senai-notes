@@ -17,12 +17,6 @@ namespace API_Notes.Repositories
             _context = context;
         }
 
-        // Validar a necessidade do metodo
-        public Nota BuscarPorID(int id)
-        {
-            return _context.Notas.FirstOrDefault(n => n.IdNotas == id);
-        }
-
         public void CadastrarNota(CadastrarNotaDTO nota)
         {
             // Cadastro

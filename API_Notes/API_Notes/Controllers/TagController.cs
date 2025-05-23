@@ -36,37 +36,5 @@ namespace API_Notes.Controllers
             return Ok(_tagRepository.BuscarTag(tagId, userId));
         }
 
-
-        [HttpPut("{id}")]
-        public IActionResult Editar(int id, Tag prod)
-        {
-            try
-            {
-                _tagRepository.Atualizar(id, prod);
-
-                return Ok(prod);
-            }
-
-            catch (Exception ex)
-            {
-                return NotFound("Tag não encontrada");
-            }
-        }
-
-        [HttpDelete("{id}")]
-        public IActionResult Deletar(int id)
-        {
-            try
-            {
-                _tagRepository.Deletar(id);
-                // 204 - Deu Certo
-                return NoContent();
-            }
-            // Caso de erro
-            catch (Exception ex)
-            {
-                return NotFound("Tag não encontrada.");
-            }
-        }
     }
 }

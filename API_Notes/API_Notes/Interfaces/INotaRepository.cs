@@ -9,9 +9,7 @@ namespace API_Notes.Interfaces
         List<ListarNotasViewModel> ListarTodos(int idUsuario);
         public BuscarNotaViewModel BuscarNota(int idNota);
         void CadastrarNota(CadastrarNotaDTO nota);
-
-        Nota BuscarPorID(int id);
-
+     
         void AtualizarNota(int idNota, AtualizarNotaDTO nota);
 
         void DeletarNota(int idNota);

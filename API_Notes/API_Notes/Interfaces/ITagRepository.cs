@@ -10,12 +10,6 @@ namespace API_Notes.Interfaces
         List<ListarTagsViewModel> ListarTodos(int userId);
 
         List<RetornoTagViewModel> BuscarTag(int tagId, int userId);
-
-        //Tag BuscarPorId(int id);
-
-        void Atualizar(int id, Tag tag);
-        
-        void Deletar(int id);
         
     }
 
