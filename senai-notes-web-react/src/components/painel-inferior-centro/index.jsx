@@ -64,9 +64,17 @@ function PainelInferiorCentro({ recebeNotaSelecionada }) {
                 <div className="inf-descricao">
                     <p className='tag-descricao'>
                         <FontAwesomeIcon icon={faClock} className='icon' />
-                        Last Edited
+                        Data Criação
                     </p>
                     <p className='tag-descricao'>{new Date(recebeNotaSelecionada?.dataCriacao).toLocaleDateString()}</p>
+                </div>
+
+                <div className="inf-descricao">
+                    <p className='tag-descricao'>
+                        <FontAwesomeIcon icon={faClock} className='icon' />
+                        Data Edição
+                    </p>
+                    <p className='tag-descricao'>{new Date(recebeNotaSelecionada?.dataEdicao).toLocaleDateString()}</p>
                 </div>
 
                 <div className="detalhe">

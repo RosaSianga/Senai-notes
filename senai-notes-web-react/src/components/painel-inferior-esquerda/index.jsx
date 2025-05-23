@@ -20,7 +20,7 @@ function PainelInferiorEsquerda({ enviarNotaSelecionada }) {
         let userId = localStorage.getItem("meuId");
 
         let response = await fetch("https://apisenainotesgrupo5temp.azurewebsites.net/api/Nota/listar/" + userId, {
-            method: "POST",
+            method: "GET",
             headers: {
                 "content-type": "application/json"
             }
@@ -43,6 +43,7 @@ function PainelInferiorEsquerda({ enviarNotaSelecionada }) {
 
     const ClickCriarNote = async () => {
 
+        debugger;
         let userId = localStorage.getItem("meuId");
 
         let estuturaNote = {
@@ -92,6 +93,7 @@ function PainelInferiorEsquerda({ enviarNotaSelecionada }) {
 
                             </div>
                             <p>{new Date(note.datacriacao).toLocaleDateString()}</p>
+                            <p>{new Date(note.dataEdicao).toLocaleDateString()}</p>
                         </div>
 
                     </div>
