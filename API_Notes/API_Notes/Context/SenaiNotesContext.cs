@@ -30,13 +30,11 @@ public partial class SenaiNotesContext : DbContext
     public virtual DbSet<Usuario> Usuarios { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-      /*  => optionsBuilder.UseSqlServer(
-            "Data Source=localhost, 1433;Initial Catalog=SENAI_NOTES;User Id=sa;Password=Senai@134;TrustServerCertificate=true;"); */
-     {
+    {
         var con = _configuration.GetConnectionString("DefaultConnection");
-        optionsBuilder.UseSqlServer(con); 
-    } 
-    
+        optionsBuilder.UseSqlServer(con);
+    }
+
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<ConfiguracaoUsuario>(entity =>
@@ -136,9 +134,7 @@ public partial class SenaiNotesContext : DbContext
             entity.Property(e => e.Nome)
                 .HasMaxLength(50)
                 .IsUnicode(false);
-            entity.Property(e => e.Senha)
-                .HasMaxLength(50)
-                .IsUnicode(false);
+            entity.Property(e => e.Senha).IsUnicode(false);
         });
 
         OnModelCreatingPartial(modelBuilder);
