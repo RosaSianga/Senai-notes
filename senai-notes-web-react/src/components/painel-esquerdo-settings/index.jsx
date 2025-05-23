@@ -1,5 +1,6 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import './painel-esquerdo-settings.css';
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faRightFromBracket } from '@fortawesome/free-solid-svg-icons/faRightFromBracket';
 import { faArrowRight, faCircleHalfStroke, faLock, faTextHeight } from '@fortawesome/free-solid-svg-icons';
 

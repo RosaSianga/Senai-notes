@@ -12,26 +12,30 @@ function Notes() {
 
 
     const [noteSelecionada, setNoteSelecionada] = useState(null);
+    const [tag, setTag] = useState(null);
+    const [textoSelecionado, setTextoSelecionado] = useState(null);
 
     return (
         <>
             <div className="tela">
 
-                <PainelEsquerdo />
+                <PainelEsquerdo enviarTag={tag=> setTag(tag)} />
 
                 <main className='notas-direita'>
 
-                    <PainelSuperior />
+                    <PainelSuperior enviarTexto={texto => setTextoSelecionado(texto)} />
 
                     <div className="inferior">
 
-                        <PainelInferiorEsquerda enviarNotaSelecionada={note => setNoteSelecionada(note)} />
+                        <PainelInferiorEsquerda enviarNotaSelecionada={note => setNoteSelecionada(note)}  
+                                                tagSelecionada={tag} 
+                                                enviarTextoPesquisa={textoSelecionado} />
 
                         {noteSelecionada != null && (
                             <>
                                 <PainelInferiorCentro recebeNotaSelecionada={noteSelecionada} />
 
-                                <PainelInferiorDireita />
+                                <PainelInferiorDireita deletarNotaSelecionada={noteSelecionada}/>
                             </>
 
                         )}

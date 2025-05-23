@@ -3,7 +3,7 @@ import './settings.css';
 import PainelEsquerdo from '../../components/painel-esquerdo';
 import PainelSuperiorSettings from '../../components/painel-superior-settings';
 import PainelEsquerdoSettings from '../../components/painel-esquerdo-settings';
-
+import PainelTema from '../../components/painel-tema';
 
 function Settings() {
 
@@ -20,6 +20,8 @@ function Settings() {
                     <div className="painel-inferior">
 
                         <PainelEsquerdoSettings />
+
+                        <PainelTema />
 
                     </div>
 

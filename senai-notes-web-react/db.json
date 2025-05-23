@@ -1,146 +1,63 @@
 {
   "users": [
     {
-      "token": "agbjklo5624pifdrs",
-      "id": "1",
-      "nome": "Rose",
-      "email": "rsianga@email.com",
-      "senha": "123456"
-    },
-    {
-      "token": "agbjklo5624pifdrs",
-      "id": "2",
-      "nome": "Teste",
-      "email": "teste@email.com",
-      "senha": "123456"
-    },
-    {
       "id": "1a2f",
       "email": "rsianga@email.com",
       "senha": "123456"
-    },
-    {
-      "id": "bb65",
-      "email": "rsianga@email.com",
-      "senha": "12345"
-    },
-    {
-      "id": "1a78",
-      "email": "rsianga@email.com",
-      "senha": "12345"
-    },
-    {
-      "id": "8fe4",
-      "email": "rsianga@email.com",
-      "senha": "12345"
-    },
-    {
-      "id": "edeb",
-      "email": "rsianga@email.com",
-      "senha": "12345"
-    },
-    {
-      "id": "b529",
-      "email": "rsianga@email.com",
-      "senha": "12345"
-    },
-    {
-      "id": "405a",
-      "email": "rsianga@email.com",
-      "senha": "12345"
     }
   ],
   "tags": [
     {
-      "name": "React",
-      "id": "7b8e"
+      "nome": "Pessoal",
+      "idTag": "1"
     },
     {
-      "name": "Node",
-      "id": "c565"
+      "nome": "React",
+      "idTag": "2"
     },
     {
-      "name": "JavaScript",
-      "id": "3338"
+      "nome": "Dev",
+      "idTag": "3"
     },
     {
-      "name": "CSS",
-      "id": "52fe"
-    },
-    {
-      "name": "HTML",
-      "id": "db30"
+      "nome": "Angular",
+      "idTag": "4"
     }
   ],
-  "notes": [
+  "listar": [
     {
-      "id": "9999",
-      "userId": "1",
-      "title": "React Development",
-      "description": "Texto.",
-      "image": "assets/sample.png",
+      "idNotas": "1",
+      "tituto": "React Development",
+      "dataCriacao": "2025-05-19T19:53:40.182Z",
+      "dataEdicao": "2025-05-19T19:53:40.182Z",
+      "imgUrl": " ",
       "tags": [
-        "React",
-        "Node"
-      ],
-      "date": "2025-05-19T19:53:40.182Z"
-    },
+        {
+          "idTag": 2,
+          "nome": "Dev"
+        },
+        {
+          "idTag": 3,
+          "nome": "React"
+        },
+        {
+          "idTag": 4,
+          "nome": "Angular"
+        }
+      ]
+    }
+  ],
+  "buscarNota": [
     {
-      "id": "d7b9",
-      "userId": "1",
-      "title": "Node Development",
-      "description": "Texto 2.",
-      "image": "assets/sample.png",
+      "idNotas": "1",
+      "tituto": "React Development",
+      "conteudo": "Nova anotação de React",
+      "dataCriacao": "2025-05-19T19:53:40.182Z",
+      "dataEdicao": "2025-05-19T19:53:40.182Z",
       "tags": [
-        "Node",
-        "    Teste"
-      ],
-      "date": "2025-05-19T18:44:08.198Z"
-    },
-    {
-      "id": "af12",
-      "userId": "1",
-      "title": "JavaScript Development",
-      "description": "Texto",
-      "image": "assets/sample.png",
-      "tags": [
-        "JavaScript"
-      ],
-      "date": "2025-05-19T16:57:26.196Z"
-    },
-    {
-      "id": "aedd",
-      "userId": "1",
-      "title": "Teste novo note",
-      "description": "Teste",
-      "tags": [],
-      "date": "20/05/2025"
-    },
-    {
-      "id": "628e",
-      "userId": "1",
-      "title": "Teste novo note atualizado3",
-      "description": "Teste de atualização",
-      "tags": [
-        "Teste"
-      ],
-      "date": "2025-05-21T22:59:27.940Z"
-    },
-    {
-      "id": "725b",
-      "userId": "1",
-      "title": "Teste novo note",
-      "description": "Teste",
-      "tags": [],
-      "date": "2025-05-20T23:31:39.441Z"
-    },
-    {
-      "id": "47f2",
-      "userId": "1",
-      "title": "Teste novo note",
-      "description": "Teste",
-      "tags": [],
-      "date": "2025-05-20T23:56:44.154Z"
+        "Dev",
+        "React"
+      ]
     }
   ]
 }
