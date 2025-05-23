@@ -1,0 +1,135 @@
+[
+  {
+    "ContainingType": "API_Notes.Controllers.NotaController",
+    "Method": "ArquivarNota",
+    "RelativePath": "api/Nota/arquivarNota/{IdNota}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "IdNota",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "API_Notes.Controllers.NotaController",
+    "Method": "BuscarNota",
+    "RelativePath": "api/Nota/buscarNota/{idNota}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "idNota",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "API_Notes.Controllers.NotaController",
+    "Method": "CadastrarNota",
+    "RelativePath": "api/Nota/cadastrarNota",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "not",
+        "Type": "API_Notes.DTO.CadastrarNotaDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "API_Notes.Controllers.NotaController",
+    "Method": "PesquisarNota",
+    "RelativePath": "api/Nota/CampoPesquisa/{palavraPesquisada}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "palavraPesquisada",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "API_Notes.Controllers.NotaController",
+    "Method": "CampoPesquisaArquivada",
+    "RelativePath": "api/Nota/CampoPesquisaArquivada/{palavraPesquisada}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "palavraPesquisada",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "API_Notes.Controllers.NotaController",
+    "Method": "AtualizarNota",
+    "RelativePath": "api/Nota/editarNota/{idNota}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "idNota",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "nota",
+        "Type": "API_Notes.DTO.AtualizarNotaDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "API_Notes.Controllers.NotaController",
+    "Method": "DeletarNota",
+    "RelativePath": "api/Nota/excluirNota/{idNota}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "idNota",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "API_Notes.Controllers.NotaController",
+    "Method": "ListarNotas",
+    "RelativePath": "api/Nota/listar/{idUsuario}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "idUsuario",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]

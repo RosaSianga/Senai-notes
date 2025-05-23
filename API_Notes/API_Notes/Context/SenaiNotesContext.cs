@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using API_Notes.Models;
 using Microsoft.EntityFrameworkCore;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 
 namespace API_Notes.Context;
 
@@ -61,7 +62,10 @@ public partial class SenaiNotesContext : DbContext
             entity.ToTable(tb => tb.HasTrigger("trg_audit_notas"));
 
             entity.Property(e => e.IdNotas).HasColumnName("Id_Notas");
+            entity.Property(e => e.Arquivada).HasDefaultValue(false);
+            entity.Property(e => e.Conteudo).HasColumnType("text");
             entity.Property(e => e.DataCriacao)
+                .HasDefaultValueSql("(getdate())")
                 .HasColumnType("datetime")
                 .HasColumnName("Data_Criacao");
             entity.Property(e => e.DataEdicao)
@@ -126,6 +130,7 @@ public partial class SenaiNotesContext : DbContext
 
             entity.Property(e => e.IdUsuario).HasColumnName("Id_Usuario");
             entity.Property(e => e.DataCriacao)
+                .HasDefaultValueSql("(getdate())")
                 .HasColumnType("datetime")
                 .HasColumnName("Data_Criacao");
             entity.Property(e => e.Email)
