@@ -1,58 +1,6 @@
 [
   {
     "ContainingType": "API_Notes.Controllers.TagController",
-    "Method": "CadastrarNota",
-    "RelativePath": "api/Tag",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "notaDTO",
-        "Type": "API_Notes.DTO.CadastrarTagDTO",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "API_Notes.Controllers.TagController",
-    "Method": "Get_tagRepository",
-    "RelativePath": "api/Tag",
-    "HttpMethod": "",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": [
-      {
-        "Type": "API_Notes.Interfaces.ITagRepository",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "API_Notes.Controllers.TagController",
-    "Method": "ListarPorId",
-    "RelativePath": "api/Tag/{id}",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "API_Notes.Controllers.TagController",
     "Method": "Editar",
     "RelativePath": "api/Tag/{id}",
     "HttpMethod": "PUT",
@@ -91,15 +39,36 @@
   {
     "ContainingType": "API_Notes.Controllers.TagController",
     "Method": "ListarTodos",
-    "RelativePath": "api/Tag/listartag/{id}",
+    "RelativePath": "api/Tag/listartag/{userId}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "id",
+        "Name": "userId",
         "Type": "System.Int32",
         "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "API_Notes.Controllers.TagController",
+    "Method": "BuscarTag",
+    "RelativePath": "api/Tag/RetornoTag",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "tagId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "userId",
+        "Type": "System.Int32",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": []

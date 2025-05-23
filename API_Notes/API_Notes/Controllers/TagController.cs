@@ -30,8 +30,8 @@ namespace API_Notes.Controllers
             return Ok(_tagRepository.ListarTodos(userId));
         }
 
-        [HttpGet("RetornoTag/{tagId},{userId}")]
-        public IActionResult BuscarTag(int tagId, int userId)
+        [HttpGet("RetornoTag")]
+        public IActionResult BuscarTag([FromQuery] int tagId, [FromQuery] int userId)
         {
             return Ok(_tagRepository.BuscarTag(tagId, userId));
         }

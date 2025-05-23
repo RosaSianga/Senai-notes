@@ -55,19 +55,7 @@ namespace API_Notes.Repositories
 
         // Listagem de Tag
         public List<ListarTagsViewModel> ListarTodos(int userId)
-            /* {
-                  return _context.Tags
-                      .Include(t => t.NotasTags)
-                      .ThenInclude(t => t.IdNotasNavigation)
-                      //.Where(t => t.IdUsuario == id && t. )
-                      .Select(
-                      c => new ListarTagsViewModel
-                      {
-                          IdTag = c.IdTag,
-                          Nome = c.Nome
-                      })
-                      .ToList();
-              } */
+       
         {
             var listaTags = _context.NotasTags
                 .Where(t => t.IdNotasNavigation.IdUsuario == userId && t.IdNotasNavigation.Arquivada == false)

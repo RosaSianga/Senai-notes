@@ -5,14 +5,16 @@
     "version": "1.0"
   },
   "paths": {
-    "/api/Tag/listartag/{id}": {
+    "/api/Tag/listartag/{userId}": {
       "get": {
         "tags": [
           "Tag"
         ],
+        "summary": "Lista todas as Tags",
+        "description": "Este método lista todas as tags com base do ID do usuario",
         "parameters": [
           {
-            "name": "id",
+            "name": "userId",
             "in": "path",
             "required": true,
             "schema": {
@@ -28,30 +30,29 @@
         }
       }
     },
-    "/api/Tag": {
-      "post": {
+    "/api/Tag/RetornoTag": {
+      "get": {
         "tags": [
           "Tag"
         ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/CadastrarTagDTO"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/CadastrarTagDTO"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/CadastrarTagDTO"
-              }
+        "parameters": [
+          {
+            "name": "tagId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "userId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
             }
           }
-        },
+        ],
         "responses": {
           "200": {
             "description": "OK"
@@ -60,27 +61,6 @@
       }
     },
     "/api/Tag/{id}": {
-      "get": {
-        "tags": [
-          "Tag"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      },
       "put": {
         "tags": [
           "Tag"
@@ -98,6 +78,11 @@
         ],
         "requestBody": {
           "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Tag"
+              }
+            },
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/Tag"
@@ -146,35 +131,6 @@
   },
   "components": {
     "schemas": {
-      "CadastrarTagDTO": {
-        "type": "object",
-        "properties": {
-          "idTag": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "idUsuario": {
-            "type": "integer",
-            "format": "int32",
-            "nullable": true
-          },
-          "nome": {
-            "type": "string",
-            "nullable": true
-          },
-          "idUsuarioNavigation": {
-            "$ref": "#/components/schemas/Usuario"
-          },
-          "notasTags": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/NotasTag"
-            },
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
       "ConfiguracaoUsuario": {
         "type": "object",
         "properties": {
