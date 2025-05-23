@@ -16,10 +16,31 @@ import arquivo from '../../assets/img/Archive.svg'
 import { useEffect, useState } from 'react';
 
 
-function Notes() {
+function Notes ({ enviarNota, tagSelecionada, somenteArquivadas, atualizarLista })  {
 
 
     const [setNotes] = useState([]);
+
+
+    // useEffect para carregar as notas ao montar o componente
+  useEffect(() => { 
+    getNotes(); 
+  }, []);  // executa apenas uma vez, ao montar
+
+  // Recarrega as notas sempre que a tag selecionada mudar
+  useEffect(() => { 
+    getNotes(); 
+  }, [tagSelecionada]);
+
+  // Recarrega as notas sempre que o filtro de arquivadas mudar
+  useEffect(() => { 
+    getNotes(); 
+  }, [somenteArquivadas]);
+
+  // Recarrega as notas sempre que a flag de atualização mudar
+  useEffect(() => { 
+    getNotes(); 
+  }, [atualizarLista]);
 
     useEffect(() => {
 
@@ -27,81 +48,63 @@ function Notes() {
 
     }, []);
 
-    const getNotes = async () => {
+   // Função que busca todas as notas e aplica os filtros de tag e arquivamento
+  const getNotes = async () => {
+    try {
+      const response = await fetch('http://localhost:3000/notes');
+      let data = await response.json();
 
-        let response = await fetch("http://localhost:3000/tags", {
+      // Filtra por tag, se houver uma selecionada
+      if (tagSelecionada) {
+        data = data.filter(note =>
+          note.tags.map(t => t.trim()).includes(tagSelecionada)
+        );
+      }
+      // Filtra somente as notas arquivadas, se solicitado
+      if (somenteArquivadas) {
+        data = data.filter(note => note.archived === true);
+      }
 
-            headers: {
-
-                "authorization": `Bearer ${localStorage.getItem("meuToken")}`
-
-            }
-
-
-        });
-
-        console.log(response);
-
-        if (response.ok == true) {
-
-            let json = await response.json(); // Pegue as informações dos chats.
-
-            setNotes(json);
-
-        } else {
-
-            if (response.status == 401) {
-
-                alert("Token inválido. Faça login novamente.");
-                localStorage.clear();
-                window.location.href = "/login";
-
-            }
-
-        }
+      // Atualiza o estado com as notas filtradas
+      setNotes(data);
+    } catch (error) {
+      console.error("Erro ao buscar notas:", error);
+      toast.error("Não foi possível carregar as notas.");
+    }
+  }
 
         const CreateNewNotes = async () => {
 
-            let novoTitulo = prompt("insira o titulo do chat")
-
-            if (novoTitulo == null || novoTitulo == "") {
-
-                alert("Insira um titulo")
-                return
-
-            }
-
-            let userId = localStorage.getNotes("meuId")
-
-            let nNote = {
-
-                NotesTitle: novoTitulo,
-                id: crypto.randomUUID(),
-                userId: userId,
-                messages: []
-
-            }
-
+            try {
+           
             let response = await fetch("http://localhost:3000/tags", {
                 method: "POST",
-                headers: {
-                    "Authorization": "Bearer " + localStorage.getItem("meuToken"),
-                    "content-Type": "application/json"
-                },
+                headers: { "content-Type": "application/json" },
                 body: JSON.stringify(
-                    nNote
-                )
+                    {
+                        userId: "1",                          // ID fixo de usuário por enquanto
+                        title: "Nova anotação",               // Título padrão
+                        description: "Escreva aqui sua descrição", // Descrição padrão
+                        tags: [],                             // Sem tags iniciais
+                        image: "assets/sample.png",           // Imagem padrão
+                        date: new Date().toISOString()        // Data atual em ISO
+                    })
+
             });
 
             if (response.ok) {
-
-                await getNotes();
-
-            }
-
-        }
-
+        // Notifica sucesso e recarrega as notas
+        toast.success("Anotação criada com sucesso!");
+        await getNotes();
+      } else {
+        // Notifica erro se não retornar 2xx
+        toast.error("Erro ao criar uma nota, tente novamente");
+      }
+    } catch (error) {
+      console.error("Erro ao criar nota:", error);
+      toast.error("Erro de rede ao criar a nota.");
     }
+  }
 
 
 
@@ -155,22 +158,22 @@ function Notes() {
                     <div className="inferior">
 
                         <div className="inferior-esquerda">
-                            <button className='botao-new-note' onClick={() => CreateNewNotes}> + Create New Note </button>
+                            <button className='botao-new-note' onClick={() => CreateNewNotes()}> + Create New Note </button>
 
                             <div className='nota-incluida'>
                                 <img src={imgNote} alt="Imagem da Nota" />
-                                {Notes.map(Notes =>
+                                {Notes.map(Note =>
 
                                     <div className="inf-tag">
 
-                                        <p>React Perfomance </p>
-                                        <p>Dev</p>
-                                        <p>15/05/2025</p>
+                                        <p>{Note.title}</p>
+                                        <p>{Note.tags}</p>
+                                        <p>{Note.description}</p>
 
                                     </div>
 
 
-                                {Notes.notes.title}
+
                                 )}
                             </div>
 
