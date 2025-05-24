@@ -75,6 +75,8 @@
     height: 30px;
     color: white;
     background-color: #335CFF;
+    animation-name: show-up;
+    animation-duration: 0.6s;
 }
 
 .nota-incluida {
@@ -143,8 +145,10 @@
 .img-centro {
 
 
-    width: 75vh;
+    width: 74vh;
     margin-left: 1px;
+    position: relative;
+    top: 4px;
 }
 
 .titulo-centro {
@@ -157,6 +161,8 @@
     height: 20px;
     border: none;
     margin-left: -30px;
+    border-color: transparent;
+    border: none;
 }
 
 .tags-centro {
@@ -352,7 +358,7 @@
     border-radius: 5px;
     font-family: "inter";
     background-color: white;
-    border-color: darkgrey;
+    border: none;
 
 }
 
@@ -369,7 +375,7 @@
     border-radius: 5px;
     font-family: "inter";
     background-color: white;
-    border-color: darkgray;
+    border: none;
 }
 
 .lixo{
@@ -378,7 +384,7 @@
     width: 24px;
     position: relative;
     top: 78px;
-    margin-left: 1px;
+    margin-left: 2px;
 
 }
 
@@ -386,7 +392,7 @@
 .arquivo{
 
      width: 23px;
-     margin-left: -23px;
+     margin-left: -25px;
     position: relative;
     top: 25px;
 
@@ -409,7 +415,7 @@
 .inferior-esquerda .botao-new-note:hover{
 
 
-    background-color: #ccc !important;
+    background-color: #87bfff !important;
 
 }
 
@@ -426,3 +432,15 @@
 
 }
 
+
+@keyframes show-up {
+
+    0%{
+        	opacity: 0;
+            transform: translateX(100px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}

@@ -16,10 +16,11 @@ import arquivo from '../../assets/img/Archive.svg'
 import { useEffect, useState } from 'react';
 
 
+
 function Notes ({ enviarNota, tagSelecionada, somenteArquivadas, atualizarLista })  {
 
 
-    const [setNotes] = useState([]);
+    const [ notes, setNotes ] = useState([]);
 
 
     // useEffect para carregar as notas ao montar o componente
@@ -69,7 +70,6 @@ function Notes ({ enviarNota, tagSelecionada, somenteArquivadas, atualizarLista 
       setNotes(data);
     } catch (error) {
       console.error("Erro ao buscar notas:", error);
-      toast.error("Não foi possível carregar as notas.");
     }
   }
 
@@ -94,15 +94,13 @@ function Notes ({ enviarNota, tagSelecionada, somenteArquivadas, atualizarLista 
 
             if (response.ok) {
         // Notifica sucesso e recarrega as notas
-        toast.success("Anotação criada com sucesso!");
         await getNotes();
       } else {
         // Notifica erro se não retornar 2xx
-        toast.error("Erro ao criar uma nota, tente novamente");
+
       }
     } catch (error) {
       console.error("Erro ao criar nota:", error);
-      toast.error("Erro de rede ao criar a nota.");
     }
   }
 
@@ -147,7 +145,7 @@ function Notes ({ enviarNota, tagSelecionada, somenteArquivadas, atualizarLista 
 
                         <div className="pesquisa">
                             <img src={search} alt="Imagem pesquisa" />
-                            <input onKeyUp={event => onKeyUp(event)} className="input" type="text" placeholder="Search by title, content or tags..." />
+                            <input className="input" type="text" placeholder="Search by title, content or tags..." />
 
                             <img src={settings} alt="Imagem configuração" />
                             <img src={perfil} alt="Imagem do perfil" />
@@ -158,17 +156,18 @@ function Notes ({ enviarNota, tagSelecionada, somenteArquivadas, atualizarLista 
                     <div className="inferior">
 
                         <div className="inferior-esquerda">
-                            <button className='botao-new-note' onClick={() => CreateNewNotes()}> + Create New Note </button>
+                            <button className='botao-new-note' onClick={() => enviarNota()}> + Create New Note </button>
 
                             <div className='nota-incluida'>
                                 <img src={imgNote} alt="Imagem da Nota" />
-                                {Notes.map(Note =>
+                                {notes.map(Note =>
 
                                     <div className="inf-tag">
 
                                         <p>{Note.title}</p>
                                         <p>{Note.tags}</p>
                                         <p>{Note.description}</p>
+                                        {new Date(Note.date).toLocaleDateString}
 
                                     </div>
 
