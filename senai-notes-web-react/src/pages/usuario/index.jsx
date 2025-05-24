@@ -10,7 +10,6 @@ function Usuario() {
 
     const clickSignUp = async () => {
 
-        debugger;
         if (nome == "") {
             alert("preencha o nome do usuário.");
             return;

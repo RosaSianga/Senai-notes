@@ -5,11 +5,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArchive, faTrashCan } from '@fortawesome/free-solid-svg-icons';
 
 
-function PainelInferiorDireita({deletarNotaSelecionada}) {
+function PainelInferiorDireita({ deletarNotaSelecionada, arquivarNotaSelecionada }) {
 
-       const clickDelete = async () => {
+    const clickDelete = async () => {
 
-        debugger
         const response = await fetch(`https://apisenainotesgrupo5temp.azurewebsites.net/api/Nota/excluirNota/${deletarNotaSelecionada.idNotas}`, {
             method: "DELETE",
             headers: { "Content-Type": "application/json" }
@@ -24,16 +23,32 @@ function PainelInferiorDireita({deletarNotaSelecionada}) {
         }
     }
 
+        const clickArchive = async () => {
+
+        const response = await fetch(`https://apisenainotesgrupo5temp.azurewebsites.net/api/Nota/arquivarNota/${arquivarNotaSelecionada.idNotas}`, {
+            method: "PUT",
+            headers: { "Content-Type": "application/json" }
+        });
+
+        if (response.ok == true) {
+            alert("Anotação arquivada com sucesso");
+            window.location.reload()
+
+        } else {
+            alert("Erro ao arquivar a nota");
+        }
+    }
+
     return (
         <>
             <nav className="inferior-direita">
 
                 <button className='botao-notes'>
-                    <FontAwesomeIcon icon={faArchive} className='icon' />
+                    <FontAwesomeIcon icon={faArchive} className='icon' onClick={() => clickArchive()} />
                     Archive Notes
                 </button>
 
-                <button className='botao-notes' onClick={() => clickDelete()}> 
+                <button className='botao-notes' onClick={() => clickDelete()}>
                     <FontAwesomeIcon icon={faTrashCan} className='icon' />
                     Delete Notes
                 </button>

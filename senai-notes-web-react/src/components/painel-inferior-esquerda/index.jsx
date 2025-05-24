@@ -18,11 +18,11 @@ function PainelInferiorEsquerda({ enviarNotaSelecionada, tagSelecionada, enviarT
 
         getNotas();
 
-    }, [tagSelecionada]);
+    }, [tagSelecionada, enviarTextoPesquisa]);
 
 
     const getNotas = async () => {
-debugger
+
         let userId = localStorage.getItem("meuId");
 
         let response = await fetch("https://apisenainotesgrupo5temp.azurewebsites.net/api/Nota/listar/" + userId, {
@@ -37,12 +37,13 @@ debugger
             let json = await response.json();
 
             if (tagSelecionada) {
-                json = json.filter(note => note.tags.map(tag => tag.nome));
+
+                json = json.filter(note => note.tags.map(tag => capitalizeFirstLetter(tag.nome)).includes(capitalizeFirstLetter(tagSelecionada.nome)));
 
             }
 
             if(enviarTextoPesquisa) {
-                json = json.filter(note => note.startsWith(texto));
+                json = json.filter(note => note.titulo.includes(enviarTextoPesquisa));
             }
 
             setNotes(json);
@@ -101,7 +102,7 @@ debugger
                             <p>{note.titulo} </p>
                             <div className="tags-notas">
                                 {note.tags.map(tag => (
-                                    <p className='tag1'>{tag.nome}</p>
+                                    <p className='tag1'>{capitalizeFirstLetter(tag.nome)}</p>
                                 ))}
 
                             </div>
@@ -118,5 +119,10 @@ debugger
         </>
     )
 }
+
+function capitalizeFirstLetter(text) {
+    return text.charAt(0).toUpperCase() + text.slice(1);
+}
+
 
 export default PainelInferiorEsquerda

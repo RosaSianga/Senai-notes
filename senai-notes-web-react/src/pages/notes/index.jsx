@@ -19,7 +19,7 @@ function Notes() {
         <>
             <div className="tela">
 
-                <PainelEsquerdo enviarTag={tag=> setTag(tag)} />
+                <PainelEsquerdo enviarTag={tag => setTag(tag)} />
 
                 <main className='notas-direita'>
 
@@ -27,15 +27,16 @@ function Notes() {
 
                     <div className="inferior">
 
-                        <PainelInferiorEsquerda enviarNotaSelecionada={note => setNoteSelecionada(note)}  
-                                                tagSelecionada={tag} 
-                                                enviarTextoPesquisa={textoSelecionado} />
+                        <PainelInferiorEsquerda enviarNotaSelecionada={note => setNoteSelecionada(note)}
+                            tagSelecionada={tag}
+                            enviarTextoPesquisa={textoSelecionado} />
 
                         {noteSelecionada != null && (
                             <>
                                 <PainelInferiorCentro recebeNotaSelecionada={noteSelecionada} />
 
-                                <PainelInferiorDireita deletarNotaSelecionada={noteSelecionada}/>
+                                <PainelInferiorDireita deletarNotaSelecionada={noteSelecionada}
+                                    arquivarNotaSelecionada={noteSelecionada} />
                             </>
 
                         )}
