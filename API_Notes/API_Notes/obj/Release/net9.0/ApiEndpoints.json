@@ -131,5 +131,42 @@
       }
     ],
     "ReturnTypes": []
+  },
+  {
+    "ContainingType": "API_Notes.Controllers.TagController",
+    "Method": "ListarTodos",
+    "RelativePath": "api/Tag/listartag/{userId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "API_Notes.Controllers.TagController",
+    "Method": "BuscarTag",
+    "RelativePath": "api/Tag/RetornoTag",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "tagId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "userId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
   }
 ]

@@ -71,7 +71,7 @@ namespace API_Notes.Repositories
                       _context.SaveChanges();
                   } */
 
-// Tratativa de tags usando a List
+            // Tratativa de tags usando a List
             var tratativaTag = nota.Tags
                 .Select(a => a.ToLower())
                 .Distinct();
@@ -127,7 +127,7 @@ namespace API_Notes.Repositories
                 .ToList();
         }
 
-        public BuscarNotaViewModel BuscarNota(int idNota)
+        public BuscarNotaViewModel? BuscarNota(int idNota)
         {
             return _context.Notas
                 .Where(n => n.IdNotas == idNota)
@@ -158,65 +158,123 @@ namespace API_Notes.Repositories
 
             _context.SaveChanges();
 
-            // Tratativa Tag
-            if (string.IsNullOrWhiteSpace(nota.Tags) == false)
+            // Tratativa Tag usando String nas Tags
+            /*   if (string.IsNullOrWhiteSpace(nota.Tags) == false)
+               {
+                   // Coleta das novas Tags
+                   var novasTags = nota.Tags
+                       .Split(',')
+                       .Select(a => a.Trim().ToLower())
+                       .Where(a => string.IsNullOrWhiteSpace(a) == false)
+                       .Distinct()
+                       .ToList();
+
+                   // Buscar Tags vinculadas as notas
+                   var validacaoTags = _context.NotasTags
+                       .Where(vt => vt.IdNotas == idNota)
+                       .Include(vt => vt.IdTagNavigation)
+                       .ToList();
+
+                   // Remover as Tags que não estão na lista nova
+                   foreach (var tagAtual in validacaoTags)
+                   {
+                       if (novasTags.Contains(tagAtual.IdTagNavigation.Nome.ToLower()) == false)
+                       {
+                           _context.NotasTags.Remove(tagAtual);
+                       }
+                   }
+
+                   // Adicionar novas tags que nao existem
+                   foreach (var tagTexto in novasTags)
+                   {
+                       var tagExistente = _context.Tags.FirstOrDefault(t =>
+                           t.Nome.ToLower() == tagTexto && t.IdUsuario == nota.IdUsuario);
+
+                       //Se a tag não existe, crie 
+                       if (tagExistente == null)
+                       {
+                           tagExistente = new Tag
+                           {
+                               Nome = tagTexto,
+                               IdUsuario = nota.IdUsuario
+                           };
+                           _context.Tags.Add(tagExistente);
+                           _context.SaveChanges();
+                       }
+
+                       //Verifica se a relacao já existe
+                       bool relacaoExistente = _context.NotasTags
+                           .Any(re => re.IdNotas == idNota && re.IdTag == tagExistente.IdTag);
+                       if (relacaoExistente == false)
+                       {
+                           _context.NotasTags.Add(new NotasTag()
+                           {
+                               IdNotas = idNota,
+                               IdTag = tagExistente.IdTag
+                           });
+                       }
+                   }
+
+                   _context.SaveChanges();
+               }  */
+
+            // Tratativa das tags usando List
+
+            // Novas Tags 
+            var novasTags = nota.Tags
+                .Select(n => n.ToLower())
+                .Distinct()
+                .ToList();
+
+            // buscar tags vinculadas
+            var validacaoTags = _context.NotasTags
+                       .Where(vt => vt.IdNotas == idNota)
+                       .Include(vt => vt.IdTagNavigation)
+                       .ToList();
+
+            // Adicionar novas tags que não existem
+            foreach (var tagAtual in validacaoTags)
             {
-                // Coleta das novas Tags
-                var novasTags = nota.Tags
-                    .Split(',')
-                    .Select(a => a.Trim().ToLower())
-                    .Where(a => string.IsNullOrWhiteSpace(a) == false)
-                    .Distinct()
-                    .ToList();
-
-                // Buscar Tags vinculadas as notas
-                var validacaoTags = _context.NotasTags
-                    .Where(vt => vt.IdNotas == idNota)
-                    .Include(vt => vt.IdTagNavigation)
-                    .ToList();
-
-                // Remover as Tags que não estão na lista nova
-                foreach (var tagAtual in validacaoTags)
+                if (novasTags.Contains(tagAtual.IdTagNavigation.Nome) == false)
                 {
-                    if (novasTags.Contains(tagAtual.IdTagNavigation.Nome.ToLower()) == false)
-                    {
-                        _context.NotasTags.Remove(tagAtual);
-                    }
+                    _context.NotasTags.Remove(tagAtual);
                 }
-
-                // Adicionar novas tags que nao existem
-                foreach (var tagTexto in novasTags)
-                {
-                    var tagExistente = _context.Tags.FirstOrDefault(t =>
-                        t.Nome.ToLower() == tagTexto && t.IdUsuario == nota.IdUsuario);
-
-                    //Se a tag não existe, crie 
-                    if (tagExistente == null)
-                    {
-                        tagExistente = new Tag
-                        {
-                            Nome = tagTexto,
-                            IdUsuario = nota.IdUsuario
-                        };
-                        _context.Tags.Add(tagExistente);
-                        _context.SaveChanges();
-                    }
-
-                    //Verifica se a relacao já existe
-                    bool relacaoExistente = _context.NotasTags
-                        .Any(re => re.IdNotas == idNota && re.IdTag == tagExistente.IdTag);
-                    if (relacaoExistente == false)
-                    {
-                        _context.NotasTags.Add(new NotasTag()
-                        {
-                            IdNotas = idNota,
-                            IdTag = tagExistente.IdTag
-                        });
-                    }
-                }
-
-                _context.SaveChanges();
             }
+
+            // Criação das Tags
+            foreach (var tagTexto in novasTags)
+            {
+                var tagExistente = _context.Tags
+                    .FirstOrDefault(t => t.Nome == tagTexto && t.IdUsuario == nota.IdUsuario);
+
+                //Se a tag não existe, crie 
+                if (tagExistente == null)
+                {
+                    tagExistente = new Tag
+                    {
+                        Nome = tagTexto,
+                        IdUsuario = nota.IdUsuario
+                    };
+                    _context.Tags.Add(tagExistente);
+                    _context.SaveChanges();
+                }
+
+                //Verifica se a relacao já existe
+                bool relacaoExistente = _context.NotasTags
+                    .Any(re => re.IdNotas == idNota && re.IdTag == tagExistente.IdTag);
+                if (relacaoExistente == false)
+                {
+                    _context.NotasTags.Add(new NotasTag()
+                    {
+                        IdNotas = idNota,
+                        IdTag = tagExistente.IdTag
+                    });
+                }
+            }
+            _context.SaveChanges();
+
+
+
         }
 
         public void DeletarNota(int idNota)

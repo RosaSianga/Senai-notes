@@ -1,6 +1,6 @@
 C:\Users\FIC\Documents\Workstation\Senai-notes\API_Notes\API_Notes\obj\Release\net9.0\PubTmp\Out\API_Notes.exe
+C:\Users\FIC\Documents\Workstation\Senai-notes\API_Notes\API_Notes\obj\Release\net9.0\PubTmp\Out\appsettings-azure.json
 C:\Users\FIC\Documents\Workstation\Senai-notes\API_Notes\API_Notes\obj\Release\net9.0\PubTmp\Out\appsettings.Development.json
-C:\Users\FIC\Documents\Workstation\Senai-notes\API_Notes\API_Notes\obj\Release\net9.0\PubTmp\Out\appsettings.json
 C:\Users\FIC\Documents\Workstation\Senai-notes\API_Notes\API_Notes\obj\Release\net9.0\PubTmp\Out\API_Notes.dll
 C:\Users\FIC\Documents\Workstation\Senai-notes\API_Notes\API_Notes\obj\Release\net9.0\PubTmp\Out\API_Notes.runtimeconfig.json
 C:\Users\FIC\Documents\Workstation\Senai-notes\API_Notes\API_Notes\obj\Release\net9.0\PubTmp\Out\API_Notes.pdb
@@ -37,6 +37,7 @@ C:\Users\FIC\Documents\Workstation\Senai-notes\API_Notes\API_Notes\obj\Release\n
 C:\Users\FIC\Documents\Workstation\Senai-notes\API_Notes\API_Notes\obj\Release\net9.0\PubTmp\Out\Microsoft.Win32.SystemEvents.dll
 C:\Users\FIC\Documents\Workstation\Senai-notes\API_Notes\API_Notes\obj\Release\net9.0\PubTmp\Out\Newtonsoft.Json.dll
 C:\Users\FIC\Documents\Workstation\Senai-notes\API_Notes\API_Notes\obj\Release\net9.0\PubTmp\Out\Newtonsoft.Json.Bson.dll
+C:\Users\FIC\Documents\Workstation\Senai-notes\API_Notes\API_Notes\obj\Release\net9.0\PubTmp\Out\Swashbuckle.AspNetCore.Annotations.dll
 C:\Users\FIC\Documents\Workstation\Senai-notes\API_Notes\API_Notes\obj\Release\net9.0\PubTmp\Out\Swashbuckle.AspNetCore.Swagger.dll
 C:\Users\FIC\Documents\Workstation\Senai-notes\API_Notes\API_Notes\obj\Release\net9.0\PubTmp\Out\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\FIC\Documents\Workstation\Senai-notes\API_Notes\API_Notes\obj\Release\net9.0\PubTmp\Out\Swashbuckle.AspNetCore.SwaggerUI.dll
