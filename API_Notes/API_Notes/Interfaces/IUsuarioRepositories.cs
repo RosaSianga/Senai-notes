@@ -11,7 +11,9 @@ namespace API_Notes.Interfaces
 
         Usuario BuscarPorEmailSenha(string email, string senha);
 
-        void Cadastrar(Usuario usuario);    
+        Usuario BuscarPorNome(string nome);
+
+        void Cadastrar(CadastrarUsuarioDTO usuario);    
 
         void Atualizar(int id, Usuario usuario);    
 

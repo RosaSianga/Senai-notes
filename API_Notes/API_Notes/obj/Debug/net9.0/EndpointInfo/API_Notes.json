@@ -17,6 +17,30 @@
         }
       }
     },
+    "/Buscar/{nome}": {
+      "get": {
+        "tags": [
+          "UsuarioControllers"
+        ],
+        "summary": "Buscar por nome",
+        "description": "Esta endpoint busca nomes dos usuarios",
+        "parameters": [
+          {
+            "name": "nome",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/UsuarioControllers/cadastrar": {
       "post": {
         "tags": [
@@ -24,19 +48,24 @@
         ],
         "requestBody": {
           "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CadastrarUsuarioDTO"
+              }
+            },
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Usuario"
+                "$ref": "#/components/schemas/CadastrarUsuarioDTO"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/Usuario"
+                "$ref": "#/components/schemas/CadastrarUsuarioDTO"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/Usuario"
+                "$ref": "#/components/schemas/CadastrarUsuarioDTO"
               }
             }
           }
@@ -89,6 +118,11 @@
         ],
         "requestBody": {
           "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Usuario"
+              }
+            },
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/Usuario"
@@ -143,6 +177,11 @@
         ],
         "requestBody": {
           "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/LoginDTO"
+              }
+            },
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/LoginDTO"
@@ -170,6 +209,40 @@
   },
   "components": {
     "schemas": {
+      "CadastrarUsuarioDTO": {
+        "type": "object",
+        "properties": {
+          "idUsuario": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "email": {
+            "type": "string",
+            "nullable": true
+          },
+          "senha": {
+            "type": "string",
+            "nullable": true
+          },
+          "nome": {
+            "type": "string",
+            "nullable": true
+          },
+          "dataCriacao": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "tags": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "ConfiguracaoUsuario": {
         "type": "object",
         "properties": {
@@ -242,6 +315,10 @@
           },
           "arquivada": {
             "type": "boolean",
+            "nullable": true
+          },
+          "imgUrl": {
+            "type": "string",
             "nullable": true
           },
           "idUsuarioNavigation": {
@@ -330,6 +407,10 @@
           "dataCriacao": {
             "type": "string",
             "format": "date-time",
+            "nullable": true
+          },
+          "nome": {
+            "type": "string",
             "nullable": true
           },
           "configuracaoUsuarios": {

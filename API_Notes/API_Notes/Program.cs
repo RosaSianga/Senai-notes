@@ -11,7 +11,10 @@ builder.Services.AddControllers()
     {
         options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
     });
-builder.Services.AddSwaggerGen();
+builder.Services.AddSwaggerGen(options =>
+{
+    options.EnableAnnotations();
+});
 builder.Services.AddDbContext<SenaiNotesContext, SenaiNotesContext>();
 builder.Services.AddTransient<IUsuarioRepositories, UsuarioRepositories>();
 

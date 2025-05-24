@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 using API_Notes.Models;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.Options;
 
 namespace API_Notes.Context;
 
@@ -12,11 +10,10 @@ public partial class SenaiNotesContext : DbContext
     public SenaiNotesContext()
     {
     }
-    private IConfiguration _configuration;
-    public SenaiNotesContext(DbContextOptions<SenaiNotesContext> options, IConfiguration config)
+
+    public SenaiNotesContext(DbContextOptions<SenaiNotesContext> options)
         : base(options)
     {
-        _configuration = config;
     }
 
     public virtual DbSet<ConfiguracaoUsuario> ConfiguracaoUsuarios { get; set; }
@@ -30,16 +27,10 @@ public partial class SenaiNotesContext : DbContext
     public virtual DbSet<Usuario> Usuarios { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-    {
-        var conection = _configuration.GetConnectionString("DefaultConnection");
-        optionsBuilder.UseSqlServer(conection);
-    }
-
-
-   
+#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
+        => optionsBuilder.UseSqlServer("Data Source=tcp:senainotesserver.database.windows.net,1433;Initial Catalog=SENAI_NOTES;Persist Security Info=False;User ID=LoginAlexandreBack;Password=BackSenai@134;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
-    
     {
         modelBuilder.Entity<ConfiguracaoUsuario>(entity =>
         {
@@ -138,9 +129,7 @@ public partial class SenaiNotesContext : DbContext
             entity.Property(e => e.Nome)
                 .HasMaxLength(50)
                 .IsUnicode(false);
-            entity.Property(e => e.Senha)
-                .HasMaxLength(50)
-                .IsUnicode(false);
+            entity.Property(e => e.Senha).IsUnicode(false);
         });
 
         OnModelCreatingPartial(modelBuilder);

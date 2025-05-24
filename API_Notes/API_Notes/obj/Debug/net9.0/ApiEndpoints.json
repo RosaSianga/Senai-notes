@@ -9,7 +9,7 @@
     "Parameters": [
       {
         "Name": "usuario",
-        "Type": "API_Notes.Models.Usuario",
+        "Type": "API_Notes.DTO.CadastrarUsuarioDTO",
         "IsRequired": true
       }
     ],
@@ -89,6 +89,22 @@
       {
         "Name": "login",
         "Type": "API_Notes.DTO.LoginDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "API_Notes.Controllers.UsuarioControllers",
+    "Method": "BuscarPorNome",
+    "RelativePath": "Buscar/{nome}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "nome",
+        "Type": "System.String",
         "IsRequired": true
       }
     ],

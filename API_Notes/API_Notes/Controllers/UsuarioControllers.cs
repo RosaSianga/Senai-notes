@@ -6,6 +6,7 @@ using API_Notes.Service;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Swashbuckle.AspNetCore.Annotations;
 
 namespace API_Notes.Controllers
 {
@@ -24,14 +25,23 @@ namespace API_Notes.Controllers
         }
 
         [HttpGet("ListarTodos")]
-
+       
         public IActionResult ListarTodos()
         {
             return Ok(_usuarioRepositories.ListarTodos());
         }
 
+        [HttpGet("/Buscar/{nome}")]
+        [SwaggerOperation(
+            Summary = "Buscar por nome",
+            Description = "Esta endpoint busca nomes dos usuarios")]
+        public IActionResult BuscarPorNome(string nome)
+        {
+            return Ok(_usuarioRepositories.BuscarPorNome(nome));
+        }
+
         [HttpPost("cadastrar")]
-        public IActionResult CadastrarUsuario(Usuario usuario)
+        public IActionResult CadastrarUsuario(CadastrarUsuarioDTO usuario)
         {
             _usuarioRepositories.Cadastrar(usuario);
 
@@ -60,7 +70,7 @@ namespace API_Notes.Controllers
                 _usuarioRepositories.Atualizar(id, usuario);
                 return Ok();
             }
-            catch (Exception ex)
+            catch (ArgumentNullException ex)
             {
                 return NotFound(ex);
             }
@@ -77,7 +87,7 @@ namespace API_Notes.Controllers
                 return NoContent();
             }
 
-            catch (Exception ex)
+            catch (ArgumentNullException ex)
             {
                 return NotFound("Uusraio nao encontrado");
             }
@@ -98,7 +108,13 @@ namespace API_Notes.Controllers
 
                 var token = tokenService.GenerateToken(usuario.Senha);
 
-                return Ok(token);
+                return Ok(new
+                {
+                    token,
+                    usuario
+                });
+              
+
 
 
 
@@ -106,6 +122,7 @@ namespace API_Notes.Controllers
 
             }
         }
+       
 
     } 
 }
