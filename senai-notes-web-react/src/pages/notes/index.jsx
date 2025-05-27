@@ -17,39 +17,43 @@ import { useEffect, useState } from 'react';
 
 
 
-function Notes ({ enviarNota, tagSelecionada, somenteArquivadas, atualizarLista })  {
+function Notes({ enviarNota, tagSelecionada, somenteArquivadas, atualizarLista }) {
 
 
-    const [ notes, setNotes ] = useState([]);
+  const [notes, setNotes] = useState([]);
 
+  const [image, setImage] = useState(null)
+  const [imageURL, setImageURL] = useState(null)
 
-    // useEffect para carregar as notas ao montar o componente
-  useEffect(() => { 
-    getNotes(); 
+  
+
+  // useEffect para carregar as notas ao montar o componente
+  useEffect(() => {
+    getNotes();
   }, []);  // executa apenas uma vez, ao montar
 
   // Recarrega as notas sempre que a tag selecionada mudar
-  useEffect(() => { 
-    getNotes(); 
+  useEffect(() => {
+    getNotes();
   }, [tagSelecionada]);
 
   // Recarrega as notas sempre que o filtro de arquivadas mudar
-  useEffect(() => { 
-    getNotes(); 
+  useEffect(() => {
+    getNotes();
   }, [somenteArquivadas]);
 
   // Recarrega as notas sempre que a flag de atualização mudar
-  useEffect(() => { 
-    getNotes(); 
+  useEffect(() => {
+    getNotes();
   }, [atualizarLista]);
 
-    useEffect(() => {
+  useEffect(() => {
 
-        getNotes();
+    getNotes();
 
-    }, []);
+  }, []);
 
-   // Função que busca todas as notas e aplica os filtros de tag e arquivamento
+  // Função que busca todas as notas e aplica os filtros de tag e arquivamento
   const getNotes = async () => {
     try {
       const response = await fetch('http://localhost:3000/notes');
@@ -73,26 +77,26 @@ function Notes ({ enviarNota, tagSelecionada, somenteArquivadas, atualizarLista 
     }
   }
 
-        const CreateNewNotes = async () => {
+  const CreateNewNotes = async () => {
 
-            try {
-           
-            let response = await fetch("http://localhost:3000/tags", {
-                method: "POST",
-                headers: { "content-Type": "application/json" },
-                body: JSON.stringify(
-                    {
-                        userId: "1",                          // ID fixo de usuário por enquanto
-                        title: "Nova anotação",               // Título padrão
-                        description: "Escreva aqui sua descrição", // Descrição padrão
-                        tags: [],                             // Sem tags iniciais
-                        image: "assets/sample.png",           // Imagem padrão
-                        date: new Date().toISOString()        // Data atual em ISO
-                    })
+    try {
 
-            });
+      let response = await fetch("http://localhost:3000/tags", {
+        method: "POST",
+        headers: { "content-Type": "application/json" },
+        body: JSON.stringify(
+          {
+            userId: "1",                          // ID fixo de usuário por enquanto
+            title: "Nova anotação",               // Título padrão
+            description: "Escreva aqui sua descrição", // Descrição padrão
+            tags: [],                             // Sem tags iniciais
+            image: "assets/sample.png",           // Imagem padrão
+            date: new Date().toISOString()        // Data atual em ISO
+          })
 
-            if (response.ok) {
+      });
+
+      if (response.ok) {
         // Notifica sucesso e recarrega as notas
         await getNotes();
       } else {
@@ -104,130 +108,144 @@ function Notes ({ enviarNota, tagSelecionada, somenteArquivadas, atualizarLista 
     }
   }
 
+  const aoAdicionarImagem = (Event) =>{
+
+    const arquivo = Event.target.files[0]
+
+    console.log("arquivo", arquivo)
+
+    setImage(arquivo)
+    setImageURL(URL.createObjectURL(arquivo))
+  }
 
 
-    return (
-        <>
+  return (
+    <>
 
-            <div className="tela">
-                <header className='notas-esquerda'>
+      <div className="tela">
+        <header className='notas-esquerda'>
 
-                    <img className="logo" src={logo} alt="Logo Senai Notes" />
+          <img className="logo" src={logo} alt="Logo Senai Notes" />
 
-                    <button className='botao-notes'>
-                        <img src={home} alt="Imagem home" />
-                        All Notes
-                        <img className='seta' src={setinha} alt="Imagem Seta" />
-                    </button>
+          <button className='botao-notes'>
+            <img src={home} alt="Imagem home" />
+            All Notes
+            <img className='seta' src={setinha} alt="Imagem Seta" />
+          </button>
 
-                    <button className='botao-notes'>
-                        <img src={archive} alt="Imagem arquivo" />
-                        Archived Notes
-                    </button>
+          <button className='botao-notes'>
+            <img src={archive} alt="Imagem arquivo" />
+            Archived Notes
+          </button>
 
-                    <div className="tags">
-                        <p>Tags</p>
+          <div className="tags">
+            <p>Tags</p>
 
-                        <button className='botao-notes'>
-                            <img src={tag} alt="Imagem da Tag" />
-                            Cooking
-                        </button>
-                    </div>
-
-
-
-                </header>
-
-                <main className='notas-direita'>
-
-                    <div className="superior">
-                        <h1>All Notes</h1>
-
-                        <div className="pesquisa">
-                            <img src={search} alt="Imagem pesquisa" />
-                            <input className="input" type="text" placeholder="Search by title, content or tags..." />
-
-                            <img src={settings} alt="Imagem configuração" />
-                            <img src={perfil} alt="Imagem do perfil" />
-                        </div>
-
-                    </div>
-
-                    <div className="inferior">
-
-                        <div className="inferior-esquerda">
-                            <button className='botao-new-note' onClick={() => enviarNota()}> + Create New Note </button>
-
-                            <div className='nota-incluida'>
-                                <img src={imgNote} alt="Imagem da Nota" />
-                                {notes.map(Note =>
-
-                                    <div className="inf-tag">
-
-                                        <p>{Note.title}</p>
-                                        <p>{Note.tags}</p>
-                                        <p>{Note.description}</p>
-                                        {new Date(Note.date).toLocaleDateString}
-
-                                    </div>
+            <button className='botao-notes'>
+              <img src={tag} alt="Imagem da Tag" />
+              Cooking
+            </button>
+          </div>
 
 
 
-                                )}
-                            </div>
+        </header>
 
-                        </div>
+        <main className='notas-direita'>
 
-                        <div className="inferior-centro">
+          <div className="superior">
+            <h1>All Notes</h1>
 
-                            <img className='img-centro' src={imgdescricao} alt="" />
-                            <img className='img-tag-centro' src={imgtag} alt="" />
-                            <img className='img-relogio-centro' src={imgrelogio} alt="" />
-                            <input className='titulo-centro' type="text" />
-                            <p className='tags-centro'>Tags</p>
-                            <p className='Last-edited-centro'>Last edited</p>
-                            <p className='dev'>Dev, React</p>
-                            <p className='data'>29 Oct 2024</p>
+            <div className="pesquisa">
+              <img src={search} alt="Imagem pesquisa" />
+              <input className="input" type="text" placeholder="Search by title, content or tags..." />
+
+              <img src={settings} alt="Imagem configuração" />
+              <img src={perfil} alt="Imagem do perfil" />
+            </div>
+
+          </div>
+
+          <div className="inferior">
+
+            <div className="inferior-esquerda">
+              <button className='botao-new-note' onClick={() => enviarNota()}> + Create New Note </button>
+
+              <div className='nota-incluida'>
+                <img src={imgNote} alt="Imagem da Nota" />
+                {notes.map(Note =>
+
+                  <div className="inf-tag">
+
+                    <p>{Note.title}</p>
+                    <p>{Note.tags}</p>
+                    <p>{Note.description}</p>
+                    {new Date(Note.date).toLocaleDateString}
+
+                  </div>
 
 
 
-                            <p className='titulo-segundario'>Key performance optimization techniques:</p>
-                            <p className='code'>1. Code Splitting</p>
-                            <p className='usereact'>- Use React.lazy() for route-based splitting</p>
-                            <p className='implement'>- Implement dynamic imports for heavy components</p>
-                            <p className='titulo-terciario'>2. Memoization</p>
-                            <p className='useMemo'>- useMemo for expensive calculations</p>
-                            <p className='useCall'>- useCallback for function props</p>
-                            <p className='titulo-quatro'>3. Virtual List Implementation</p>
-                            <p className='window'>- Use react-window for long lists</p>
-                            <p className='implement2'>- Implement infinite scrolling</p>
-                            <p className='todo'>TODO: Benchmark current application and identify bottlenecks</p>
-
-                            <button className='save'>Save note</button>
-                            <button className='cancel'>Cancel</button>
-
-
-                        </div>
-
-                        <div className="inferior-direita">
-
-                            <img className='lixo' src={lixeira} alt="" />
-                            <img className='arquivo' src={arquivo} alt="" />
-                            <button className='arquive'>Archive note</button>
-                            <button className='delete'>Delete Note</button>
-
-                        </div>
-                    </div>
-
-                </main>
-
-                <footer></footer>
+                )}
+              </div>
 
             </div>
 
-        </>
+            <div className="inferior-centro">
 
-    )
+              <label
+               className="image"
+               style={{backgoundimage: `url('${imageURL || 'assents/sample.png'}')`}}>
+                <img src={imageURL || imgdescricao} alt="" />
+                <input onChange={Event => aoAdicionarImagem(Event)} type="file" />
+              </label>
+              <img className='img-tag-centro' src={imgtag} alt="" />
+              <img className='img-relogio-centro' src={imgrelogio} alt="" />
+              <input className='titulo-centro' type="text" />
+              <p className='tags-centro'>Tags</p>
+              <p className='Last-edited-centro'>Last edited</p>
+              <p className='dev'>Dev, React</p>
+              <p className='data'>29 Oct 2024</p>
+
+
+
+              <p className='titulo-segundario'>Key performance optimization techniques:</p>
+              <p className='code'>1. Code Splitting</p>
+              <p className='usereact'>- Use React.lazy() for route-based splitting</p>
+              <p className='implement'>- Implement dynamic imports for heavy components</p>
+              <p className='titulo-terciario'>2. Memoization</p>
+              <p className='useMemo'>- useMemo for expensive calculations</p>
+              <p className='useCall'>- useCallback for function props</p>
+              <p className='titulo-quatro'>3. Virtual List Implementation</p>
+              <p className='window'>- Use react-window for long lists</p>
+              <p className='implement2'>- Implement infinite scrolling</p>
+              <p className='todo'>TODO: Benchmark current application and identify bottlenecks</p>
+
+              <button className='save'>Save note</button>
+              <button className='cancel'>Cancel</button>
+
+
+            </div>
+
+            <div className="inferior-direita">
+
+              <img className='lixo' src={lixeira} alt="" />
+              <img className='arquivo' src={arquivo} alt="" />
+              <button className='arquive'>Archive note</button>
+              <button className='delete'>Delete Note</button>
+
+            </div>
+          </div>
+
+        </main>
+
+        <footer></footer>
+
+      </div>
+
+    </>
+
+  )
 }
 
 export default Notes
